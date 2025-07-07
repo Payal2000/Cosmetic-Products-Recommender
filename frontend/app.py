@@ -179,7 +179,7 @@ if st.session_state.conversation:
         st.markdown(f"- {q}")
 
 # ============ TRY-ON BUTTON ==============
-
+if st.button(""):
     st.markdown(
         """
         <a href="https://cosmetic-products-recommender-zmp1.vercel.app" target="_blank">
