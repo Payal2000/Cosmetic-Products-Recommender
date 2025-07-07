@@ -1,0 +1,9 @@
+streamlit
+openai
+pinecone
+snowflake-connector-python
+pandas
+numpy
+scikit-learn
+requests
+tqdm
