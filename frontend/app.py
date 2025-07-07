@@ -182,7 +182,7 @@ st.markdown("---")
 if st.button("💄 Try-On Yourself!"):
     st.markdown(
         """
-        <meta http-equiv="refresh" content="0; url='http://localhost:8000/index.html'" />
+        <meta http-equiv="refresh" content="0; url='cosmetic-products-recommender-zmp1.vercel.app'" />
         """,
         unsafe_allow_html=True
     )
