@@ -182,7 +182,11 @@ st.markdown("---")
 if st.button("💄 Try-On Yourself!"):
     st.markdown(
         """
-        <meta http-equiv="refresh" content="0; url='cosmetic-products-recommender-zmp1.vercel.app'" />
+        <a href="https://cosmetic-products-recommender-zmp1.vercel.app" target="_blank">
+            <button style="background-color:#c2185b; color:white; padding:10px 20px; border:none; border-radius:5px;">
+                Go to Virtual Try-On
+            </button>
+        </a>
         """,
         unsafe_allow_html=True
     )
