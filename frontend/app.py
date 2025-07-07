@@ -179,15 +179,25 @@ if st.session_state.conversation:
         st.markdown(f"- {q}")
 
 # ============ TRY-ON BUTTON ==============
-if st.button(""):
-    st.markdown(
-        """
+st.markdown(
+    """
+    <div style="text-align:center; margin-top: 30px;">
         <a href="https://cosmetic-products-recommender-zmp1.vercel.app" target="_blank">
-            <button style="background-color:#c2185b; color:white; padding:10px 20px; border:none; border-radius:5px;">
-                Go to Virtual Try-On
+            <button style="
+                background-color:#c2185b;
+                color:white;
+                padding:12px 24px;
+                border:none;
+                border-radius:8px;
+                font-size:16px;
+                cursor:pointer;
+                box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+            ">
+                💄 Try It On Yourself
             </button>
         </a>
-        """,
-        unsafe_allow_html=True
-    )
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
