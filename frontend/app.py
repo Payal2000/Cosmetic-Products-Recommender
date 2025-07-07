@@ -178,8 +178,8 @@ if st.session_state.conversation:
     for q in st.session_state.conversation:
         st.markdown(f"- {q}")
 
-st.markdown("---")
-if st.button("💄 Try-On Yourself!"):
+# ============ TRY-ON BUTTON ==============
+
     st.markdown(
         """
         <a href="https://cosmetic-products-recommender-zmp1.vercel.app" target="_blank">
@@ -191,4 +191,3 @@ if st.button("💄 Try-On Yourself!"):
         unsafe_allow_html=True
     )
 
-st.caption("Made with ❤️ using Streamlit, Pinecone, and OpenAI")
