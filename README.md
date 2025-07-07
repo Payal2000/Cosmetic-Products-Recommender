@@ -194,6 +194,9 @@ This project builds an advanced data pipeline and recommendation system for Rare
 - **Try-On Makeup**: Use your webcam to try on lipstick or eyeshadow shades from Rare Beauty’s product line.
 - **Semantic Recommendations**: Enter a query and get personalized product recommendations based on semantic search powered by Pinecone and OpenAI embeddings.
 
+## Demo
+
+<img src="https://github.com/Payal2000/Cosmetic-Products-Recommender/blob/main/Demo-1.jpeg" alt="Demo Image" width="300"/>
 
 
 
