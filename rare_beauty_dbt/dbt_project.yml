@@ -1,0 +1,11 @@
+name: 'rare_beauty'
+version: '1.0.0'
+config-version: 2
+
+profile: 'rare_beauty'
+
+model-paths: ["rare_beauty/models"]
+
+models:
+  rare_beauty:
+    +materialized: view

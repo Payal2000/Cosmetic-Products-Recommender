@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rare Beauty AR Shade Try-On</title>
+  <style>
+    video, canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.95);
+      padding: 15px;
+      border-radius: 12px;
+      font-family: Arial, sans-serif;
+      max-width: 320px;
+      overflow-y: auto;
+      max-height: 90vh;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    select, label {
+      margin: 5px 0;
+      display: block;
+    }
+    .swatch-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+    .swatch {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #ccc;
+    }
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" autoplay muted playsinline width="640" height="480"></video>
+  <canvas id="canvas" width="640" height="480"></canvas>
+
+  <div id="controls">
+    <h3>Lips</h3>
+    <label for="finish">Finish:</label>
+    <select id="finish">
+      <option value="matte">Matte</option>
+      <option value="glossy">Glossy</option>
+      <option value="dewy">Dewy</option>
+    </select>
+    <label for="productType">Product Type:</label>
+    <select id="productType"></select>
+    <label>Shade:</label>
+    <div id="lipShadeContainer" class="swatch-container"></div>
+
+    <h3>Cheeks</h3>
+    <label for="cheekFinish">Finish:</label>
+    <select id="cheekFinish">
+      <option value="matte">Matte</option>
+      <option value="dewy">Dewy</option>
+      <option value="glossy">Glossy</option>
+    </select>
+    <label for="cheekProduct">Product Type:</label>
+    <select id="cheekProduct"></select>
+    <label>Shade:</label>
+    <div id="cheekShadeContainer" class="swatch-container"></div>
+
+    <h3>Brows</h3>
+    <label for="browProduct">Product:</label>
+    <select id="browProduct"></select>
+    <label>Shade:</label>
+    <div id="browShadeContainer" class="swatch-container"></div>
+
+    <h3>Contour</h3>
+    <label for="contourProduct">Product:</label>
+    <select id="contourProduct">
+      <option value="Warm Wishes Bronzer Stick">Warm Wishes Bronzer Stick</option>
+    </select>
+    <label>Shade:</label>
+    <div id="contourShadeContainer" class="swatch-container"></div>
+
+    <h3>Foundation</h3>
+    <label for="foundationProduct">Product:</label>
+    <select id="foundationProduct">
+      <option value="Liquid Touch Weightless Foundation">Liquid Touch Weightless Foundation</option>
+    </select>
+    <label>Shade:</label>
+    <div id="foundationShadeContainer" class="swatch-container"></div>
+  </div>
+
+  
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+
+
+
+
+  <script>
+    const videoElement = document.getElementById('video');
+    const canvasElement = document.getElementById('canvas');
+    const canvasCtx = canvasElement.getContext('2d');
+
+    const finishSelect = document.getElementById('finish');
+    const productTypeSelect = document.getElementById('productType');
+    const lipShadeContainer = document.getElementById('lipShadeContainer');
+
+    const cheekFinish = document.getElementById('cheekFinish');
+    const cheekProduct = document.getElementById('cheekProduct');
+    const cheekShadeContainer = document.getElementById('cheekShadeContainer');
+
+    const browProductSelect = document.getElementById('browProduct');
+    const browShadeContainer = document.getElementById('browShadeContainer');
+
+    const contourProductSelect = document.getElementById('contourProduct');
+    const contourShadeContainer = document.getElementById('contourShadeContainer');
+
+    const foundationProductSelect = document.getElementById('foundationProduct');
+    const foundationShadeContainer = document.getElementById('foundationShadeContainer');
+
+    let selectedLipShade = "#E33638";
+    let selectedCheekShade = "#f7976c";
+    let selectedBrowShade = "#6D4F3A";
+    let selectedContourShade = "#A2644F";
+    let selectedFoundationShade = "#F7E3CF";
+
+    const shadeData = {
+      dewy: {
+        "Soft Pinch Tinted Lip Oil": {
+          Serenity: "#B76E6B", Affection: "#A24C58", Happy: "#FB7798", Joy: "#F7976C", Delight: "#C6846A", Hope: "#D79FA8", Wonder: "#E583A4", Honesty: "#C18A76", Truth: "#B47271"
+        }
+      },
+      matte: {
+        "Lip Soufflé Matte Lip Cream": {
+          Inspire: "#E33638", Heroic: "#A8344C", Brave: "#E25C4C", Daring: "#A589A3", Fearless: "#8B3D51", Courage: "#D79FA8", Transform: "#8C1D2B", Energize: "#FF6F61", Strengthen: "#7A2430", Motivate: "#FF5D73"
+        },
+        "Kind Words Matte Lipstick": {
+          Worthy: "#C27A7D", Talented: "#D0948C", Humble: "#BE8289", Gifted: "#B06C74", Bold: "#912F3B", Wise: "#7A3D44", Strong: "#68343A", Lively: "#DE8F90", Fun: "#ED9BA7"
+        }
+      },
+      glossy: {
+        "Stay Vulnerable Glossy Lip Balm": {
+          "Nearly Neutral": "#C6846A", "Nearly Apricot": "#F5A49D", "Nearly Mauve": "#E583A4", "Nearly Rose": "#F4AEB7", "Nearly Berry": "#A24C58"
+        }
+      }
+    };
+
+    const cheekShades = {
+      matte: {
+        "Soft Pinch Liquid Blush": { Bliss: "#f4aeb7", Grace: "#f4949d", Faith: "#8b3d51", Love: "#e25c4c", Encourage: "#e0a2aa", Hope: "#d79fa8" }
+      },
+      dewy: {
+        "Soft Pinch Liquid Blush": { Joy: "#f7976c", Happy: "#fb7798", Lucky: "#ff5d73", Grateful: "#d33638", Believe: "#b84c5c" }
+      },
+      glossy: {
+        "Stay Vulnerable Melting Cream Blush": { "Nearly Neutral": "#c6846a", "Nearly Apricot": "#f5a49d", "Nearly Mauve": "#e583a4", "Nearly Rose": "#f4aeb7", "Nearly Berry": "#a24c58" }
+      }
+    };
+
+    const browProducts = {
+      "Brow Harmony Pencil & Gel": {
+        "Soft Blonde": "#D1B79A", "Blonde": "#C8A87D", "Warm Auburn": "#A56547", "Soft Brown": "#8A6752", "Brown": "#6D4F3A", "Cool Brown": "#5B4A3B", "Deep Brown": "#4B3A2F", "Soft Black": "#3C2E27"
+      },
+      "Brow Harmony Shape & Fill Duo": {
+        "Taupe": "#B29A81", "Soft Brown": "#8A6B54", "Rich Taupe": "#927E6A", "Deep Brown": "#4C3B2E", "Soft Black": "#3A2D25"
+      },
+      "Brow Harmony Flexible Lifting Gel": {
+        "Clear": "transparent"
+      }
+    };
+
+    const contourShades = {
+      "Warm Wishes Bronzer Stick": {
+        "Power Boost": "#A2644F",
+        "Happy Sol": "#A76552",
+        "Always Sunny": "#9C644B",
+        "True Warmth": "#8B5847",
+        "Good Energy": "#A5694F",
+        "On the Horizon": "#8A5A47",
+        "Full of Life": "#7A4C3A"
+      }
+    };
+
+    const foundationShades = {
+      "Liquid Touch Weightless Foundation": {
+        "100W": "#FBE9D7",
+        "110N": "#F7E3CF",
+        "130N": "#F2D5C2",
+        "160C": "#EFCBB3",
+        "210N": "#E3BFA5",
+        "240W": "#D2A47F",
+        "280N": "#C48D68",
+        "310C": "#B47453",
+        "340C": "#A75D40",
+        "370N": "#94583C",
+        "400W": "#7A462D",
+        "410N": "#6B3D29",
+        "440C": "#593423",
+        "460W": "#4C2C1F"
+      }
+    };
+
+    // swatch updaters
+    function updateLipProducts() {
+      const finish = finishSelect.value;
+      productTypeSelect.innerHTML = "";
+      if (shadeData[finish]) {
+        Object.keys(shadeData[finish]).forEach(type => {
+          const option = document.createElement('option');
+          option.value = type;
+          option.text = type;
+          productTypeSelect.appendChild(option);
+        });
+      }
+      updateLipShades();
+    }
+    function updateLipShades() {
+      const finish = finishSelect.value;
+      const productType = productTypeSelect.value;
+      lipShadeContainer.innerHTML = "";
+      if (shadeData[finish] && shadeData[finish][productType]) {
+        Object.entries(shadeData[finish][productType]).forEach(([name, hex]) => {
+          const swatch = document.createElement('div');
+          swatch.className = "swatch";
+          swatch.style.backgroundColor = hex;
+          swatch.title = name;
+          swatch.addEventListener('click', () => {
+            selectedLipShade = hex;
+            document.querySelectorAll("#lipShadeContainer .swatch").forEach(s => s.style.border = "2px solid #ccc");
+            swatch.style.border = "3px solid black";
+          });
+          lipShadeContainer.appendChild(swatch);
+        });
+        selectedLipShade = Object.values(shadeData[finish][productType])[0];
+        lipShadeContainer.firstChild.style.border = "3px solid black";
+      }
+    }
+
+    function updateCheekProducts() {
+      const finish = cheekFinish.value;
+      cheekProduct.innerHTML = "";
+      if (cheekShades[finish]) {
+        Object.keys(cheekShades[finish]).forEach(type => {
+          const option = document.createElement('option');
+          option.value = type;
+          option.text = type;
+          cheekProduct.appendChild(option);
+        });
+      }
+      updateCheekShades();
+    }
+    function updateCheekShades() {
+      const finish = cheekFinish.value;
+      const productType = cheekProduct.value;
+      cheekShadeContainer.innerHTML = "";
+      if (cheekShades[finish] && cheekShades[finish][productType]) {
+        Object.entries(cheekShades[finish][productType]).forEach(([name, hex]) => {
+          const swatch = document.createElement('div');
+          swatch.className = "swatch";
+          swatch.style.backgroundColor = hex;
+          swatch.title = name;
+          swatch.addEventListener('click', () => {
+            selectedCheekShade = hex;
+            document.querySelectorAll("#cheekShadeContainer .swatch").forEach(s => s.style.border = "2px solid #ccc");
+            swatch.style.border = "3px solid black";
+          });
+          cheekShadeContainer.appendChild(swatch);
+        });
+        selectedCheekShade = Object.values(cheekShades[finish][productType])[0];
+        cheekShadeContainer.firstChild.style.border = "3px solid black";
+      }
+    }
+    function updateBrowShades() {
+      const product = browProductSelect.value;
+      browShadeContainer.innerHTML = "";
+      if (browProducts[product]) {
+        Object.entries(browProducts[product]).forEach(([name, hex]) => {
+          const swatch = document.createElement('div');
+          swatch.className = "swatch";
+          swatch.style.backgroundColor = hex === "transparent" ? "white" : hex;
+          swatch.style.border = hex === "transparent" ? "2px dashed #999" : "2px solid #ccc";
+          swatch.title = name;
+          swatch.addEventListener("click", () => {
+            selectedBrowShade = hex;
+            document.querySelectorAll("#browShadeContainer .swatch").forEach(s => s.style.border = "2px solid #ccc");
+            swatch.style.border = "3px solid black";
+          });
+          browShadeContainer.appendChild(swatch);
+        });
+        selectedBrowShade = Object.values(browProducts[product])[0];
+        browShadeContainer.firstChild.style.border = "3px solid black";
+      }
+    }
+    function updateContourShades() {
+      const product = contourProductSelect.value;
+      contourShadeContainer.innerHTML = "";
+      Object.entries(contourShades[product]).forEach(([name, hex]) => {
+        const swatch = document.createElement('div');
+        swatch.className = "swatch";
+        swatch.style.backgroundColor = hex;
+        swatch.title = name;
+        swatch.addEventListener("click", () => {
+          selectedContourShade = hex;
+          document.querySelectorAll("#contourShadeContainer .swatch").forEach(s => s.style.border = "2px solid #ccc");
+          swatch.style.border = "3px solid black";
+        });
+        contourShadeContainer.appendChild(swatch);
+      });
+      selectedContourShade = Object.values(contourShades[product])[0];
+      contourShadeContainer.firstChild.style.border = "3px solid black";
+    }
+    function updateFoundationShades() {
+      const product = foundationProductSelect.value;
+      foundationShadeContainer.innerHTML = "";
+      if (foundationShades[product]) {
+        Object.entries(foundationShades[product]).forEach(([name, hex]) => {
+          const swatch = document.createElement("div");
+          swatch.className = "swatch";
+          swatch.style.backgroundColor = hex;
+          swatch.title = name;
+          swatch.addEventListener("click", () => {
+            selectedFoundationShade = hex;
+            document.querySelectorAll("#foundationShadeContainer .swatch").forEach(s => s.style.border = "2px solid #ccc");
+            swatch.style.border = "3px solid black";
+          });
+          foundationShadeContainer.appendChild(swatch);
+        });
+        selectedFoundationShade = Object.values(foundationShades[product])[0];
+        foundationShadeContainer.firstChild.style.border = "3px solid black";
+      }
+    }
+
+    finishSelect.addEventListener('change', updateLipProducts);
+    productTypeSelect.addEventListener('change', updateLipShades);
+    cheekFinish.addEventListener('change', updateCheekProducts);
+    cheekProduct.addEventListener('change', updateCheekShades);
+    browProductSelect.addEventListener("change", updateBrowShades);
+    contourProductSelect.addEventListener("change", updateContourShades);
+    foundationProductSelect.addEventListener("change", updateFoundationShades);
+
+    updateLipProducts();
+    updateCheekProducts();
+    updateContourShades();
+    updateFoundationShades();
+    Object.keys(browProducts).forEach(prod => {
+      const opt = document.createElement("option");
+      opt.value = prod;
+      opt.text = prod;
+      browProductSelect.appendChild(opt);
+    });
+    updateBrowShades();
+
+    const faceMesh = new FaceMesh({ locateFile: f => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${f}` });
+    faceMesh.setOptions({ selfieMode: true, maxNumFaces: 1, refineLandmarks: true, minDetectionConfidence: 0.5, minTrackingConfidence: 0.5 });
+    faceMesh.onResults(onResults);
+
+    const camera = new Camera(videoElement, { onFrame: async () => { await faceMesh.send({image: videoElement}); }, width: 640, height: 480 });
+    camera.start();
+
+    function onResults(results) {
+      canvasCtx.save();
+      canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+      canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+
+      if (results.multiFaceLandmarks && results.multiFaceLandmarks.length > 0) {
+        const landmarks = results.multiFaceLandmarks[0];
+
+        // lips
+        const upperOuterLip = [61,146,91,181,84,17,314,405,321,375,291];
+        const lowerOuterLip = [61,185,40,39,37,0,267,269,270,409,291];
+        canvasCtx.beginPath();
+        canvasCtx.moveTo(landmarks[upperOuterLip[0]].x * canvasElement.width, landmarks[upperOuterLip[0]].y * canvasElement.height);
+        upperOuterLip.concat(lowerOuterLip.slice().reverse()).forEach(idx => {
+          const pt = landmarks[idx];
+          canvasCtx.lineTo(pt.x * canvasElement.width, pt.y * canvasElement.height);
+        });
+        canvasCtx.closePath();
+        canvasCtx.fillStyle = hexToRGBA(selectedLipShade, 0.25);
+        canvasCtx.fill();
+
+        // cheeks
+        const left = landmarks[205];
+        if (left) {
+          const lx = left.x * canvasElement.width;
+          const ly = left.y * canvasElement.height - 10;
+          canvasCtx.beginPath();
+          canvasCtx.ellipse(lx, ly, 30, 20, 0, 0, 2 * Math.PI);
+          canvasCtx.fillStyle = hexToRGBA(selectedCheekShade, 0.045);
+          canvasCtx.fill();
+        }
+        const right = landmarks[425];
+        if (right) {
+          const rx = right.x * canvasElement.width;
+          const ry = right.y * canvasElement.height - 10;
+          canvasCtx.beginPath();
+          canvasCtx.ellipse(rx, ry, 30, 20, 0, 0, 2 * Math.PI);
+          canvasCtx.fillStyle = hexToRGBA(selectedCheekShade, 0.045);
+          canvasCtx.fill();
+        }
+
+        // brows
+        if (selectedBrowShade !== "transparent") {
+          const browAlpha = browProductSelect.value.includes("Pencil") ? 0.3 : 0.2;
+          const leftBrow = [70,63,105,66,107,55];
+          const rightBrow = [336,296,334,293,300,285];
+          [leftBrow, rightBrow].forEach(brow => {
+            canvasCtx.beginPath();
+            canvasCtx.moveTo(landmarks[brow[0]].x * canvasElement.width, landmarks[brow[0]].y * canvasElement.height);
+            brow.forEach(idx => {
+              const pt = landmarks[idx];
+              canvasCtx.lineTo(pt.x * canvasElement.width, pt.y * canvasElement.height);
+            });
+            canvasCtx.closePath();
+            canvasCtx.fillStyle = hexToRGBA(selectedBrowShade, browAlpha);
+            canvasCtx.fill();
+          });
+        }
+
+        // contour
+        const contourAlpha = 0.05;
+        if (landmarks[234] && landmarks[132]) {
+          const x1 = landmarks[234].x * canvasElement.width;
+          const y1 = landmarks[234].y * canvasElement.height;
+          const x2 = landmarks[132].x * canvasElement.width;
+          const y2 = landmarks[132].y * canvasElement.height;
+          const cx = (x1 + x2) / 2;
+          const cy = (y1 + y2) / 2 + 20;
+          const angle = Math.atan2(y2 - y1, x2 - x1) - 0.3;
+          canvasCtx.save();
+          canvasCtx.translate(cx, cy);
+          canvasCtx.rotate(angle);
+          canvasCtx.beginPath();
+          canvasCtx.ellipse(0, 0, 40, 20, 0, 0, 2 * Math.PI);
+          canvasCtx.fillStyle = hexToRGBA(selectedContourShade, contourAlpha);
+          canvasCtx.fill();
+          canvasCtx.restore();
+        }
+        if (landmarks[454] && landmarks[361]) {
+          const x1 = landmarks[454].x * canvasElement.width;
+          const y1 = landmarks[454].y * canvasElement.height;
+          const x2 = landmarks[361].x * canvasElement.width;
+          const y2 = landmarks[361].y * canvasElement.height;
+          const cx = (x1 + x2) / 2;
+          const cy = (y1 + y2) / 2 + 20;
+          const angle = Math.atan2(y2 - y1, x2 - x1) + 0.3;
+          canvasCtx.save();
+          canvasCtx.translate(cx, cy);
+          canvasCtx.rotate(angle);
+          canvasCtx.beginPath();
+          canvasCtx.ellipse(0, 0, 40, 20, 0, 0, 2 * Math.PI);
+          canvasCtx.fillStyle = hexToRGBA(selectedContourShade, contourAlpha);
+          canvasCtx.fill();
+          canvasCtx.restore();
+        }
+
+        // foundation
+        const foundationAlpha = 0.09;
+        const faceOutline = [
+          10,338,297,332,284,251,389,356,454,323,361,288,
+          397,365,379,378,400,377,152,148,176,149,150,
+          136,172,58,132,93,234,127,162,21,54,103,67,109
+        ];
+        canvasCtx.beginPath();
+        faceOutline.forEach((idx, i) => {
+          const pt = landmarks[idx];
+          const x = pt.x * canvasElement.width;
+          const y = pt.y * canvasElement.height;
+          if (i === 0) {
+            canvasCtx.moveTo(x, y);
+          } else {
+            canvasCtx.lineTo(x, y);
+          }
+        });
+        canvasCtx.closePath();
+        canvasCtx.fillStyle = hexToRGBA(selectedFoundationShade, foundationAlpha);
+        canvasCtx.fill();
+
+      }
+      canvasCtx.restore();
+    }
+
+    function hexToRGBA(hex, alpha) {
+      let r = parseInt(hex.slice(1,3),16),
+          g = parseInt(hex.slice(3,5),16),
+          b = parseInt(hex.slice(5,7),16);
+      return `rgba(${r},${g},${b},${alpha})`;
+    }
+  </script>
+</body>
+</html>

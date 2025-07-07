@@ -1,0 +1,1715 @@
+[0m22:49:33.520211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105915ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107330a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107330700>]}
+
+
+============================== 22:49:33.524251 | fea2b30c-b733-420c-8855-76749e1a3d4d ==============================
+[0m22:49:33.524251 [info ] [MainThread]: Running with dbt=1.10.2
+[0m22:49:33.524622 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init rare_beauty', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:49:33.533851 [info ] [MainThread]: Creating dbt configuration folder at /Users/payalnagaonkar/.dbt
+[0m22:49:33.535040 [debug] [MainThread]: Starter project path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m22:49:33.539277 [info ] [MainThread]: 
+Your new dbt project "rare_beauty" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:49:33.539516 [info ] [MainThread]: Setting up your profile.
+[0m22:53:49.222913 [info ] [MainThread]: Profile rare_beauty written to /Users/payalnagaonkar/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:53:49.271288 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 255.80038, "process_in_blocks": "0", "process_kernel_time": 0.332714, "process_mem_max_rss": "148570112", "process_out_blocks": "0", "process_user_time": 1.110061}
+[0m22:53:49.272124 [debug] [MainThread]: Command `dbt init` succeeded at 22:53:49.271779 after 255.80 seconds
+[0m22:53:49.272843 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105915ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1065836d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107329eb0>]}
+[0m22:53:49.273634 [debug] [MainThread]: Flushing usage events
+[0m22:53:49.718633 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:54:14.550768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d749d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ff83d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ff8700>]}
+
+
+============================== 22:54:14.553476 | 78e8b2c4-9a7f-4358-8110-aa6b5631918e ==============================
+[0m22:54:14.553476 [info ] [MainThread]: Running with dbt=1.10.2
+[0m22:54:14.553833 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:54:14.562576 [info ] [MainThread]: dbt version: 1.10.2
+[0m22:54:14.562834 [info ] [MainThread]: python version: 3.9.6
+[0m22:54:14.563023 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m22:54:14.563207 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m22:54:15.088964 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m22:54:15.089275 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m22:54:15.089493 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m22:54:15.089849 [info ] [MainThread]: adapter type: snowflake
+[0m22:54:15.090083 [info ] [MainThread]: adapter version: 1.9.4
+[0m22:54:15.090284 [info ] [MainThread]: Configuration:
+[0m22:54:15.090467 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:54:15.090640 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m22:54:15.090806 [info ] [MainThread]: Required dependencies:
+[0m22:54:15.090995 [debug] [MainThread]: Executing "git --help"
+[0m22:54:15.111894 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:54:15.112380 [debug] [MainThread]: STDERR: "b''"
+[0m22:54:15.112603 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:54:15.112807 [info ] [MainThread]: Connection:
+[0m22:54:15.113051 [info ] [MainThread]:   account: tf35386
+[0m22:54:15.113238 [info ] [MainThread]:   user: Payal Nagaonkar
+[0m22:54:15.113401 [info ] [MainThread]:   database: RARE_BEAUTY
+[0m22:54:15.113565 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m22:54:15.113727 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m22:54:15.113890 [info ] [MainThread]:   schema: dbt_payal
+[0m22:54:15.114051 [info ] [MainThread]:   authenticator: None
+[0m22:54:15.114212 [info ] [MainThread]:   oauth_client_id: None
+[0m22:54:15.114370 [info ] [MainThread]:   query_tag: None
+[0m22:54:15.114530 [info ] [MainThread]:   client_session_keep_alive: False
+[0m22:54:15.114693 [info ] [MainThread]:   host: None
+[0m22:54:15.114853 [info ] [MainThread]:   port: None
+[0m22:54:15.115015 [info ] [MainThread]:   proxy_host: None
+[0m22:54:15.115176 [info ] [MainThread]:   proxy_port: None
+[0m22:54:15.115336 [info ] [MainThread]:   protocol: None
+[0m22:54:15.115498 [info ] [MainThread]:   connect_retries: 1
+[0m22:54:15.115861 [info ] [MainThread]:   connect_timeout: None
+[0m22:54:15.116137 [info ] [MainThread]:   retry_on_database_errors: False
+[0m22:54:15.116540 [info ] [MainThread]:   retry_all: False
+[0m22:54:15.116910 [info ] [MainThread]:   insecure_mode: False
+[0m22:54:15.117252 [info ] [MainThread]:   reuse_connections: True
+[0m22:54:15.118042 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m22:54:15.216503 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m22:54:15.283082 [debug] [MainThread]: Using snowflake connection "debug"
+[0m22:54:15.283359 [debug] [MainThread]: On debug: select 1 as id
+[0m22:54:15.283545 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:54:16.737142 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m22:54:16.737513 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m22:54:16.737839 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m22:54:16.738174 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m22:54:16.738440 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml> not found
+
+[0m22:54:16.738715 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250003 (08001): 404 Not Found: post https://tf35386.snowflakecomputing.com:443/session/v1/login-request?request_id=8d9a0beb-e40a-47ea-bea9-d6880b353bc0&databaseName=RARE_BEAUTY&schemaName=dbt_payal&warehouse=COMPUTE_WH&roleName=ACCOUNTADMIN&request_guid=d7e18123-591d-445c-9a59-59966826e849
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m22:54:16.740443 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.2348878, "process_in_blocks": "0", "process_kernel_time": 0.278433, "process_mem_max_rss": "171081728", "process_out_blocks": "0", "process_user_time": 1.353183}
+[0m22:54:16.740801 [debug] [MainThread]: Command `dbt debug` failed at 22:54:16.740723 after 2.24 seconds
+[0m22:54:16.741075 [debug] [MainThread]: Connection 'debug' was left open.
+[0m22:54:16.741323 [debug] [MainThread]: On debug: No close available on handle
+[0m22:54:16.741594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d749d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114007b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114007c40>]}
+[0m22:54:16.741916 [debug] [MainThread]: Flushing usage events
+[0m22:54:16.893282 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:56:16.733775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ecc9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f2b3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f2b6d0>]}
+
+
+============================== 22:56:16.736760 | fb6831d0-2ca9-466c-8a21-7512a78c5bd2 ==============================
+[0m22:56:16.736760 [info ] [MainThread]: Running with dbt=1.10.2
+[0m22:56:16.737099 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:56:16.745749 [info ] [MainThread]: dbt version: 1.10.2
+[0m22:56:16.745994 [info ] [MainThread]: python version: 3.9.6
+[0m22:56:16.746180 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m22:56:16.746365 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m22:56:17.287834 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m22:56:17.288147 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m22:56:17.288353 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m22:56:17.288739 [info ] [MainThread]: adapter type: snowflake
+[0m22:56:17.289007 [info ] [MainThread]: adapter version: 1.9.4
+[0m22:56:17.346972 [info ] [MainThread]: Configuration:
+[0m22:56:17.347274 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:56:17.347473 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:56:17.347659 [info ] [MainThread]: Required dependencies:
+[0m22:56:17.347883 [debug] [MainThread]: Executing "git --help"
+[0m22:56:17.370148 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:56:17.370736 [debug] [MainThread]: STDERR: "b''"
+[0m22:56:17.370978 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:56:17.371205 [info ] [MainThread]: Connection:
+[0m22:56:17.371447 [info ] [MainThread]:   account: tf35386
+[0m22:56:17.371619 [info ] [MainThread]:   user: Payal Nagaonkar
+[0m22:56:17.371785 [info ] [MainThread]:   database: RARE_BEAUTY
+[0m22:56:17.371949 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m22:56:17.372111 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m22:56:17.372272 [info ] [MainThread]:   schema: dbt_payal
+[0m22:56:17.372434 [info ] [MainThread]:   authenticator: None
+[0m22:56:17.372595 [info ] [MainThread]:   oauth_client_id: None
+[0m22:56:17.372757 [info ] [MainThread]:   query_tag: None
+[0m22:56:17.372920 [info ] [MainThread]:   client_session_keep_alive: False
+[0m22:56:17.373082 [info ] [MainThread]:   host: None
+[0m22:56:17.373242 [info ] [MainThread]:   port: None
+[0m22:56:17.373404 [info ] [MainThread]:   proxy_host: None
+[0m22:56:17.373562 [info ] [MainThread]:   proxy_port: None
+[0m22:56:17.373724 [info ] [MainThread]:   protocol: None
+[0m22:56:17.373885 [info ] [MainThread]:   connect_retries: 1
+[0m22:56:17.374045 [info ] [MainThread]:   connect_timeout: None
+[0m22:56:17.374206 [info ] [MainThread]:   retry_on_database_errors: False
+[0m22:56:17.374368 [info ] [MainThread]:   retry_all: False
+[0m22:56:17.374530 [info ] [MainThread]:   insecure_mode: False
+[0m22:56:17.374691 [info ] [MainThread]:   reuse_connections: True
+[0m22:56:17.375144 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m22:56:17.465465 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m22:56:17.523309 [debug] [MainThread]: Using snowflake connection "debug"
+[0m22:56:17.523578 [debug] [MainThread]: On debug: select 1 as id
+[0m22:56:17.523748 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:56:18.426503 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m22:56:18.426898 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m22:56:18.427241 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m22:56:18.427506 [info ] [MainThread]: [31m1 check failed:[0m
+[0m22:56:18.427739 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250003 (08001): 404 Not Found: post https://tf35386.snowflakecomputing.com:443/session/v1/login-request?request_id=483d6e32-80ad-4d8a-9c29-f457b55aec4e&databaseName=RARE_BEAUTY&schemaName=dbt_payal&warehouse=COMPUTE_WH&roleName=ACCOUNTADMIN&request_guid=6b841c4d-4a61-4e8c-9ad9-68c379917f29
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m22:56:18.430607 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.7409964, "process_in_blocks": "0", "process_kernel_time": 0.269791, "process_mem_max_rss": "169623552", "process_out_blocks": "0", "process_user_time": 1.250195}
+[0m22:56:18.431144 [debug] [MainThread]: Command `dbt debug` failed at 22:56:18.430923 after 1.74 seconds
+[0m22:56:18.431430 [debug] [MainThread]: Connection 'debug' was left open.
+[0m22:56:18.431678 [debug] [MainThread]: On debug: No close available on handle
+[0m22:56:18.431933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ecc9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f2b040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108fc99d0>]}
+[0m22:56:18.432229 [debug] [MainThread]: Flushing usage events
+[0m22:56:18.765228 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:58:41.411369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075189d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085773a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085776d0>]}
+
+
+============================== 22:58:41.414144 | fd699d93-4dd5-48c6-a1b8-071a96e9f318 ==============================
+[0m22:58:41.414144 [info ] [MainThread]: Running with dbt=1.10.2
+[0m22:58:41.414524 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m22:58:41.423064 [info ] [MainThread]: dbt version: 1.10.2
+[0m22:58:41.423301 [info ] [MainThread]: python version: 3.9.6
+[0m22:58:41.423485 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m22:58:41.423662 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m22:58:41.967732 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m22:58:41.968050 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m22:58:41.968258 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m22:58:41.968600 [info ] [MainThread]: adapter type: snowflake
+[0m22:58:41.968835 [info ] [MainThread]: adapter version: 1.9.4
+[0m22:58:42.029123 [info ] [MainThread]: Configuration:
+[0m22:58:42.029462 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:58:42.029715 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:58:42.029927 [info ] [MainThread]: Required dependencies:
+[0m22:58:42.030161 [debug] [MainThread]: Executing "git --help"
+[0m22:58:42.046775 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:58:42.047346 [debug] [MainThread]: STDERR: "b''"
+[0m22:58:42.047587 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:58:42.047800 [info ] [MainThread]: Connection:
+[0m22:58:42.048029 [info ] [MainThread]:   account: tf35386.elcgnrr
+[0m22:58:42.048202 [info ] [MainThread]:   user: Payal Nagaonkar
+[0m22:58:42.048367 [info ] [MainThread]:   database: RARE_BEAUTY
+[0m22:58:42.048531 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m22:58:42.048700 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m22:58:42.048870 [info ] [MainThread]:   schema: dbt_payal
+[0m22:58:42.049052 [info ] [MainThread]:   authenticator: None
+[0m22:58:42.049220 [info ] [MainThread]:   oauth_client_id: None
+[0m22:58:42.049386 [info ] [MainThread]:   query_tag: None
+[0m22:58:42.049554 [info ] [MainThread]:   client_session_keep_alive: False
+[0m22:58:42.049769 [info ] [MainThread]:   host: None
+[0m22:58:42.049930 [info ] [MainThread]:   port: None
+[0m22:58:42.050100 [info ] [MainThread]:   proxy_host: None
+[0m22:58:42.050314 [info ] [MainThread]:   proxy_port: None
+[0m22:58:42.050542 [info ] [MainThread]:   protocol: None
+[0m22:58:42.050725 [info ] [MainThread]:   connect_retries: 1
+[0m22:58:42.050896 [info ] [MainThread]:   connect_timeout: None
+[0m22:58:42.051074 [info ] [MainThread]:   retry_on_database_errors: False
+[0m22:58:42.051252 [info ] [MainThread]:   retry_all: False
+[0m22:58:42.051432 [info ] [MainThread]:   insecure_mode: False
+[0m22:58:42.051601 [info ] [MainThread]:   reuse_connections: True
+[0m22:58:42.052059 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m22:58:42.141696 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m22:58:42.199993 [debug] [MainThread]: Using snowflake connection "debug"
+[0m22:58:42.200258 [debug] [MainThread]: On debug: select 1 as id
+[0m22:58:42.200422 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:58:45.070607 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m22:58:45.071170 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m22:58:45.071595 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m22:58:45.071974 [info ] [MainThread]: [31m1 check failed:[0m
+[0m22:58:45.072331 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+  Verify that the hostnames and port numbers in SYSTEM$ALLOWLIST are added to your firewall's allowed list.
+  To further troubleshoot your connection you may reference the following article: https://docs.snowflake.com/en/user-guide/client-connectivity-troubleshooting/overview.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m22:58:45.075484 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 3.7101815, "process_in_blocks": "0", "process_kernel_time": 0.276086, "process_mem_max_rss": "169656320", "process_out_blocks": "0", "process_user_time": 1.374308}
+[0m22:58:45.075963 [debug] [MainThread]: Command `dbt debug` failed at 22:58:45.075872 after 3.71 seconds
+[0m22:58:45.076292 [debug] [MainThread]: Connection 'debug' was left open.
+[0m22:58:45.076608 [debug] [MainThread]: On debug: No close available on handle
+[0m22:58:45.076932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075189d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c621b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c621f10>]}
+[0m22:58:45.077306 [debug] [MainThread]: Flushing usage events
+[0m22:58:45.334574 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:05:52.161409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059149a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106973490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069737c0>]}
+
+
+============================== 23:05:52.164142 | 39f12fc8-8768-4cfe-a41e-9475c761a0d9 ==============================
+[0m23:05:52.164142 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:05:52.164490 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:05:52.173288 [info ] [MainThread]: dbt version: 1.10.2
+[0m23:05:52.173540 [info ] [MainThread]: python version: 3.9.6
+[0m23:05:52.173728 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m23:05:52.173905 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m23:05:52.761782 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m23:05:52.762089 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m23:05:52.762301 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m23:05:52.762636 [info ] [MainThread]: adapter type: snowflake
+[0m23:05:52.762868 [info ] [MainThread]: adapter version: 1.9.4
+[0m23:05:52.820710 [info ] [MainThread]: Configuration:
+[0m23:05:52.821012 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:05:52.821213 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:05:52.821399 [info ] [MainThread]: Required dependencies:
+[0m23:05:52.821625 [debug] [MainThread]: Executing "git --help"
+[0m23:05:52.838744 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:05:52.839345 [debug] [MainThread]: STDERR: "b''"
+[0m23:05:52.839568 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:05:52.839783 [info ] [MainThread]: Connection:
+[0m23:05:52.840024 [info ] [MainThread]:   account: elcgnrr-tf35386
+[0m23:05:52.840196 [info ] [MainThread]:   user: NPAYAL00
+[0m23:05:52.840364 [info ] [MainThread]:   database: RARE_BEAUTY
+[0m23:05:52.840526 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m23:05:52.840691 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m23:05:52.840856 [info ] [MainThread]:   schema: dbt_payal
+[0m23:05:52.841017 [info ] [MainThread]:   authenticator: None
+[0m23:05:52.841179 [info ] [MainThread]:   oauth_client_id: None
+[0m23:05:52.841338 [info ] [MainThread]:   query_tag: None
+[0m23:05:52.841500 [info ] [MainThread]:   client_session_keep_alive: False
+[0m23:05:52.841662 [info ] [MainThread]:   host: None
+[0m23:05:52.841823 [info ] [MainThread]:   port: None
+[0m23:05:52.841984 [info ] [MainThread]:   proxy_host: None
+[0m23:05:52.842144 [info ] [MainThread]:   proxy_port: None
+[0m23:05:52.842304 [info ] [MainThread]:   protocol: None
+[0m23:05:52.842462 [info ] [MainThread]:   connect_retries: 1
+[0m23:05:52.842621 [info ] [MainThread]:   connect_timeout: None
+[0m23:05:52.842780 [info ] [MainThread]:   retry_on_database_errors: False
+[0m23:05:52.842941 [info ] [MainThread]:   retry_all: False
+[0m23:05:52.843101 [info ] [MainThread]:   insecure_mode: False
+[0m23:05:52.843260 [info ] [MainThread]:   reuse_connections: True
+[0m23:05:52.843685 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:05:52.931245 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m23:05:52.994357 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:05:52.994620 [debug] [MainThread]: On debug: select 1 as id
+[0m23:05:52.994787 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:05:53.872075 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m23:05:53.872433 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m23:05:53.872739 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m23:05:53.873026 [info ] [MainThread]: [31m1 check failed:[0m
+[0m23:05:53.873296 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001 (08001): Failed to connect to DB: elcgnrr-tf35386.snowflakecomputing.com:443. Incorrect username or password was specified.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m23:05:53.875568 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.7591652, "process_in_blocks": "0", "process_kernel_time": 0.269827, "process_mem_max_rss": "172867584", "process_out_blocks": "0", "process_user_time": 1.263057}
+[0m23:05:53.875927 [debug] [MainThread]: Command `dbt debug` failed at 23:05:53.875848 after 1.76 seconds
+[0m23:05:53.876197 [debug] [MainThread]: Connection 'debug' was left open.
+[0m23:05:53.876442 [debug] [MainThread]: On debug: No close available on handle
+[0m23:05:53.876710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059149a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a9eb040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7ffb80>]}
+[0m23:05:53.877031 [debug] [MainThread]: Flushing usage events
+[0m23:05:54.143937 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:07:10.508628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071e09d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082403a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082406d0>]}
+
+
+============================== 23:07:10.511282 | 050d96db-d29e-4903-917f-20daf991a5bf ==============================
+[0m23:07:10.511282 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:07:10.511633 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:07:10.520608 [info ] [MainThread]: dbt version: 1.10.2
+[0m23:07:10.520925 [info ] [MainThread]: python version: 3.9.6
+[0m23:07:10.521241 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m23:07:10.521455 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m23:07:11.293641 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m23:07:11.293959 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m23:07:11.294165 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m23:07:11.294514 [info ] [MainThread]: adapter type: snowflake
+[0m23:07:11.294701 [info ] [MainThread]: adapter version: 1.9.4
+[0m23:07:11.351432 [info ] [MainThread]: Configuration:
+[0m23:07:11.351717 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:07:11.351908 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:07:11.352155 [info ] [MainThread]: Required dependencies:
+[0m23:07:11.352416 [debug] [MainThread]: Executing "git --help"
+[0m23:07:11.368894 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:07:11.369705 [debug] [MainThread]: STDERR: "b''"
+[0m23:07:11.370019 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:07:11.370248 [info ] [MainThread]: Connection:
+[0m23:07:11.370517 [info ] [MainThread]:   account: elcgnrr-tf35386
+[0m23:07:11.370692 [info ] [MainThread]:   user: NPAYAL00
+[0m23:07:11.370859 [info ] [MainThread]:   database: RARE_BEAUTY
+[0m23:07:11.371023 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m23:07:11.371184 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m23:07:11.371346 [info ] [MainThread]:   schema: dbt_payal
+[0m23:07:11.371507 [info ] [MainThread]:   authenticator: None
+[0m23:07:11.371670 [info ] [MainThread]:   oauth_client_id: None
+[0m23:07:11.371831 [info ] [MainThread]:   query_tag: None
+[0m23:07:11.371992 [info ] [MainThread]:   client_session_keep_alive: False
+[0m23:07:11.372154 [info ] [MainThread]:   host: None
+[0m23:07:11.372314 [info ] [MainThread]:   port: None
+[0m23:07:11.372474 [info ] [MainThread]:   proxy_host: None
+[0m23:07:11.372636 [info ] [MainThread]:   proxy_port: None
+[0m23:07:11.372797 [info ] [MainThread]:   protocol: None
+[0m23:07:11.372957 [info ] [MainThread]:   connect_retries: 1
+[0m23:07:11.373116 [info ] [MainThread]:   connect_timeout: None
+[0m23:07:11.373275 [info ] [MainThread]:   retry_on_database_errors: False
+[0m23:07:11.373435 [info ] [MainThread]:   retry_all: False
+[0m23:07:11.373597 [info ] [MainThread]:   insecure_mode: False
+[0m23:07:11.373759 [info ] [MainThread]:   reuse_connections: True
+[0m23:07:11.374177 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:07:11.463180 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m23:07:11.520893 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:07:11.521162 [debug] [MainThread]: On debug: select 1 as id
+[0m23:07:11.521331 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:07:12.330672 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.809 seconds
+[0m23:07:12.332385 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:07:12.332909 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:07:12.337367 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.8720306, "process_in_blocks": "0", "process_kernel_time": 0.279592, "process_mem_max_rss": "171425792", "process_out_blocks": "0", "process_user_time": 1.217038}
+[0m23:07:12.338198 [debug] [MainThread]: Command `dbt debug` succeeded at 23:07:12.338038 after 1.87 seconds
+[0m23:07:12.338701 [debug] [MainThread]: Connection 'debug' was left open.
+[0m23:07:12.339095 [debug] [MainThread]: On debug: Close
+[0m23:07:12.492821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071e09d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c184a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082dd9d0>]}
+[0m23:07:12.493795 [debug] [MainThread]: Flushing usage events
+[0m23:07:12.859417 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:33:45.452598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e34940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e91490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e917c0>]}
+
+
+============================== 23:33:45.455495 | 0c1f89a4-a8fa-4019-ac24-8244c3187ac1 ==============================
+[0m23:33:45.455495 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:33:45.455846 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:33:46.327732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0c1f89a4-a8fa-4019-ac24-8244c3187ac1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd7d760>]}
+[0m23:33:46.364290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0c1f89a4-a8fa-4019-ac24-8244c3187ac1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cc8b20>]}
+[0m23:33:46.364928 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:33:46.468469 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m23:33:46.469009 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m23:33:46.470202 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '0c1f89a4-a8fa-4019-ac24-8244c3187ac1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cdb3fa0>]}
+[0m23:33:47.049544 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.rare_beauty
+[0m23:33:47.052932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0c1f89a4-a8fa-4019-ac24-8244c3187ac1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1b32e0>]}
+[0m23:33:47.084027 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:33:47.085391 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:33:47.104415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0c1f89a4-a8fa-4019-ac24-8244c3187ac1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1ddf40>]}
+[0m23:33:47.104772 [info ] [MainThread]: Found 476 macros
+[0m23:33:47.104995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0c1f89a4-a8fa-4019-ac24-8244c3187ac1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d193070>]}
+[0m23:33:47.105581 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m23:33:47.105912 [debug] [MainThread]: Command end result
+[0m23:33:47.121063 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:33:47.122071 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:33:47.124276 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m23:33:47.126083 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.7412708, "process_in_blocks": "0", "process_kernel_time": 0.312835, "process_mem_max_rss": "164282368", "process_out_blocks": "0", "process_user_time": 1.748624}
+[0m23:33:47.126329 [debug] [MainThread]: Command `dbt run` succeeded at 23:33:47.126282 after 1.74 seconds
+[0m23:33:47.126567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e34940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cc8b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1ddf40>]}
+[0m23:33:47.126804 [debug] [MainThread]: Flushing usage events
+[0m23:33:47.429149 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:38:05.745977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051509a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061b1310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061b1640>]}
+
+
+============================== 23:38:05.748796 | f9b86547-ca0d-48d9-a8e5-b7ee9f1061b4 ==============================
+[0m23:38:05.748796 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:38:05.749163 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m23:38:06.356205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f9b86547-ca0d-48d9-a8e5-b7ee9f1061b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a08fc10>]}
+[0m23:38:06.389530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f9b86547-ca0d-48d9-a8e5-b7ee9f1061b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054e10d0>]}
+[0m23:38:06.390155 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:38:06.486755 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m23:38:06.583953 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:38:06.584198 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:38:06.584555 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.rare_beauty
+[0m23:38:06.587900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f9b86547-ca0d-48d9-a8e5-b7ee9f1061b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a4f4130>]}
+[0m23:38:06.617848 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:38:06.619682 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:38:06.631273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f9b86547-ca0d-48d9-a8e5-b7ee9f1061b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a4bebb0>]}
+[0m23:38:06.631574 [info ] [MainThread]: Found 476 macros
+[0m23:38:06.631789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f9b86547-ca0d-48d9-a8e5-b7ee9f1061b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a4f3a30>]}
+[0m23:38:06.632320 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m23:38:06.633465 [debug] [MainThread]: Command end result
+[0m23:38:06.646763 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:38:06.647594 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:38:06.649625 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m23:38:06.651356 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.9503157, "process_in_blocks": "0", "process_kernel_time": 0.243624, "process_mem_max_rss": "160268288", "process_out_blocks": "0", "process_user_time": 1.240205}
+[0m23:38:06.651623 [debug] [MainThread]: Command `dbt run` succeeded at 23:38:06.651574 after 0.95 seconds
+[0m23:38:06.651841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051509a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106187d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053ebc40>]}
+[0m23:38:06.652045 [debug] [MainThread]: Flushing usage events
+[0m23:38:06.825319 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:38:42.393221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103b44a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056b9550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056b9880>]}
+
+
+============================== 23:38:42.396030 | 03d4231c-3804-4e0f-af9c-f12effc5b54d ==============================
+[0m23:38:42.396030 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:38:42.396385 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m23:38:42.984737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '03d4231c-3804-4e0f-af9c-f12effc5b54d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103fe25e0>]}
+[0m23:38:43.017990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '03d4231c-3804-4e0f-af9c-f12effc5b54d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105687100>]}
+[0m23:38:43.018447 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:38:43.115535 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m23:38:43.219862 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:38:43.220128 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:38:43.220498 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.rare_beauty
+[0m23:38:43.223956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '03d4231c-3804-4e0f-af9c-f12effc5b54d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122880130>]}
+[0m23:38:43.282533 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:38:43.284114 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:38:43.295383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '03d4231c-3804-4e0f-af9c-f12effc5b54d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12284b760>]}
+[0m23:38:43.295680 [info ] [MainThread]: Found 476 macros
+[0m23:38:43.295891 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '03d4231c-3804-4e0f-af9c-f12effc5b54d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12284b5e0>]}
+[0m23:38:43.296432 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m23:38:43.297558 [debug] [MainThread]: Command end result
+[0m23:38:43.310849 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:38:43.311801 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:38:43.313769 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m23:38:43.315215 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.96568584, "process_in_blocks": "0", "process_kernel_time": 0.242178, "process_mem_max_rss": "162742272", "process_out_blocks": "0", "process_user_time": 1.265245}
+[0m23:38:43.315478 [debug] [MainThread]: Command `dbt run` succeeded at 23:38:43.315429 after 0.97 seconds
+[0m23:38:43.315713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103b44a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102fa93d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103fe25e0>]}
+[0m23:38:43.315937 [debug] [MainThread]: Flushing usage events
+[0m23:38:43.484300 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:40:44.569567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103f88940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104fe44f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104fe4820>]}
+
+
+============================== 23:40:44.572309 | f536d228-e535-40ba-a527-3092f820be96 ==============================
+[0m23:40:44.572309 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:40:44.572659 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:40:44.573012 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:40:44.574374 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.04814229, "process_in_blocks": "0", "process_kernel_time": 0.126197, "process_mem_max_rss": "92389376", "process_out_blocks": "0", "process_user_time": 0.730764}
+[0m23:40:44.574637 [debug] [MainThread]: Command `dbt run` failed at 23:40:44.574584 after 0.05 seconds
+[0m23:40:44.574835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103f88940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042d1fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104fe4340>]}
+[0m23:40:44.575038 [debug] [MainThread]: Flushing usage events
+[0m23:40:44.859200 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:42:19.406310 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105db49a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e134c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e137f0>]}
+
+
+============================== 23:42:19.409175 | 76abe733-93b0-4d5e-a1aa-79eace3fc0ef ==============================
+[0m23:42:19.409175 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:42:19.409703 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:42:19.419307 [info ] [MainThread]: dbt version: 1.10.2
+[0m23:42:19.419555 [info ] [MainThread]: python version: 3.9.6
+[0m23:42:19.419743 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m23:42:19.419917 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m23:42:19.948294 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m23:42:19.948655 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m23:42:19.948879 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m23:42:19.949272 [info ] [MainThread]: adapter type: snowflake
+[0m23:42:19.949508 [info ] [MainThread]: adapter version: 1.9.4
+[0m23:42:19.949707 [info ] [MainThread]: Configuration:
+[0m23:42:19.949882 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:42:19.950061 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m23:42:19.950227 [info ] [MainThread]: Required dependencies:
+[0m23:42:19.950430 [debug] [MainThread]: Executing "git --help"
+[0m23:42:19.972551 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:42:19.973226 [debug] [MainThread]: STDERR: "b''"
+[0m23:42:19.973513 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:42:19.973743 [info ] [MainThread]: Connection:
+[0m23:42:19.973991 [info ] [MainThread]:   account: elcgnrr-tf35386
+[0m23:42:19.974171 [info ] [MainThread]:   user: NPAYAL00
+[0m23:42:19.974336 [info ] [MainThread]:   database: RARE_BEAUTY
+[0m23:42:19.974500 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m23:42:19.974664 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m23:42:19.974827 [info ] [MainThread]:   schema: dbt_payal
+[0m23:42:19.974989 [info ] [MainThread]:   authenticator: None
+[0m23:42:19.975151 [info ] [MainThread]:   oauth_client_id: None
+[0m23:42:19.975313 [info ] [MainThread]:   query_tag: None
+[0m23:42:19.975478 [info ] [MainThread]:   client_session_keep_alive: False
+[0m23:42:19.975638 [info ] [MainThread]:   host: None
+[0m23:42:19.975798 [info ] [MainThread]:   port: None
+[0m23:42:19.975963 [info ] [MainThread]:   proxy_host: None
+[0m23:42:19.976124 [info ] [MainThread]:   proxy_port: None
+[0m23:42:19.976284 [info ] [MainThread]:   protocol: None
+[0m23:42:19.976444 [info ] [MainThread]:   connect_retries: 1
+[0m23:42:19.976605 [info ] [MainThread]:   connect_timeout: None
+[0m23:42:19.976765 [info ] [MainThread]:   retry_on_database_errors: False
+[0m23:42:19.976927 [info ] [MainThread]:   retry_all: False
+[0m23:42:19.977089 [info ] [MainThread]:   insecure_mode: False
+[0m23:42:19.977249 [info ] [MainThread]:   reuse_connections: True
+[0m23:42:19.977671 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:42:20.072680 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m23:42:20.141002 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:42:20.141257 [debug] [MainThread]: On debug: select 1 as id
+[0m23:42:20.141439 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:42:21.140267 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.999 seconds
+[0m23:42:21.142822 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:42:21.143459 [info ] [MainThread]: [31m1 check failed:[0m
+[0m23:42:21.143995 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml> not found
+
+[0m23:42:21.148638 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.7870109, "process_in_blocks": "0", "process_kernel_time": 0.268188, "process_mem_max_rss": "167968768", "process_out_blocks": "0", "process_user_time": 1.144448}
+[0m23:42:21.149487 [debug] [MainThread]: Command `dbt debug` failed at 23:42:21.149333 after 1.79 seconds
+[0m23:42:21.150098 [debug] [MainThread]: Connection 'debug' was left open.
+[0m23:42:21.150703 [debug] [MainThread]: On debug: Close
+[0m23:42:21.287658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105db49a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1dae50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1daf40>]}
+[0m23:42:21.289178 [debug] [MainThread]: Flushing usage events
+[0m23:42:21.504976 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:42:22.433783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1036789d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046d9580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046d98b0>]}
+
+
+============================== 23:42:22.436034 | 577930a8-af68-4432-962f-0a3400a0821f ==============================
+[0m23:42:22.436034 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:42:22.436388 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:42:22.436701 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:42:22.437557 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.04258925, "process_in_blocks": "0", "process_kernel_time": 0.064568, "process_mem_max_rss": "95633408", "process_out_blocks": "0", "process_user_time": 0.703675}
+[0m23:42:22.437823 [debug] [MainThread]: Command `dbt run` failed at 23:42:22.437763 after 0.04 seconds
+[0m23:42:22.438028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1036789d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046a8760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046d93d0>]}
+[0m23:42:22.438235 [debug] [MainThread]: Flushing usage events
+[0m23:42:22.563770 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:44:57.545481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c589a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076b9310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076b9640>]}
+
+
+============================== 23:44:57.548251 | f7dab038-4027-4738-b287-a2c6a4e2f69d ==============================
+[0m23:44:57.548251 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:44:57.548615 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:44:58.166100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f7dab038-4027-4738-b287-a2c6a4e2f69d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10768fd00>]}
+[0m23:44:58.199377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f7dab038-4027-4738-b287-a2c6a4e2f69d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10768f4c0>]}
+[0m23:44:58.199849 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:44:58.297718 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m23:44:58.357956 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m23:44:58.358316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f7dab038-4027-4738-b287-a2c6a4e2f69d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106750130>]}
+[0m23:44:58.883397 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.rare_beauty
+[0m23:44:58.887194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f7dab038-4027-4738-b287-a2c6a4e2f69d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfb4eb0>]}
+[0m23:44:58.914967 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:44:58.916333 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:44:58.927385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f7dab038-4027-4738-b287-a2c6a4e2f69d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c8a8d60>]}
+[0m23:44:58.927677 [info ] [MainThread]: Found 476 macros
+[0m23:44:58.927889 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7dab038-4027-4738-b287-a2c6a4e2f69d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c8930a0>]}
+[0m23:44:58.928438 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m23:44:58.928764 [debug] [MainThread]: Command end result
+[0m23:44:58.942117 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:44:58.943060 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:44:58.945025 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m23:44:58.946646 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.4466848, "process_in_blocks": "0", "process_kernel_time": 0.242391, "process_mem_max_rss": "162037760", "process_out_blocks": "0", "process_user_time": 1.717473}
+[0m23:44:58.946883 [debug] [MainThread]: Command `dbt run` succeeded at 23:44:58.946837 after 1.45 seconds
+[0m23:44:58.947090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c589a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10768fd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c8a8d60>]}
+[0m23:44:58.947293 [debug] [MainThread]: Flushing usage events
+[0m23:44:59.418151 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:46:07.394713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b34a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076b9520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076b9850>]}
+
+
+============================== 23:46:07.397460 | 41d687af-4867-495d-b1f5-d08b3dfdbb52 ==============================
+[0m23:46:07.397460 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:46:07.397825 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'version_check': 'True', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:46:08.000012 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '41d687af-4867-495d-b1f5-d08b3dfdbb52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104321880>]}
+[0m23:46:08.033763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '41d687af-4867-495d-b1f5-d08b3dfdbb52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c202610>]}
+[0m23:46:08.034272 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:46:08.166232 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m23:46:08.197748 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m23:46:08.198057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '41d687af-4867-495d-b1f5-d08b3dfdbb52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f41cd0>]}
+[0m23:46:08.924378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '41d687af-4867-495d-b1f5-d08b3dfdbb52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd02130>]}
+[0m23:46:08.970746 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:46:08.972197 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:46:08.983790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '41d687af-4867-495d-b1f5-d08b3dfdbb52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd51430>]}
+[0m23:46:08.984097 [info ] [MainThread]: Found 1 model, 1 source, 476 macros
+[0m23:46:08.984316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '41d687af-4867-495d-b1f5-d08b3dfdbb52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd48a00>]}
+[0m23:46:08.985058 [info ] [MainThread]: 
+[0m23:46:08.985281 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:46:08.985460 [info ] [MainThread]: 
+[0m23:46:08.985736 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:46:08.986220 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RARE_BEAUTY'
+[0m23:46:09.056946 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY"
+[0m23:46:09.057242 [debug] [ThreadPool]: On list_RARE_BEAUTY: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY"} */
+show terse schemas in database RARE_BEAUTY
+    limit 10000
+[0m23:46:09.057425 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:46:09.917965 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01bd6942-0003-1bd0-0008-b482000550ce
+[0m23:46:09.919596 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m23:46:09.919959 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m23:46:09.920201 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m23:46:09.920715 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:46:09.920940 [debug] [MainThread]: Connection 'list_RARE_BEAUTY' was left open.
+[0m23:46:09.921157 [debug] [MainThread]: On list_RARE_BEAUTY: Close
+[0m23:46:10.095331 [info ] [MainThread]: 
+[0m23:46:10.096282 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.11 seconds (1.11s).
+[0m23:46:10.097228 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "RARE_BEAUTY"
+  Database Error
+    002043 (02000): SQL compilation error:
+    Object does not exist, or operation cannot be performed.
+[0m23:46:10.101444 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.7507315, "process_in_blocks": "0", "process_kernel_time": 0.285532, "process_mem_max_rss": "181485568", "process_out_blocks": "0", "process_user_time": 2.125987}
+[0m23:46:10.102158 [debug] [MainThread]: Command `dbt run` failed at 23:46:10.101970 after 2.75 seconds
+[0m23:46:10.102703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b34a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104428580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd4c760>]}
+[0m23:46:10.103398 [debug] [MainThread]: Flushing usage events
+[0m23:46:10.229400 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:56:08.661806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e8c9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106eed340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106eed670>]}
+
+
+============================== 23:56:08.664627 | 13b1873b-25df-4c19-b686-715c292b0136 ==============================
+[0m23:56:08.664627 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:56:08.665007 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m23:56:09.245726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '13b1873b-25df-4c19-b686-715c292b0136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ec4640>]}
+[0m23:56:09.279220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '13b1873b-25df-4c19-b686-715c292b0136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ec48b0>]}
+[0m23:56:09.279741 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:56:09.407185 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m23:56:09.501788 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m23:56:09.502220 [debug] [MainThread]: Partial parsing: updated file: rare_beauty://rare_beauty/models/sources.yml
+[0m23:56:09.712416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '13b1873b-25df-4c19-b686-715c292b0136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x116c52fa0>]}
+[0m23:56:09.762247 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:56:09.764834 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:56:09.780746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '13b1873b-25df-4c19-b686-715c292b0136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x116c63bb0>]}
+[0m23:56:09.781052 [info ] [MainThread]: Found 1 model, 1 source, 476 macros
+[0m23:56:09.781275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '13b1873b-25df-4c19-b686-715c292b0136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x116cc4d30>]}
+[0m23:56:09.782004 [info ] [MainThread]: 
+[0m23:56:09.782220 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:56:09.782402 [info ] [MainThread]: 
+[0m23:56:09.782676 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:56:09.783161 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RARE_BEAUTY'
+[0m23:56:09.821364 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY"
+[0m23:56:09.821751 [debug] [ThreadPool]: On list_RARE_BEAUTY: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY"} */
+show terse schemas in database RARE_BEAUTY
+    limit 10000
+[0m23:56:09.822013 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:56:10.927941 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01bd694c-0003-1afe-0008-b482000540ea
+[0m23:56:10.928239 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m23:56:10.928510 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m23:56:10.928692 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m23:56:10.929159 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:56:10.929378 [debug] [MainThread]: Connection 'list_RARE_BEAUTY' was left open.
+[0m23:56:10.929568 [debug] [MainThread]: On list_RARE_BEAUTY: Close
+[0m23:56:11.059486 [info ] [MainThread]: 
+[0m23:56:11.060371 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.28 seconds (1.28s).
+[0m23:56:11.061290 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "RARE_BEAUTY"
+  Database Error
+    002043 (02000): SQL compilation error:
+    Object does not exist, or operation cannot be performed.
+[0m23:56:11.064463 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.4463775, "process_in_blocks": "0", "process_kernel_time": 0.286271, "process_mem_max_rss": "181207040", "process_out_blocks": "0", "process_user_time": 1.610974}
+[0m23:56:11.064790 [debug] [MainThread]: Command `dbt run` failed at 23:56:11.064729 after 2.45 seconds
+[0m23:56:11.065054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e8c9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x116cc4be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117149ca0>]}
+[0m23:56:11.065307 [debug] [MainThread]: Flushing usage events
+[0m23:56:11.323566 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:56:38.386938 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a989a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104af9340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104af9670>]}
+
+
+============================== 23:56:38.389852 | 0025153f-1736-42af-8546-1f30e4393f8b ==============================
+[0m23:56:38.389852 [info ] [MainThread]: Running with dbt=1.10.2
+[0m23:56:38.390223 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:56:38.923672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0025153f-1736-42af-8546-1f30e4393f8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ad0640>]}
+[0m23:56:38.961905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0025153f-1736-42af-8546-1f30e4393f8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ad08b0>]}
+[0m23:56:38.962654 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m23:56:39.091791 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m23:56:39.185662 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m23:56:39.186061 [debug] [MainThread]: Partial parsing: updated file: rare_beauty://rare_beauty/models/sources.yml
+[0m23:56:39.389547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0025153f-1736-42af-8546-1f30e4393f8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10910dfa0>]}
+[0m23:56:39.437967 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m23:56:39.439130 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m23:56:39.450245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0025153f-1736-42af-8546-1f30e4393f8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109122bb0>]}
+[0m23:56:39.450519 [info ] [MainThread]: Found 1 model, 1 source, 476 macros
+[0m23:56:39.450734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0025153f-1736-42af-8546-1f30e4393f8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109180d30>]}
+[0m23:56:39.451423 [info ] [MainThread]: 
+[0m23:56:39.451639 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:56:39.451817 [info ] [MainThread]: 
+[0m23:56:39.452092 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:56:39.452526 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RARE_BEAUTY'
+[0m23:56:39.490092 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY"
+[0m23:56:39.490937 [debug] [ThreadPool]: On list_RARE_BEAUTY: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY"} */
+show terse schemas in database RARE_BEAUTY
+    limit 10000
+[0m23:56:39.491429 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:56:40.445610 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01bd694c-0003-18d2-0008-b4820004621a
+[0m23:56:40.445966 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m23:56:40.446316 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m23:56:40.446560 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m23:56:40.447145 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:56:40.447419 [debug] [MainThread]: Connection 'list_RARE_BEAUTY' was left open.
+[0m23:56:40.447668 [debug] [MainThread]: On list_RARE_BEAUTY: Close
+[0m23:56:40.590208 [info ] [MainThread]: 
+[0m23:56:40.591148 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.14 seconds (1.14s).
+[0m23:56:40.592286 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "RARE_BEAUTY"
+  Database Error
+    002043 (02000): SQL compilation error:
+    Object does not exist, or operation cannot be performed.
+[0m23:56:40.596552 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.2560158, "process_in_blocks": "0", "process_kernel_time": 0.245216, "process_mem_max_rss": "180748288", "process_out_blocks": "0", "process_user_time": 1.647476}
+[0m23:56:40.597664 [debug] [MainThread]: Command `dbt run` failed at 23:56:40.597443 after 2.26 seconds
+[0m23:56:40.598461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a989a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109180be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109605ca0>]}
+[0m23:56:40.599112 [debug] [MainThread]: Flushing usage events
+[0m23:56:40.724206 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:00:20.683306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107818a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1233774f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123377820>]}
+
+
+============================== 00:00:20.686316 | dd5646e8-df85-4872-8f48-670e5b5510c7 ==============================
+[0m00:00:20.686316 [info ] [MainThread]: Running with dbt=1.10.2
+[0m00:00:20.686680 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:00:20.695974 [info ] [MainThread]: dbt version: 1.10.2
+[0m00:00:20.696201 [info ] [MainThread]: python version: 3.9.6
+[0m00:00:20.696387 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m00:00:20.696567 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m00:00:21.213209 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m00:00:21.213532 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m00:00:21.213746 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m00:00:21.214089 [info ] [MainThread]: adapter type: snowflake
+[0m00:00:21.214320 [info ] [MainThread]: adapter version: 1.9.4
+[0m00:00:21.272998 [info ] [MainThread]: Configuration:
+[0m00:00:21.273309 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:00:21.273509 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:00:21.273694 [info ] [MainThread]: Required dependencies:
+[0m00:00:21.273929 [debug] [MainThread]: Executing "git --help"
+[0m00:00:21.296270 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:00:21.296889 [debug] [MainThread]: STDERR: "b''"
+[0m00:00:21.297137 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:00:21.297368 [info ] [MainThread]: Connection:
+[0m00:00:21.297624 [info ] [MainThread]:   account: elcgnrr-tf35386
+[0m00:00:21.297804 [info ] [MainThread]:   user: NPAYAL00
+[0m00:00:21.297971 [info ] [MainThread]:   database: RARE_BEAUTY_DB
+[0m00:00:21.298136 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m00:00:21.298300 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m00:00:21.298462 [info ] [MainThread]:   schema: DBT_PAYAL
+[0m00:00:21.298640 [info ] [MainThread]:   authenticator: None
+[0m00:00:21.298803 [info ] [MainThread]:   oauth_client_id: None
+[0m00:00:21.299000 [info ] [MainThread]:   query_tag: None
+[0m00:00:21.299430 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:00:21.299767 [info ] [MainThread]:   host: None
+[0m00:00:21.299967 [info ] [MainThread]:   port: None
+[0m00:00:21.300143 [info ] [MainThread]:   proxy_host: None
+[0m00:00:21.300316 [info ] [MainThread]:   proxy_port: None
+[0m00:00:21.300484 [info ] [MainThread]:   protocol: None
+[0m00:00:21.300653 [info ] [MainThread]:   connect_retries: 1
+[0m00:00:21.300817 [info ] [MainThread]:   connect_timeout: None
+[0m00:00:21.300984 [info ] [MainThread]:   retry_on_database_errors: False
+[0m00:00:21.301147 [info ] [MainThread]:   retry_all: False
+[0m00:00:21.301309 [info ] [MainThread]:   insecure_mode: False
+[0m00:00:21.301469 [info ] [MainThread]:   reuse_connections: True
+[0m00:00:21.301913 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m00:00:21.396504 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:00:21.454019 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:00:21.454287 [debug] [MainThread]: On debug: select 1 as id
+[0m00:00:21.454461 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:00:22.392781 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.938 seconds
+[0m00:00:22.395942 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:00:22.396747 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:00:22.400410 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.7626958, "process_in_blocks": "0", "process_kernel_time": 0.271235, "process_mem_max_rss": "169115648", "process_out_blocks": "0", "process_user_time": 1.223198}
+[0m00:00:22.400913 [debug] [MainThread]: Command `dbt debug` succeeded at 00:00:22.400810 after 1.76 seconds
+[0m00:00:22.401119 [debug] [MainThread]: Connection 'debug' was left open.
+[0m00:00:22.401307 [debug] [MainThread]: On debug: Close
+[0m00:00:22.545045 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107818a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x131f55b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1328000d0>]}
+[0m00:00:22.546022 [debug] [MainThread]: Flushing usage events
+[0m00:00:22.682330 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:00:27.960047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a84910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ae1460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ae1790>]}
+
+
+============================== 00:00:27.962453 | 35faf2c5-e632-4997-b648-8886191f0417 ==============================
+[0m00:00:27.962453 [info ] [MainThread]: Running with dbt=1.10.2
+[0m00:00:27.962782 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:00:28.485817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e652b0>]}
+[0m00:00:28.519959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10436f610>]}
+[0m00:00:28.520455 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m00:00:28.653146 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m00:00:28.714636 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m00:00:28.714957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104378790>]}
+[0m00:00:29.427132 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b983130>]}
+[0m00:00:29.474829 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m00:00:29.476943 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m00:00:29.487833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b9f6c70>]}
+[0m00:00:29.488134 [info ] [MainThread]: Found 1 model, 1 source, 476 macros
+[0m00:00:29.488354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b9e80d0>]}
+[0m00:00:29.489305 [info ] [MainThread]: 
+[0m00:00:29.489519 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m00:00:29.489697 [info ] [MainThread]: 
+[0m00:00:29.489974 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:00:29.490430 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RARE_BEAUTY_DB'
+[0m00:00:29.558831 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB"
+[0m00:00:29.559136 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB"} */
+show terse schemas in database RARE_BEAUTY_DB
+    limit 10000
+[0m00:00:29.559326 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:00:30.224329 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.665 seconds
+[0m00:00:30.225789 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_RARE_BEAUTY_DB, now list_RARE_BEAUTY_DB_DBT_PAYAL)
+[0m00:00:30.235921 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m00:00:30.236206 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m00:00:30.343731 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.107 seconds
+[0m00:00:30.347338 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m00:00:30.347659 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+show objects in RARE_BEAUTY_DB.DBT_PAYAL
+    limit 10000
+    
+;
+[0m00:00:30.474234 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.126 seconds
+[0m00:00:30.477349 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m00:00:30.477959 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m00:00:30.820527 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.342 seconds
+[0m00:00:30.824637 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092d35e0>]}
+[0m00:00:30.832193 [debug] [Thread-1  ]: Began running node model.rare_beauty.stg_rare_beauty_products
+[0m00:00:30.833008 [info ] [Thread-1  ]: 1 of 1 START sql view model DBT_PAYAL.stg_rare_beauty_products ................. [RUN]
+[0m00:00:30.833628 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_RARE_BEAUTY_DB_DBT_PAYAL, now model.rare_beauty.stg_rare_beauty_products)
+[0m00:00:30.834133 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.stg_rare_beauty_products
+[0m00:00:30.845065 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.stg_rare_beauty_products"
+[0m00:00:30.846049 [debug] [Thread-1  ]: Began executing node model.rare_beauty.stg_rare_beauty_products
+[0m00:00:30.870091 [debug] [Thread-1  ]: Writing runtime sql for node "model.rare_beauty.stg_rare_beauty_products"
+[0m00:00:30.871883 [debug] [Thread-1  ]: Using snowflake connection "model.rare_beauty.stg_rare_beauty_products"
+[0m00:00:30.872163 [debug] [Thread-1  ]: On model.rare_beauty.stg_rare_beauty_products: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "node_id": "model.rare_beauty.stg_rare_beauty_products"} */
+create or replace   view RARE_BEAUTY_DB.DBT_PAYAL.stg_rare_beauty_products
+  
+   as (
+    with source as (
+    select
+        product_name,
+        handle,
+        variant_id,
+        variant_title,
+        variant_price,
+        variant_available,
+        variant_sku,
+        variant_image,
+        description,
+        ingredients,
+        finish,
+        product_url
+    from RARE_BEAUTY_DB.PUBLIC.RARE_BEAUTY_PRODUCTS
+)
+
+select *
+from source
+  );
+[0m00:00:31.435851 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.563 seconds
+[0m00:00:31.472469 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '35faf2c5-e632-4997-b648-8886191f0417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102487e20>]}
+[0m00:00:31.473073 [info ] [Thread-1  ]: 1 of 1 OK created sql view model DBT_PAYAL.stg_rare_beauty_products ............ [[32mSUCCESS 1[0m in 0.64s]
+[0m00:00:31.473538 [debug] [Thread-1  ]: Finished running node model.rare_beauty.stg_rare_beauty_products
+[0m00:00:31.474421 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:00:31.474694 [debug] [MainThread]: Connection 'model.rare_beauty.stg_rare_beauty_products' was left open.
+[0m00:00:31.474955 [debug] [MainThread]: On model.rare_beauty.stg_rare_beauty_products: Close
+[0m00:00:31.607834 [info ] [MainThread]: 
+[0m00:00:31.608942 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.12 seconds (2.12s).
+[0m00:00:31.610249 [debug] [MainThread]: Command end result
+[0m00:00:31.639185 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m00:00:31.640677 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m00:00:31.646081 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m00:00:31.646377 [info ] [MainThread]: 
+[0m00:00:31.646719 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:00:31.646980 [info ] [MainThread]: 
+[0m00:00:31.647253 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m00:00:31.649130 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.7295244, "process_in_blocks": "0", "process_kernel_time": 0.236109, "process_mem_max_rss": "180649984", "process_out_blocks": "0", "process_user_time": 2.239482}
+[0m00:00:31.649449 [debug] [MainThread]: Command `dbt run` succeeded at 00:00:31.649388 after 3.73 seconds
+[0m00:00:31.649739 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a84910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102483970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1095f7400>]}
+[0m00:00:31.650106 [debug] [MainThread]: Flushing usage events
+[0m00:00:31.772644 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:08:07.331089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054989a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064f9340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064f9670>]}
+
+
+============================== 00:08:07.333803 | ba52ff94-9f21-4988-95ea-7af9eac1317d ==============================
+[0m00:08:07.333803 [info ] [MainThread]: Running with dbt=1.10.2
+[0m00:08:07.334153 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:08:07.970786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064cf640>]}
+[0m00:08:08.005352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064cf8b0>]}
+[0m00:08:08.005979 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m00:08:08.133502 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m00:08:08.227456 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m00:08:08.227752 [debug] [MainThread]: Partial parsing: added file: rare_beauty://rare_beauty/models/int_rare_beauty_products.sql
+[0m00:08:08.385445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a9fc130>]}
+[0m00:08:08.436150 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m00:08:08.437481 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m00:08:08.449075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a9fedf0>]}
+[0m00:08:08.449360 [info ] [MainThread]: Found 2 models, 1 source, 476 macros
+[0m00:08:08.449573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a87cc70>]}
+[0m00:08:08.450469 [info ] [MainThread]: 
+[0m00:08:08.450678 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m00:08:08.450857 [info ] [MainThread]: 
+[0m00:08:08.451126 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:08:08.453809 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RARE_BEAUTY_DB'
+[0m00:08:08.487727 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB"
+[0m00:08:08.487976 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB"} */
+show terse schemas in database RARE_BEAUTY_DB
+    limit 10000
+[0m00:08:08.488151 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:08:09.240747 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.752 seconds
+[0m00:08:09.244781 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_RARE_BEAUTY_DB, now list_RARE_BEAUTY_DB_DBT_PAYAL)
+[0m00:08:09.263500 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m00:08:09.263992 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m00:08:09.419807 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.155 seconds
+[0m00:08:09.428909 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m00:08:09.429511 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+show objects in RARE_BEAUTY_DB.DBT_PAYAL
+    limit 10000
+    
+;
+[0m00:08:09.575960 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.146 seconds
+[0m00:08:09.579312 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m00:08:09.579931 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m00:08:09.704232 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.124 seconds
+[0m00:08:09.707638 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103f5ffa0>]}
+[0m00:08:09.711469 [debug] [Thread-1  ]: Began running node model.rare_beauty.stg_rare_beauty_products
+[0m00:08:09.712755 [info ] [Thread-1  ]: 1 of 2 START sql view model DBT_PAYAL.stg_rare_beauty_products ................. [RUN]
+[0m00:08:09.713624 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_RARE_BEAUTY_DB_DBT_PAYAL, now model.rare_beauty.stg_rare_beauty_products)
+[0m00:08:09.714187 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.stg_rare_beauty_products
+[0m00:08:09.722678 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.stg_rare_beauty_products"
+[0m00:08:09.723308 [debug] [Thread-1  ]: Began executing node model.rare_beauty.stg_rare_beauty_products
+[0m00:08:09.749347 [debug] [Thread-1  ]: Writing runtime sql for node "model.rare_beauty.stg_rare_beauty_products"
+[0m00:08:09.750446 [debug] [Thread-1  ]: Using snowflake connection "model.rare_beauty.stg_rare_beauty_products"
+[0m00:08:09.750793 [debug] [Thread-1  ]: On model.rare_beauty.stg_rare_beauty_products: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "node_id": "model.rare_beauty.stg_rare_beauty_products"} */
+create or replace   view RARE_BEAUTY_DB.DBT_PAYAL.stg_rare_beauty_products
+  
+   as (
+    with source as (
+    select
+        product_name,
+        handle,
+        variant_id,
+        variant_title,
+        variant_price,
+        variant_available,
+        variant_sku,
+        variant_image,
+        description,
+        ingredients,
+        finish,
+        product_url
+    from RARE_BEAUTY_DB.PUBLIC.RARE_BEAUTY_PRODUCTS
+)
+
+select *
+from source
+  );
+[0m00:08:10.322391 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.571 seconds
+[0m00:08:10.353068 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f13a6a0>]}
+[0m00:08:10.353683 [info ] [Thread-1  ]: 1 of 2 OK created sql view model DBT_PAYAL.stg_rare_beauty_products ............ [[32mSUCCESS 1[0m in 0.64s]
+[0m00:08:10.354192 [debug] [Thread-1  ]: Finished running node model.rare_beauty.stg_rare_beauty_products
+[0m00:08:10.354799 [debug] [Thread-1  ]: Began running node model.rare_beauty.int_rare_beauty_products
+[0m00:08:10.355241 [info ] [Thread-1  ]: 2 of 2 START sql view model DBT_PAYAL.int_rare_beauty_products ................. [RUN]
+[0m00:08:10.355593 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.rare_beauty.stg_rare_beauty_products, now model.rare_beauty.int_rare_beauty_products)
+[0m00:08:10.355881 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.int_rare_beauty_products
+[0m00:08:10.358559 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.int_rare_beauty_products"
+[0m00:08:10.359137 [debug] [Thread-1  ]: Began executing node model.rare_beauty.int_rare_beauty_products
+[0m00:08:10.361998 [debug] [Thread-1  ]: Writing runtime sql for node "model.rare_beauty.int_rare_beauty_products"
+[0m00:08:10.363020 [debug] [Thread-1  ]: Using snowflake connection "model.rare_beauty.int_rare_beauty_products"
+[0m00:08:10.363326 [debug] [Thread-1  ]: On model.rare_beauty.int_rare_beauty_products: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "node_id": "model.rare_beauty.int_rare_beauty_products"} */
+create or replace   view RARE_BEAUTY_DB.DBT_PAYAL.int_rare_beauty_products
+  
+   as (
+    with source as (
+
+    select *
+    from RARE_BEAUTY_DB.DBT_PAYAL.stg_rare_beauty_products
+
+),
+
+renamed as (
+
+    select
+        product_name,
+        handle,
+        variant_id,
+        variant_title,
+        variant_price,
+        variant_available,
+        variant_sku,
+        variant_image,
+        description,
+        ingredients,
+        finish,
+        product_url
+    from source
+
+)
+
+select * from renamed
+  );
+[0m00:08:10.959423 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.595 seconds
+[0m00:08:10.964117 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ba52ff94-9f21-4988-95ea-7af9eac1317d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f185fa0>]}
+[0m00:08:10.965356 [info ] [Thread-1  ]: 2 of 2 OK created sql view model DBT_PAYAL.int_rare_beauty_products ............ [[32mSUCCESS 1[0m in 0.61s]
+[0m00:08:10.966414 [debug] [Thread-1  ]: Finished running node model.rare_beauty.int_rare_beauty_products
+[0m00:08:10.967950 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:08:10.968454 [debug] [MainThread]: Connection 'model.rare_beauty.int_rare_beauty_products' was left open.
+[0m00:08:10.968926 [debug] [MainThread]: On model.rare_beauty.int_rare_beauty_products: Close
+[0m00:08:11.099232 [info ] [MainThread]: 
+[0m00:08:11.100391 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 2.65 seconds (2.65s).
+[0m00:08:11.102062 [debug] [MainThread]: Command end result
+[0m00:08:11.131840 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m00:08:11.133604 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m00:08:11.139547 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m00:08:11.139833 [info ] [MainThread]: 
+[0m00:08:11.140191 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:08:11.140415 [info ] [MainThread]: 
+[0m00:08:11.140637 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m00:08:11.142755 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.8572884, "process_in_blocks": "0", "process_kernel_time": 0.294645, "process_mem_max_rss": "182927360", "process_out_blocks": "0", "process_user_time": 1.735546}
+[0m00:08:11.143306 [debug] [MainThread]: Command `dbt run` succeeded at 00:08:11.143252 after 3.86 seconds
+[0m00:08:11.143557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054989a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a8ae7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064cf640>]}
+[0m00:08:11.143845 [debug] [MainThread]: Flushing usage events
+[0m00:08:11.553413 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:09:48.710618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b489a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ba7490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ba77c0>]}
+
+
+============================== 16:09:48.713888 | 63d01cb5-055f-4676-835d-02e50b41ad5e ==============================
+[0m16:09:48.713888 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:09:48.714258 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:09:48.723826 [info ] [MainThread]: dbt version: 1.10.2
+[0m16:09:48.724091 [info ] [MainThread]: python version: 3.9.6
+[0m16:09:48.724366 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m16:09:48.724571 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m16:09:49.676961 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m16:09:49.677279 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m16:09:49.677510 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m16:09:49.677854 [info ] [MainThread]: adapter type: snowflake
+[0m16:09:49.678091 [info ] [MainThread]: adapter version: 1.9.4
+[0m16:09:49.736407 [info ] [MainThread]: Configuration:
+[0m16:09:49.736728 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:09:49.736949 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:09:49.737137 [info ] [MainThread]: Required dependencies:
+[0m16:09:49.737396 [debug] [MainThread]: Executing "git --help"
+[0m16:09:49.761785 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:09:49.762442 [debug] [MainThread]: STDERR: "b''"
+[0m16:09:49.762690 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:09:49.762915 [info ] [MainThread]: Connection:
+[0m16:09:49.763166 [info ] [MainThread]:   account: elcgnrr-tf35386
+[0m16:09:49.763361 [info ] [MainThread]:   user: NPAYAL00
+[0m16:09:49.763547 [info ] [MainThread]:   database: RARE_BEAUTY_DB
+[0m16:09:49.763722 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m16:09:49.763895 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m16:09:49.764061 [info ] [MainThread]:   schema: DBT_PAYAL
+[0m16:09:49.764228 [info ] [MainThread]:   authenticator: None
+[0m16:09:49.764395 [info ] [MainThread]:   oauth_client_id: None
+[0m16:09:49.764561 [info ] [MainThread]:   query_tag: None
+[0m16:09:49.764731 [info ] [MainThread]:   client_session_keep_alive: False
+[0m16:09:49.764901 [info ] [MainThread]:   host: None
+[0m16:09:49.765067 [info ] [MainThread]:   port: None
+[0m16:09:49.765234 [info ] [MainThread]:   proxy_host: None
+[0m16:09:49.765403 [info ] [MainThread]:   proxy_port: None
+[0m16:09:49.765571 [info ] [MainThread]:   protocol: None
+[0m16:09:49.765753 [info ] [MainThread]:   connect_retries: 1
+[0m16:09:49.765920 [info ] [MainThread]:   connect_timeout: None
+[0m16:09:49.766099 [info ] [MainThread]:   retry_on_database_errors: False
+[0m16:09:49.766269 [info ] [MainThread]:   retry_all: False
+[0m16:09:49.766438 [info ] [MainThread]:   insecure_mode: False
+[0m16:09:49.766606 [info ] [MainThread]:   reuse_connections: True
+[0m16:09:49.767070 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:09:49.856889 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m16:09:49.930647 [debug] [MainThread]: Using snowflake connection "debug"
+[0m16:09:49.930914 [debug] [MainThread]: On debug: select 1 as id
+[0m16:09:49.931091 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:09:51.010615 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.079 seconds
+[0m16:09:51.013436 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:09:51.014160 [info ] [MainThread]: [32mAll checks passed![0m
+[0m16:09:51.020592 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 2.3562937, "process_in_blocks": "0", "process_kernel_time": 0.321783, "process_mem_max_rss": "169984000", "process_out_blocks": "0", "process_user_time": 1.28154}
+[0m16:09:51.021892 [debug] [MainThread]: Command `dbt debug` succeeded at 16:09:51.021621 after 2.36 seconds
+[0m16:09:51.022575 [debug] [MainThread]: Connection 'debug' was left open.
+[0m16:09:51.023111 [debug] [MainThread]: On debug: Close
+[0m16:09:51.139252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b489a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b39190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b06dd30>]}
+[0m16:09:51.140224 [debug] [MainThread]: Flushing usage events
+[0m16:09:51.256721 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:09:57.657577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104809d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111ef9550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111ef9880>]}
+
+
+============================== 16:09:57.660030 | b6577a60-bca4-4dd5-a48d-8e43213a1cbb ==============================
+[0m16:09:57.660030 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:09:57.660373 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:09:58.141485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b6577a60-bca4-4dd5-a48d-8e43213a1cbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106751910>]}
+[0m16:09:58.177781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b6577a60-bca4-4dd5-a48d-8e43213a1cbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110dd3fa0>]}
+[0m16:09:58.178435 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:09:58.306721 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m16:09:58.365275 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:09:58.365568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b6577a60-bca4-4dd5-a48d-8e43213a1cbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1106aebe0>]}
+[0m16:09:59.026518 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.rare_beauty.stg_rare_beauty_master_merged' (rare_beauty/models/stg_rare_beauty_master_merged.sql) depends on a node named 'rare_beauty_master_merged' which was not found
+[0m16:09:59.027839 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.4109651, "process_in_blocks": "0", "process_kernel_time": 0.193027, "process_mem_max_rss": "164970496", "process_out_blocks": "0", "process_user_time": 1.842073}
+[0m16:09:59.028126 [debug] [MainThread]: Command `dbt run` failed at 16:09:59.028077 after 1.41 seconds
+[0m16:09:59.028340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104809d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120deaee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120deadc0>]}
+[0m16:09:59.028554 [debug] [MainThread]: Flushing usage events
+[0m16:09:59.119794 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:12:51.177225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107958a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089b74f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089b7820>]}
+
+
+============================== 16:12:51.180440 | e6808680-b48c-4063-ba60-fe9950f7d4d1 ==============================
+[0m16:12:51.180440 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:12:51.180796 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:12:51.190095 [info ] [MainThread]: dbt version: 1.10.2
+[0m16:12:51.190350 [info ] [MainThread]: python version: 3.9.6
+[0m16:12:51.190539 [info ] [MainThread]: python path: /Users/payalnagaonkar/cosmetic-semantic-recommender/venv/bin/python3
+[0m16:12:51.190722 [info ] [MainThread]: os info: macOS-15.3.2-arm64-arm-64bit
+[0m16:12:51.733257 [info ] [MainThread]: Using profiles dir at /Users/payalnagaonkar/.dbt
+[0m16:12:51.733570 [info ] [MainThread]: Using profiles.yml file at /Users/payalnagaonkar/.dbt/profiles.yml
+[0m16:12:51.733774 [info ] [MainThread]: Using dbt_project.yml file at /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/dbt_project.yml
+[0m16:12:51.734121 [info ] [MainThread]: adapter type: snowflake
+[0m16:12:51.734348 [info ] [MainThread]: adapter version: 1.9.4
+[0m16:12:51.793260 [info ] [MainThread]: Configuration:
+[0m16:12:51.793575 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:12:51.793777 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:12:51.793965 [info ] [MainThread]: Required dependencies:
+[0m16:12:51.794194 [debug] [MainThread]: Executing "git --help"
+[0m16:12:51.817898 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:12:51.818543 [debug] [MainThread]: STDERR: "b''"
+[0m16:12:51.818839 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:12:51.819070 [info ] [MainThread]: Connection:
+[0m16:12:51.819319 [info ] [MainThread]:   account: elcgnrr-tf35386
+[0m16:12:51.819492 [info ] [MainThread]:   user: NPAYAL00
+[0m16:12:51.819657 [info ] [MainThread]:   database: RARE_BEAUTY_DB
+[0m16:12:51.819821 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m16:12:51.819982 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m16:12:51.820144 [info ] [MainThread]:   schema: DBT_PAYAL
+[0m16:12:51.820308 [info ] [MainThread]:   authenticator: None
+[0m16:12:51.820470 [info ] [MainThread]:   oauth_client_id: None
+[0m16:12:51.820636 [info ] [MainThread]:   query_tag: None
+[0m16:12:51.820798 [info ] [MainThread]:   client_session_keep_alive: False
+[0m16:12:51.820964 [info ] [MainThread]:   host: None
+[0m16:12:51.821125 [info ] [MainThread]:   port: None
+[0m16:12:51.821287 [info ] [MainThread]:   proxy_host: None
+[0m16:12:51.821447 [info ] [MainThread]:   proxy_port: None
+[0m16:12:51.821615 [info ] [MainThread]:   protocol: None
+[0m16:12:51.821775 [info ] [MainThread]:   connect_retries: 1
+[0m16:12:51.821936 [info ] [MainThread]:   connect_timeout: None
+[0m16:12:51.822097 [info ] [MainThread]:   retry_on_database_errors: False
+[0m16:12:51.822258 [info ] [MainThread]:   retry_all: False
+[0m16:12:51.822417 [info ] [MainThread]:   insecure_mode: False
+[0m16:12:51.822576 [info ] [MainThread]:   reuse_connections: True
+[0m16:12:51.822989 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:12:51.914814 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m16:12:51.972960 [debug] [MainThread]: Using snowflake connection "debug"
+[0m16:12:51.973213 [debug] [MainThread]: On debug: select 1 as id
+[0m16:12:51.973386 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:12:53.116658 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.143 seconds
+[0m16:12:53.119410 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:12:53.120060 [info ] [MainThread]: [32mAll checks passed![0m
+[0m16:12:53.125725 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.9974203, "process_in_blocks": "0", "process_kernel_time": 0.281579, "process_mem_max_rss": "169918464", "process_out_blocks": "0", "process_user_time": 1.233412}
+[0m16:12:53.127185 [debug] [MainThread]: Command `dbt debug` succeeded at 16:12:53.126952 after 2.00 seconds
+[0m16:12:53.127920 [debug] [MainThread]: Connection 'debug' was left open.
+[0m16:12:53.128406 [debug] [MainThread]: On debug: Close
+[0m16:12:53.261715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107958a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c955b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9f00d0>]}
+[0m16:12:53.263529 [debug] [MainThread]: Flushing usage events
+[0m16:12:53.384464 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:12:59.949737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1055d89a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106639340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106639670>]}
+
+
+============================== 16:12:59.952254 | 1a5dc6d9-878c-4a71-ad5c-f8385c197876 ==============================
+[0m16:12:59.952254 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:12:59.952599 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:13:00.511073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1a5dc6d9-878c-4a71-ad5c-f8385c197876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10660f640>]}
+[0m16:13:00.545008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1a5dc6d9-878c-4a71-ad5c-f8385c197876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10660f8b0>]}
+[0m16:13:00.545520 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:13:00.678396 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m16:13:00.737175 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:13:00.737462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1a5dc6d9-878c-4a71-ad5c-f8385c197876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ed0130>]}
+[0m16:13:01.400847 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.rare_beauty.stg_rare_beauty_products' (rare_beauty/models/stg_rare_beauty_products.sql) depends on a source named 'RARE_BEAUTY.RARE_BEAUTY_PRODUCTS' which was not found
+[0m16:13:01.402437 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.5021429, "process_in_blocks": "0", "process_kernel_time": 0.214243, "process_mem_max_rss": "167231488", "process_out_blocks": "0", "process_user_time": 1.854232}
+[0m16:13:01.402690 [debug] [MainThread]: Command `dbt run` failed at 16:13:01.402638 after 1.50 seconds
+[0m16:13:01.402908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1055d89a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aba7ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ab81160>]}
+[0m16:13:01.403156 [debug] [MainThread]: Flushing usage events
+[0m16:13:01.545615 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:13:59.949200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1033d7a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104435490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1044357c0>]}
+
+
+============================== 16:13:59.952730 | 5b0011e7-10c8-4ea0-9bc8-43acdf3d9db5 ==============================
+[0m16:13:59.952730 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:13:59.953097 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:14:00.615895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5b0011e7-10c8-4ea0-9bc8-43acdf3d9db5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10836a700>]}
+[0m16:14:00.651199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5b0011e7-10c8-4ea0-9bc8-43acdf3d9db5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10440b340>]}
+[0m16:14:00.651878 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:14:00.781600 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m16:14:00.841179 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:14:00.841521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5b0011e7-10c8-4ea0-9bc8-43acdf3d9db5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103696160>]}
+[0m16:14:01.501529 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.rare_beauty.stg_rare_beauty_master_merged' (rare_beauty/models/stg_rare_beauty_master_merged.sql) depends on a source named 'raw.rare_beauty_master_merged' which was not found
+[0m16:14:01.503378 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.6007152, "process_in_blocks": "0", "process_kernel_time": 0.260377, "process_mem_max_rss": "162906112", "process_out_blocks": "0", "process_user_time": 1.904626}
+[0m16:14:01.503662 [debug] [MainThread]: Command `dbt run` failed at 16:14:01.503604 after 1.60 seconds
+[0m16:14:01.503898 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1033d7a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089ab6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089ab640>]}
+[0m16:14:01.504124 [debug] [MainThread]: Flushing usage events
+[0m16:14:01.777361 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:14:40.721372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e18940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e75580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e758b0>]}
+
+
+============================== 16:14:40.724678 | e844d970-4d0f-4207-a3cd-be4f749286fb ==============================
+[0m16:14:40.724678 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:14:40.725083 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'debug': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:14:41.340960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac72bb0>]}
+[0m16:14:41.379151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ada54f0>]}
+[0m16:14:41.379835 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:14:41.507708 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m16:14:41.567517 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:14:41.567840 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106142df0>]}
+[0m16:14:42.292188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4ed130>]}
+[0m16:14:42.343485 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m16:14:42.346257 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m16:14:42.360822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b51e7c0>]}
+[0m16:14:42.361116 [info ] [MainThread]: Found 3 models, 2 sources, 476 macros
+[0m16:14:42.361332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b3d40d0>]}
+[0m16:14:42.362121 [info ] [MainThread]: 
+[0m16:14:42.362333 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:14:42.362512 [info ] [MainThread]: 
+[0m16:14:42.362783 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m16:14:42.365629 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RARE_BEAUTY_DB'
+[0m16:14:42.401407 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB"
+[0m16:14:42.401656 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB"} */
+show terse schemas in database RARE_BEAUTY_DB
+    limit 10000
+[0m16:14:42.401860 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:14:43.404463 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.002 seconds
+[0m16:14:43.409882 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_RARE_BEAUTY_DB, now list_RARE_BEAUTY_DB_DBT_PAYAL)
+[0m16:14:43.430372 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m16:14:43.430969 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m16:14:43.563568 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.132 seconds
+[0m16:14:43.570491 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m16:14:43.571121 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+show objects in RARE_BEAUTY_DB.DBT_PAYAL
+    limit 10000
+    
+;
+[0m16:14:43.683600 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.112 seconds
+[0m16:14:43.686355 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m16:14:43.686905 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m16:14:43.808331 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.121 seconds
+[0m16:14:43.813021 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048dba30>]}
+[0m16:14:43.817843 [debug] [Thread-1  ]: Began running node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:14:43.818912 [info ] [Thread-1  ]: 1 of 3 START sql view model DBT_PAYAL.stg_rare_beauty_master_merged ............ [RUN]
+[0m16:14:43.819826 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_RARE_BEAUTY_DB_DBT_PAYAL, now model.rare_beauty.stg_rare_beauty_master_merged)
+[0m16:14:43.820554 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:14:43.834349 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.stg_rare_beauty_master_merged"
+[0m16:14:43.835254 [debug] [Thread-1  ]: Began executing node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:14:43.864356 [debug] [Thread-1  ]: Writing runtime sql for node "model.rare_beauty.stg_rare_beauty_master_merged"
+[0m16:14:43.866092 [debug] [Thread-1  ]: Using snowflake connection "model.rare_beauty.stg_rare_beauty_master_merged"
+[0m16:14:43.866458 [debug] [Thread-1  ]: On model.rare_beauty.stg_rare_beauty_master_merged: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "node_id": "model.rare_beauty.stg_rare_beauty_master_merged"} */
+create or replace   view RARE_BEAUTY_DB.DBT_PAYAL.stg_rare_beauty_master_merged
+  
+   as (
+    WITH source AS (
+    SELECT *
+    FROM RARE_BEAUTY_DB.DBT_PAYAL.rare_beauty_master_merged
+),
+
+cleaned AS (
+    SELECT
+        category,
+        product_name,
+        handle,
+        variant_id,
+        variant_title_product,
+        variant_price,
+        variant_available,
+        variant_sku,
+        variant_image,
+        product_url,
+        product_rank,
+        variant_title_review,
+        variant_url,
+        image_url,
+
+        -- Clean price
+        TRY_CAST(
+            REGEXP_SUBSTR(price, '\\$([0-9]+(\\.[0-9]+)?)', 1, 1, 'e', 1)
+            AS FLOAT
+        ) AS cleaned_price,
+
+        -- Clean rating
+        CASE
+            WHEN rating ILIKE 'N/A' THEN NULL
+            ELSE TRY_CAST(rating AS FLOAT)
+        END AS cleaned_rating,
+
+        -- Clean review count
+        CASE
+            WHEN review_count ILIKE 'N/A' THEN NULL
+            ELSE TRY_CAST(review_count AS INTEGER)
+        END AS cleaned_review_count
+
+    FROM source
+)
+
+SELECT *
+FROM cleaned
+  );
+[0m16:14:44.482021 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.615 seconds
+[0m16:14:44.517396 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10481be50>]}
+[0m16:14:44.518251 [info ] [Thread-1  ]: 1 of 3 OK created sql view model DBT_PAYAL.stg_rare_beauty_master_merged ....... [[32mSUCCESS 1[0m in 0.70s]
+[0m16:14:44.518879 [debug] [Thread-1  ]: Finished running node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:14:44.519289 [debug] [Thread-1  ]: Began running node model.rare_beauty.stg_rare_beauty_products
+[0m16:14:44.519811 [info ] [Thread-1  ]: 2 of 3 START sql view model DBT_PAYAL.stg_rare_beauty_products ................. [RUN]
+[0m16:14:44.520255 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.rare_beauty.stg_rare_beauty_master_merged, now model.rare_beauty.stg_rare_beauty_products)
+[0m16:14:44.520610 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.stg_rare_beauty_products
+[0m16:14:44.523941 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.stg_rare_beauty_products"
+[0m16:14:44.524708 [debug] [Thread-1  ]: Began executing node model.rare_beauty.stg_rare_beauty_products
+[0m16:14:44.527973 [debug] [Thread-1  ]: Writing runtime sql for node "model.rare_beauty.stg_rare_beauty_products"
+[0m16:14:44.528982 [debug] [Thread-1  ]: Using snowflake connection "model.rare_beauty.stg_rare_beauty_products"
+[0m16:14:44.529324 [debug] [Thread-1  ]: On model.rare_beauty.stg_rare_beauty_products: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "node_id": "model.rare_beauty.stg_rare_beauty_products"} */
+create or replace   view RARE_BEAUTY_DB.DBT_PAYAL.stg_rare_beauty_products
+  
+   as (
+    with source as (
+    select
+        product_name,
+        handle,
+        variant_id,
+        variant_title,
+        variant_price,
+        variant_available,
+        variant_sku,
+        variant_image,
+        description,
+        ingredients,
+        finish,
+        product_url
+    from RARE_BEAUTY_DB.PUBLIC.RARE_BEAUTY_PRODUCTS
+)
+
+select *
+from source
+  );
+[0m16:14:44.904965 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.375 seconds
+[0m16:14:44.910144 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058cebe0>]}
+[0m16:14:44.910802 [info ] [Thread-1  ]: 2 of 3 OK created sql view model DBT_PAYAL.stg_rare_beauty_products ............ [[32mSUCCESS 1[0m in 0.39s]
+[0m16:14:44.911361 [debug] [Thread-1  ]: Finished running node model.rare_beauty.stg_rare_beauty_products
+[0m16:14:44.911973 [debug] [Thread-1  ]: Began running node model.rare_beauty.int_rare_beauty_products
+[0m16:14:44.912599 [info ] [Thread-1  ]: 3 of 3 START sql view model DBT_PAYAL.int_rare_beauty_products ................. [RUN]
+[0m16:14:44.913120 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.rare_beauty.stg_rare_beauty_products, now model.rare_beauty.int_rare_beauty_products)
+[0m16:14:44.913463 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.int_rare_beauty_products
+[0m16:14:44.916572 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.int_rare_beauty_products"
+[0m16:14:44.917512 [debug] [Thread-1  ]: Began executing node model.rare_beauty.int_rare_beauty_products
+[0m16:14:44.922036 [debug] [Thread-1  ]: Writing runtime sql for node "model.rare_beauty.int_rare_beauty_products"
+[0m16:14:44.923153 [debug] [Thread-1  ]: Using snowflake connection "model.rare_beauty.int_rare_beauty_products"
+[0m16:14:44.923476 [debug] [Thread-1  ]: On model.rare_beauty.int_rare_beauty_products: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "node_id": "model.rare_beauty.int_rare_beauty_products"} */
+create or replace   view RARE_BEAUTY_DB.DBT_PAYAL.int_rare_beauty_products
+  
+   as (
+    with source as (
+
+    select *
+    from RARE_BEAUTY_DB.DBT_PAYAL.stg_rare_beauty_products
+
+),
+
+renamed as (
+
+    select
+        product_name,
+        handle,
+        variant_id,
+        variant_title,
+        variant_price,
+        variant_available,
+        variant_sku,
+        variant_image,
+        description,
+        ingredients,
+        finish,
+        product_url
+    from source
+
+)
+
+select * from renamed
+  );
+[0m16:14:45.404015 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.480 seconds
+[0m16:14:45.412742 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e844d970-4d0f-4207-a3cd-be4f749286fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058cebe0>]}
+[0m16:14:45.414074 [info ] [Thread-1  ]: 3 of 3 OK created sql view model DBT_PAYAL.int_rare_beauty_products ............ [[32mSUCCESS 1[0m in 0.50s]
+[0m16:14:45.414955 [debug] [Thread-1  ]: Finished running node model.rare_beauty.int_rare_beauty_products
+[0m16:14:45.416664 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:14:45.417101 [debug] [MainThread]: Connection 'model.rare_beauty.int_rare_beauty_products' was left open.
+[0m16:14:45.417374 [debug] [MainThread]: On model.rare_beauty.int_rare_beauty_products: Close
+[0m16:14:45.513977 [info ] [MainThread]: 
+[0m16:14:45.514797 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 3.15 seconds (3.15s).
+[0m16:14:45.516373 [debug] [MainThread]: Command end result
+[0m16:14:45.550080 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m16:14:45.552502 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m16:14:45.560494 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m16:14:45.560788 [info ] [MainThread]: 
+[0m16:14:45.561097 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:14:45.561327 [info ] [MainThread]: 
+[0m16:14:45.561581 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m16:14:45.564031 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.8874454, "process_in_blocks": "0", "process_kernel_time": 0.315581, "process_mem_max_rss": "181698560", "process_out_blocks": "0", "process_user_time": 2.341757}
+[0m16:14:45.564444 [debug] [MainThread]: Command `dbt run` succeeded at 16:14:45.564382 after 4.89 seconds
+[0m16:14:45.564801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e18940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10673d5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b51e970>]}
+[0m16:14:45.565083 [debug] [MainThread]: Flushing usage events
+[0m16:14:45.655424 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:34:29.843465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050a8970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b39460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b39790>]}
+
+
+============================== 16:34:29.846155 | 6c10ab81-de7d-494f-af5a-c7e5885854ca ==============================
+[0m16:34:29.846155 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:34:29.846516 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt docs generate', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:34:30.449454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6c10ab81-de7d-494f-af5a-c7e5885854ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b61c2e0>]}
+[0m16:34:30.483228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6c10ab81-de7d-494f-af5a-c7e5885854ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a13fd0>]}
+[0m16:34:30.483848 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:34:30.610718 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m16:34:30.708492 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:34:30.709003 [debug] [MainThread]: Partial parsing: updated file: rare_beauty://rare_beauty/models/sources.yml
+[0m16:34:30.963142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6c10ab81-de7d-494f-af5a-c7e5885854ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d1fffa0>]}
+[0m16:34:30.975679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6c10ab81-de7d-494f-af5a-c7e5885854ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d247940>]}
+[0m16:34:30.975980 [info ] [MainThread]: Found 3 models, 2 sources, 476 macros
+[0m16:34:30.976205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6c10ab81-de7d-494f-af5a-c7e5885854ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d247910>]}
+[0m16:34:30.976943 [info ] [MainThread]: 
+[0m16:34:30.977161 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:34:30.977334 [info ] [MainThread]: 
+[0m16:34:30.977598 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m16:34:30.980320 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RARE_BEAUTY_DB_DBT_PAYAL'
+[0m16:34:31.017471 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m16:34:31.017707 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m16:34:31.017886 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:34:31.675138 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.657 seconds
+[0m16:34:31.684840 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m16:34:31.685474 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+show objects in RARE_BEAUTY_DB.DBT_PAYAL
+    limit 10000
+    
+;
+[0m16:34:31.837603 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.151 seconds
+[0m16:34:31.842358 [debug] [ThreadPool]: Using snowflake connection "list_RARE_BEAUTY_DB_DBT_PAYAL"
+[0m16:34:31.843044 [debug] [ThreadPool]: On list_RARE_BEAUTY_DB_DBT_PAYAL: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "list_RARE_BEAUTY_DB_DBT_PAYAL"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m16:34:31.943903 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.100 seconds
+[0m16:34:31.947977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6c10ab81-de7d-494f-af5a-c7e5885854ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d247b50>]}
+[0m16:34:31.951396 [debug] [Thread-1  ]: Began running node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:34:31.952053 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_RARE_BEAUTY_DB_DBT_PAYAL, now model.rare_beauty.stg_rare_beauty_master_merged)
+[0m16:34:31.952630 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:34:31.966629 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.stg_rare_beauty_master_merged"
+[0m16:34:31.967810 [debug] [Thread-1  ]: Began executing node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:34:31.968681 [debug] [Thread-1  ]: Finished running node model.rare_beauty.stg_rare_beauty_master_merged
+[0m16:34:31.969192 [debug] [Thread-1  ]: Began running node model.rare_beauty.stg_rare_beauty_products
+[0m16:34:31.969702 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.rare_beauty.stg_rare_beauty_master_merged, now model.rare_beauty.stg_rare_beauty_products)
+[0m16:34:31.970183 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.stg_rare_beauty_products
+[0m16:34:31.973822 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.stg_rare_beauty_products"
+[0m16:34:31.974874 [debug] [Thread-1  ]: Began executing node model.rare_beauty.stg_rare_beauty_products
+[0m16:34:31.975635 [debug] [Thread-1  ]: Finished running node model.rare_beauty.stg_rare_beauty_products
+[0m16:34:31.976280 [debug] [Thread-1  ]: Began running node model.rare_beauty.int_rare_beauty_products
+[0m16:34:31.976783 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.rare_beauty.stg_rare_beauty_products, now model.rare_beauty.int_rare_beauty_products)
+[0m16:34:31.977208 [debug] [Thread-1  ]: Began compiling node model.rare_beauty.int_rare_beauty_products
+[0m16:34:31.981209 [debug] [Thread-1  ]: Writing injected SQL for node "model.rare_beauty.int_rare_beauty_products"
+[0m16:34:31.981802 [debug] [Thread-1  ]: Began executing node model.rare_beauty.int_rare_beauty_products
+[0m16:34:31.982407 [debug] [Thread-1  ]: Finished running node model.rare_beauty.int_rare_beauty_products
+[0m16:34:31.983037 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:34:31.983327 [debug] [MainThread]: Connection 'model.rare_beauty.int_rare_beauty_products' was left open.
+[0m16:34:31.983608 [debug] [MainThread]: On model.rare_beauty.int_rare_beauty_products: Close
+[0m16:34:32.105644 [debug] [MainThread]: Command end result
+[0m16:34:32.182822 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m16:34:32.184232 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m16:34:32.188415 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/run_results.json
+[0m16:34:32.191163 [debug] [MainThread]: Acquiring new snowflake connection 'generate_catalog'
+[0m16:34:32.191359 [info ] [MainThread]: Building catalog
+[0m16:34:32.197460 [debug] [ThreadPool]: Acquiring new snowflake connection 'RARE_BEAUTY_DB.information_schema'
+[0m16:34:32.207282 [debug] [ThreadPool]: Using snowflake connection "RARE_BEAUTY_DB.information_schema"
+[0m16:34:32.207639 [debug] [ThreadPool]: On RARE_BEAUTY_DB.information_schema: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "rare_beauty", "target_name": "dev", "connection_name": "RARE_BEAUTY_DB.information_schema"} */
+with tables as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+        case
+            when is_dynamic = 'YES' and table_type = 'BASE TABLE' THEN 'DYNAMIC TABLE'
+            else table_type
+        end as "table_type",
+        comment as "table_comment",
+
+        -- note: this is the _role_ that owns the table
+        table_owner as "table_owner",
+
+        'Clustering Key' as "stats:clustering_key:label",
+        clustering_key as "stats:clustering_key:value",
+        'The key used to cluster this table' as "stats:clustering_key:description",
+        (clustering_key is not null) as "stats:clustering_key:include",
+
+        'Row Count' as "stats:row_count:label",
+        row_count as "stats:row_count:value",
+        'An approximate count of rows in this table' as "stats:row_count:description",
+        (row_count is not null) as "stats:row_count:include",
+
+        'Approximate Size' as "stats:bytes:label",
+        bytes as "stats:bytes:value",
+        'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+        (bytes is not null) as "stats:bytes:include",
+
+        'Last Modified' as "stats:last_modified:label",
+        to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+        'The timestamp for last update/change' as "stats:last_modified:description",
+        (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+    from RARE_BEAUTY_DB.INFORMATION_SCHEMA.tables
+            where (
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'stg_rare_beauty_master_merged' and upper("table_name") = upper('stg_rare_beauty_master_merged')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'PUBLIC' and upper("table_schema") = upper('PUBLIC')
+
+                    and 
+    "table_name" ilike 'RARE_BEAUTY_PRODUCTS' and upper("table_name") = upper('RARE_BEAUTY_PRODUCTS')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'rare_beauty_master_merged' and upper("table_name") = upper('rare_beauty_master_merged')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'stg_rare_beauty_products' and upper("table_name") = upper('stg_rare_beauty_products')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'int_rare_beauty_products' and upper("table_name") = upper('int_rare_beauty_products')
+
+                )
+            )
+        ),
+        columns as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+
+        column_name as "column_name",
+        ordinal_position as "column_index",
+        data_type as "column_type",
+        comment as "column_comment"
+    from RARE_BEAUTY_DB.INFORMATION_SCHEMA.columns
+            where (
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'stg_rare_beauty_master_merged' and upper("table_name") = upper('stg_rare_beauty_master_merged')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'PUBLIC' and upper("table_schema") = upper('PUBLIC')
+
+                    and 
+    "table_name" ilike 'RARE_BEAUTY_PRODUCTS' and upper("table_name") = upper('RARE_BEAUTY_PRODUCTS')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'rare_beauty_master_merged' and upper("table_name") = upper('rare_beauty_master_merged')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'stg_rare_beauty_products' and upper("table_name") = upper('stg_rare_beauty_products')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'DBT_PAYAL' and upper("table_schema") = upper('DBT_PAYAL')
+
+                    and 
+    "table_name" ilike 'int_rare_beauty_products' and upper("table_name") = upper('int_rare_beauty_products')
+
+                )
+            )
+        )
+        select *
+    from tables
+    join columns using ("table_database", "table_schema", "table_name")
+    order by "column_index"
+[0m16:34:32.207933 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:34:35.236823 [debug] [ThreadPool]: SQL status: SUCCESS 70 in 3.028 seconds
+[0m16:34:35.288353 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/catalog.json
+[0m16:34:35.348392 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/manifest.json
+[0m16:34:35.349495 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/semantic_manifest.json
+[0m16:34:35.349694 [info ] [MainThread]: Catalog written to /Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/target/catalog.json
+[0m16:34:35.351599 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 5.551168, "process_in_blocks": "0", "process_kernel_time": 0.292783, "process_mem_max_rss": "185253888", "process_out_blocks": "0", "process_user_time": 1.873913}
+[0m16:34:35.351862 [debug] [MainThread]: Command `dbt docs generate` succeeded at 16:34:35.351816 after 5.55 seconds
+[0m16:34:35.352082 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m16:34:35.352233 [debug] [MainThread]: Connection 'RARE_BEAUTY_DB.information_schema' was left open.
+[0m16:34:35.352391 [debug] [MainThread]: On RARE_BEAUTY_DB.information_schema: Close
+[0m16:34:35.450440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050a8970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102bf2190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11dc06fd0>]}
+[0m16:34:35.450903 [debug] [MainThread]: Flushing usage events
+[0m16:34:35.559305 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:34:43.986131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053d8a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106739460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106739790>]}
+
+
+============================== 16:34:43.988635 | 373444f6-d4f4-4a54-9292-0c12add6c823 ==============================
+[0m16:34:43.988635 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:34:43.988986 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/payalnagaonkar/cosmetic-semantic-recommender/rare_beauty_dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/payalnagaonkar/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs serve', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:34:44.534088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '373444f6-d4f4-4a54-9292-0c12add6c823', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b934910>]}
+[0m16:34:44.568286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '373444f6-d4f4-4a54-9292-0c12add6c823', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106585d90>]}
+[0m16:45:14.702718 [error] [MainThread]: Encountered an error:
+
+[0m16:45:14.880377 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 285, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/cli/main.py", line 307, in docs_serve
+    results = task.run()
+  File "/Users/payalnagaonkar/cosmetic-semantic-recommender/venv/lib/python3.9/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+[0m16:45:14.917531 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 630.96967, "process_in_blocks": "0", "process_kernel_time": 0.301202, "process_mem_max_rss": "159023104", "process_out_blocks": "0", "process_user_time": 1.206926}
+[0m16:45:14.918029 [debug] [MainThread]: Command `dbt docs serve` failed at 16:45:14.917949 after 630.97 seconds
+[0m16:45:14.919046 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053d8a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc102b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc10f40>]}
+[0m16:45:14.919709 [debug] [MainThread]: Flushing usage events
+[0m16:45:15.457468 [debug] [MainThread]: An error was encountered while trying to flush usage events

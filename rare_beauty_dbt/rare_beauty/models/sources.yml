@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: raw
+    database: RARE_BEAUTY_DB
+    schema: DBT_PAYAL
+    tables:
+      - name: rare_beauty_master_merged
+        description: "Raw merged master data for Rare Beauty scraped products and reviews."
+        columns:
+          - name: price
+            description: "Raw price text scraped from the site, including promotional language."
+          - name: rating
+            description: "Raw customer rating text."
+          - name: review_count
+            description: "Number of reviews, as string."
+
+  - name: RARE_BEAUTY
+    database: RARE_BEAUTY_DB
+    schema: PUBLIC
+    tables:
+      - name: RARE_BEAUTY_PRODUCTS
+        description: "Raw Rare Beauty product data from their public catalog."
+
+models:
+  - name: stg_rare_beauty_master_merged
+    description: "Clean staging model for Rare Beauty master merged data."
+    columns:
+      - name: cleaned_price
+        description: "Price cleaned to numeric, extracted from text."
+      - name: cleaned_rating
+        description: "Numeric customer rating, N/A values replaced with NULL."
+      - name: cleaned_review_count
+        description: "Integer review count, N/A replaced with NULL."
