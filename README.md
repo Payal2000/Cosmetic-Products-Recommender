@@ -2,6 +2,8 @@
 
 This repository contains the implementation of a comprehensive **Rare Beauty Product Data Pipeline** and **Virtual Product Recommender** with Augmented Reality (AR) Try-On features. The solution integrates modern data engineering tools and techniques to provide an end-to-end workflow, from scraping product data to building a semantic product recommendation system and virtual try-on experience.
 
+Live Demo: https://drive.google.com/file/d/1924QjMDTodv-voJRR15mtWnntPlutizF/view?usp=sharing
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
@@ -209,3 +211,4 @@ This project builds an advanced data pipeline and recommendation system for Rare
 
 
    
+
