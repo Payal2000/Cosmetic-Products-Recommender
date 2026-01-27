@@ -27,10 +27,10 @@ function Swatch({
     <button
       onClick={onClick}
       title={title}
-      className={`w-7 h-7 rounded-full transition-all duration-200 focus:outline-none ${
+      className={`w-7 h-7 rounded-full transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] focus:outline-none active:scale-90 ${
         selected
-          ? 'scale-110 ring-2 ring-offset-2 ring-blush-400'
-          : 'hover:scale-110'
+          ? 'scale-110 ring-2 ring-offset-2 ring-blush-400 shadow-md'
+          : 'hover:scale-115 hover:shadow-sm'
       } ${isLight ? 'border border-cream-200' : ''}`}
       style={{ backgroundColor: color === 'transparent' ? 'white' : color }}
     />
@@ -95,19 +95,19 @@ export default function TryOnPage() {
   };
 
   const selectClass =
-    'w-full bg-white border border-cream-200 rounded-lg py-2.5 px-3 pr-8 text-sm text-warm-700 focus:ring-1 focus:ring-blush-400 focus:border-blush-400 outline-none appearance-none cursor-pointer';
+    'w-full bg-white border border-cream-200 rounded-lg py-2.5 px-3 pr-8 text-sm text-warm-700 focus:ring-1 focus:ring-blush-400 focus:border-blush-400 outline-none appearance-none cursor-pointer focus-glow transition-all duration-200';
 
   return (
     <div className="min-h-screen bg-cream-50 flex flex-col md:flex-row font-sans text-warm-900">
       {/* Sidebar Controls */}
       <aside className="w-full md:w-[380px] bg-white border-r border-cream-200 md:h-screen overflow-y-auto scrollbar-hide flex-shrink-0 flex flex-col">
         {/* Header */}
-        <div className="px-8 pt-8 pb-6 flex-shrink-0">
+        <div className="px-8 pt-8 pb-6 flex-shrink-0 animate-fade-in">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-olive-400 hover:text-warm-900 transition-colors mb-6 text-sm font-medium"
+            className="inline-flex items-center gap-2 text-olive-400 hover:text-warm-900 transition-all duration-200 mb-6 text-sm font-medium group"
           >
-            <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-200" strokeWidth={1.5} />
             Back
           </Link>
           <h1 className="text-2xl font-light tracking-tight text-warm-900 mb-1">
@@ -122,7 +122,7 @@ export default function TryOnPage() {
         <div className="flex-1 overflow-y-auto scrollbar-hide px-8 pb-8">
           <div className="space-y-6">
             {/* LIPS */}
-            <section className="border-t border-cream-200 pt-6">
+            <section className="border-t border-cream-200 pt-6 opacity-0 animate-fade-in-up stagger-1">
               <div className="flex items-center gap-2 mb-4">
                 <Palette className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
                 <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
@@ -182,7 +182,7 @@ export default function TryOnPage() {
             </section>
 
             {/* CHEEKS */}
-            <section className="border-t border-cream-200 pt-6">
+            <section className="border-t border-cream-200 pt-6 opacity-0 animate-fade-in-up stagger-3">
               <div className="flex items-center gap-2 mb-4">
                 <CircleDot className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
                 <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
@@ -244,7 +244,7 @@ export default function TryOnPage() {
             </section>
 
             {/* BROWS */}
-            <section className="border-t border-cream-200 pt-6">
+            <section className="border-t border-cream-200 pt-6 opacity-0 animate-fade-in-up stagger-5">
               <div className="flex items-center gap-2 mb-4">
                 <Eye className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
                 <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
@@ -287,7 +287,7 @@ export default function TryOnPage() {
             </section>
 
             {/* FACE */}
-            <section className="border-t border-cream-200 pt-6">
+            <section className="border-t border-cream-200 pt-6 opacity-0 animate-fade-in-up stagger-7">
               <div className="flex items-center gap-2 mb-4">
                 <Layers className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
                 <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
@@ -340,7 +340,7 @@ export default function TryOnPage() {
       {/* AR Camera View */}
       <div className="flex-1 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden bg-cream-50">
         <div className="relative z-10 flex flex-col items-center max-w-2xl w-full">
-          <div className="bg-white p-3 rounded-2xl shadow-lg border border-cream-200/40 mb-6">
+          <div className="bg-white p-3 rounded-2xl shadow-lg border border-cream-200/40 mb-6 w-full max-w-[670px] opacity-0 animate-scale-in" style={{ animationDelay: '150ms' }}>
             <ARCamera
               lipShade={selectedLipShade}
               cheekShade={selectedCheekShade}
@@ -352,11 +352,11 @@ export default function TryOnPage() {
           </div>
 
           <div className="flex items-center gap-2.5 text-olive-400 text-xs tracking-wide">
-            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-cream-200/60">
+            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-cream-200/60 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
               <Camera className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Camera active</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-cream-200/60">
+            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-cream-200/60 opacity-0 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
               <Shield className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Processed locally</span>
             </div>

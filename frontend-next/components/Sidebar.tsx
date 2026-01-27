@@ -56,9 +56,9 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
   return (
     <aside className="w-full md:w-[380px] bg-white border-r border-cream-200 flex flex-col md:h-screen flex-shrink-0">
       {/* Header */}
-      <div className="px-8 pt-8 pb-6 flex-shrink-0">
+      <div className="px-8 pt-8 pb-6 flex-shrink-0 animate-fade-in">
         <div className="flex items-center gap-2.5">
-          <Sparkles className="w-5 h-5 text-blush-400" strokeWidth={1.5} />
+          <Sparkles className="w-5 h-5 text-blush-400 transition-transform duration-500 hover:rotate-12" strokeWidth={1.5} />
           <h1 className="text-xl font-semibold tracking-tight text-warm-900">
             RARE.
           </h1>
@@ -77,7 +77,7 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
             Describe your look
           </label>
           <textarea
-            className="w-full p-4 bg-cream-50 border border-cream-300 rounded-xl text-sm text-warm-800 placeholder:text-olive-300 focus:ring-1 focus:ring-blush-400 focus:border-blush-400 outline-none resize-none leading-relaxed"
+            className="w-full p-4 bg-cream-50 border border-cream-300 rounded-xl text-sm text-warm-800 placeholder:text-olive-300 focus:ring-1 focus:ring-blush-400 focus:border-blush-400 outline-none resize-none leading-relaxed focus-glow transition-all duration-300"
             rows={3}
             placeholder="A natural, dewy finish for everyday wear..."
             value={query}
@@ -99,13 +99,13 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
                 <button
                   key={cat.id}
                   onClick={() => handleCategoryChange(cat.id)}
-                  className={`px-3.5 py-2 rounded-lg text-xs font-medium border flex items-center gap-1.5 transition-all duration-200 ${
+                  className={`px-3.5 py-2 rounded-lg text-xs font-medium border flex items-center gap-1.5 transition-all duration-200 active:scale-95 ${
                     isSelected
-                      ? 'bg-blush-400 text-white border-blush-400'
+                      ? 'bg-blush-400 text-white border-blush-400 shadow-sm shadow-blush-400/20'
                       : 'bg-white text-warm-600 border-cream-300 hover:border-blush-300 hover:text-warm-800'
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" strokeWidth={1.5} />
+                  <Icon className={`w-3.5 h-3.5 transition-transform duration-300 ${isSelected ? 'scale-110' : ''}`} strokeWidth={1.5} />
                   {cat.label}
                 </button>
               );
@@ -162,24 +162,24 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
           <div className="space-y-0.5">
             <button
               onClick={() => handlePreload('products for a summer dewy glow with Rare Beauty')}
-              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-colors group"
+              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-all duration-200 active:scale-[0.98] group"
             >
-              <Sun className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-colors" strokeWidth={1.5} />
-              <span className="font-medium">Summer Dewy Glow</span>
+              <Sun className="w-4 h-4 text-olive-300 group-hover:text-blush-400 group-hover:rotate-45 transition-all duration-300" strokeWidth={1.5} />
+              <span className="font-medium group-hover:translate-x-0.5 transition-transform duration-200">Summer Dewy Glow</span>
             </button>
             <button
               onClick={() => handlePreload('lightweight natural makeup for office from Rare Beauty')}
-              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-colors group"
+              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-all duration-200 active:scale-[0.98] group"
             >
-              <Briefcase className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-colors" strokeWidth={1.5} />
-              <span className="font-medium">Natural Office Look</span>
+              <Briefcase className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-all duration-300" strokeWidth={1.5} />
+              <span className="font-medium group-hover:translate-x-0.5 transition-transform duration-200">Natural Office Look</span>
             </button>
             <button
               onClick={() => handlePreload('evening glam look with Rare Beauty products')}
-              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-colors group"
+              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-all duration-200 active:scale-[0.98] group"
             >
-              <Moon className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-colors" strokeWidth={1.5} />
-              <span className="font-medium">Evening Glam Look</span>
+              <Moon className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-all duration-300" strokeWidth={1.5} />
+              <span className="font-medium group-hover:translate-x-0.5 transition-transform duration-200">Evening Glam Look</span>
             </button>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
         <button
           onClick={handleSearch}
           disabled={isLoading}
-          className="w-full bg-blush-400 text-white py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-blush-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2.5"
+          className="w-full bg-blush-400 text-white py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-blush-500 active:scale-[0.97] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2.5 hover:shadow-md hover:shadow-blush-400/20"
         >
           {isLoading ? (
             <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -201,7 +201,7 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
         </button>
 
         <Link href="/try-on" className="block">
-          <button className="w-full bg-transparent text-warm-700 border border-cream-300 py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-blush-400 hover:text-white hover:border-blush-400 transition-all duration-300 flex items-center justify-center gap-2.5">
+          <button className="w-full bg-transparent text-warm-700 border border-cream-300 py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-blush-400 hover:text-white hover:border-blush-400 active:scale-[0.97] transition-all duration-300 flex items-center justify-center gap-2.5">
             <Camera className="w-4 h-4" strokeWidth={1.5} />
             Virtual Try-On
           </button>
