@@ -67,7 +67,7 @@ export default function Dashboard() {
     <div className="flex flex-col md:flex-row min-h-screen bg-stone-50/40">
       <Sidebar onSearch={handleSearch} isLoading={loading} />
 
-      <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto h-screen scrollbar-hide">
+      <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto min-h-screen md:h-screen scrollbar-hide">
         {hasSearched ? (
           <div className="animate-fade-in-up">
             {/* Results Header */}

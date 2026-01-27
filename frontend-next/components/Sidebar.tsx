@@ -54,7 +54,7 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
   };
 
   return (
-    <aside className="w-full md:w-[380px] bg-white border-r border-stone-200/60 flex flex-col h-screen flex-shrink-0">
+    <aside className="w-full md:w-[380px] bg-white border-r border-stone-200/60 flex flex-col md:h-screen flex-shrink-0">
       {/* Header */}
       <div className="px-8 pt-8 pb-6 flex-shrink-0">
         <div className="flex items-center gap-2.5">

@@ -100,7 +100,7 @@ export default function TryOnPage() {
   return (
     <div className="min-h-screen bg-stone-50/40 flex flex-col md:flex-row font-sans text-stone-900">
       {/* Sidebar Controls */}
-      <aside className="w-full md:w-[380px] bg-white border-r border-stone-200/60 h-screen overflow-y-auto scrollbar-hide flex-shrink-0 flex flex-col">
+      <aside className="w-full md:w-[380px] bg-white border-r border-stone-200/60 md:h-screen overflow-y-auto scrollbar-hide flex-shrink-0 flex flex-col">
         {/* Header */}
         <div className="px-8 pt-8 pb-6 flex-shrink-0">
           <Link
