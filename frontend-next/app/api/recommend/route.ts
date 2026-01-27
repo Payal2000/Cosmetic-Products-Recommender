@@ -2,16 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Pinecone } from '@pinecone-database/pinecone';
 import OpenAI from 'openai';
 
-const pinecone = new Pinecone({
-  apiKey: process.env.PINECONE_API_KEY!,
-});
-
-const index = pinecone.index(process.env.INDEX_NAME!);
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(req: NextRequest) {
   try {
     const { query, filters } = await req.json();
@@ -19,6 +9,19 @@ export async function POST(req: NextRequest) {
     if (!query) {
       return NextResponse.json({ error: 'Query is required' }, { status: 400 });
     }
+
+    if (!process.env.PINECONE_API_KEY || !process.env.INDEX_NAME || !process.env.OPENAI_API_KEY) {
+      return NextResponse.json({ error: 'Missing API keys in server configuration' }, { status: 500 });
+    }
+
+    const pinecone = new Pinecone({
+      apiKey: process.env.PINECONE_API_KEY,
+    });
+    const index = pinecone.index(process.env.INDEX_NAME);
+
+    const openai = new OpenAI({
+        apiKey: process.env.OPENAI_API_KEY,
+    });
 
     const embeddingResponse = await openai.embeddings.create({
       model: 'text-embedding-3-small',

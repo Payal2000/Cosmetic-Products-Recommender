@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import { Star } from 'lucide-react';
 
 interface Product {
   id: string;
@@ -25,30 +27,54 @@ export default function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <div className="bg-[#fdf7f4] border border-[#e0cfc5] rounded-xl p-4 mb-4 shadow-[2px_2px_12px_rgba(174,144,128,0.2)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_16px_rgba(174,144,128,0.3)] w-full">
-      <img
-        src={imageUrl}
-        alt={product.product_name}
-        className="rounded-lg mb-2 w-full object-cover aspect-square"
-      />
-      <div className="text-[#5c3b31] font-semibold text-base mb-1 truncate" title={product.product_name}>
-        {product.product_name}
+    <div className="group">
+      {/* Image */}
+      <div className="relative aspect-[4/5] overflow-hidden bg-stone-100 rounded-xl mb-4">
+        <Image
+          src={imageUrl}
+          alt={product.product_name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+
+        {/* Hover overlay with rating */}
+        <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex items-center gap-1.5">
+            <Star className="w-3 h-3 fill-white text-white" strokeWidth={1.5} />
+            <span className="text-xs font-medium text-white">
+              {product.rating}
+            </span>
+            <span className="text-xs text-white/60">
+              ({product.review_count})
+            </span>
+          </div>
+        </div>
       </div>
-      <div className="text-[#a64b2a] font-bold mb-1">
-        ${product.price.toFixed(2)}
-      </div>
-      <div className="text-[#6d4c41] text-sm mb-1 capitalize">
-        {product.category}
-      </div>
-      <div className="text-[#3d2b24] text-xs mb-1 line-clamp-3 h-[48px]">
-        {product.description}
-      </div>
-      <div className="text-[#3d2b24] text-xs flex items-center gap-1">
-        <span>⭐ {product.rating}</span>
-        <span className="text-gray-500">({product.review_count} reviews)</span>
-      </div>
-      <div className="text-[#3d2b24] text-xs mt-1 italic truncate">
-        Variant: {product.variant_title_product}
+
+      {/* Info */}
+      <div className="space-y-1.5">
+        <div className="flex justify-between items-start gap-3">
+          <h3
+            className="text-sm font-medium text-stone-900 leading-snug line-clamp-2 group-hover:text-stone-600 transition-colors duration-300"
+            title={product.product_name}
+          >
+            {product.product_name}
+          </h3>
+          <p className="text-sm font-medium text-stone-900 whitespace-nowrap">
+            ${product.price.toFixed(2)}
+          </p>
+        </div>
+
+        <p className="text-[11px] text-stone-400 capitalize tracking-wide">
+          {product.category}
+          {product.variant_title_product && (
+            <>
+              <span className="mx-1.5 text-stone-300">/</span>
+              {product.variant_title_product}
+            </>
+          )}
+        </p>
       </div>
     </div>
   );
