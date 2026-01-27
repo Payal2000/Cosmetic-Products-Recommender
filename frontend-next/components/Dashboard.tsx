@@ -64,22 +64,22 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-stone-50/40">
+    <div className="flex flex-col md:flex-row min-h-screen bg-cream-50">
       <Sidebar onSearch={handleSearch} isLoading={loading} />
 
       <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto min-h-screen md:h-screen scrollbar-hide">
         {hasSearched ? (
           <div className="animate-fade-in-up">
             {/* Results Header */}
-            <header className="mb-10 pb-6 border-b border-stone-200/60">
-              <p className="text-stone-400 uppercase tracking-[0.2em] text-[11px] font-medium mb-2">
+            <header className="mb-10 pb-6 border-b border-cream-200">
+              <p className="text-olive-400 uppercase tracking-[0.2em] text-[11px] font-medium mb-2">
                 Search Results
               </p>
               <div className="flex items-baseline justify-between gap-4">
-                <h2 className="text-2xl md:text-3xl font-light text-stone-900 tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-light text-warm-900 tracking-tight">
                   &ldquo;{currentQuery}&rdquo;
                 </h2>
-                <span className="text-stone-400 text-sm whitespace-nowrap">
+                <span className="text-olive-400 text-sm whitespace-nowrap">
                   {products.length} {products.length === 1 ? 'product' : 'products'}
                 </span>
               </div>
@@ -88,10 +88,10 @@ export default function Dashboard() {
             {/* Results Grid */}
             {products.length === 0 ? (
               <div className="py-20 flex flex-col items-center justify-center text-center">
-                <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center mb-5">
-                  <Sparkles className="w-5 h-5 text-stone-400" strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-full bg-blush-200/50 flex items-center justify-center mb-5">
+                  <Sparkles className="w-5 h-5 text-blush-400" strokeWidth={1.5} />
                 </div>
-                <p className="text-stone-500 text-sm">
+                <p className="text-warm-600 text-sm">
                   No matches found. Try refining your search.
                 </p>
               </div>
@@ -105,8 +105,8 @@ export default function Dashboard() {
 
             {/* Recent Searches */}
             {conversation.length > 0 && (
-              <div className="mt-20 pt-8 border-t border-stone-200/60">
-                <h3 className="text-[11px] font-medium text-stone-400 uppercase tracking-[0.15em] mb-4 flex items-center gap-2">
+              <div className="mt-20 pt-8 border-t border-cream-200">
+                <h3 className="text-[11px] font-medium text-olive-400 uppercase tracking-[0.15em] mb-4 flex items-center gap-2">
                   <Clock className="w-3 h-3" strokeWidth={1.5} />
                   Recent Searches
                 </h3>
@@ -114,7 +114,7 @@ export default function Dashboard() {
                   {conversation.map((q, i) => (
                     <span
                       key={i}
-                      className="px-3.5 py-1.5 bg-white rounded-full text-stone-500 text-xs border border-stone-200/60"
+                      className="px-3.5 py-1.5 bg-white rounded-full text-warm-600 text-xs border border-cream-200"
                     >
                       {q}
                     </span>
@@ -126,17 +126,17 @@ export default function Dashboard() {
         ) : (
           /* Welcome State */
           <div className="h-full flex flex-col items-center justify-center text-center max-w-md mx-auto animate-fade-in">
-            <div className="w-12 h-[1px] bg-stone-300 mb-10" />
-            <h1 className="text-4xl md:text-5xl font-extralight text-stone-900 mb-4 tracking-tight leading-tight">
+            <div className="w-12 h-[1px] bg-blush-300 mb-10" />
+            <h1 className="text-4xl md:text-5xl font-extralight text-warm-900 mb-4 tracking-tight leading-tight">
               Discover Your
               <br />
               Perfect Ritual
             </h1>
-            <p className="text-stone-400 leading-relaxed text-[15px] max-w-sm">
+            <p className="text-olive-400 leading-relaxed text-[15px] max-w-sm">
               AI-powered recommendations to find the perfect shade,
               texture, and finish for your unique style.
             </p>
-            <div className="w-12 h-[1px] bg-stone-300 mt-10" />
+            <div className="w-12 h-[1px] bg-blush-300 mt-10" />
           </div>
         )}
       </main>

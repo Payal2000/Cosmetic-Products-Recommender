@@ -199,7 +199,7 @@ export default function ARCamera({
   }, [scriptsLoaded, lipShade, cheekShade, browShade, browProductType, contourShade, foundationShade]);
 
   return (
-    <div className="relative w-full max-w-[640px] aspect-[4/3] rounded-xl overflow-hidden bg-stone-900">
+    <div className="relative w-full max-w-[640px] aspect-[4/3] rounded-xl overflow-hidden bg-warm-900">
       <Script
         src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"
         onLoad={() => setScriptsLoaded(prev => ({ ...prev, faceMesh: true }))}
@@ -222,7 +222,7 @@ export default function ARCamera({
         height={480}
       />
       {(!scriptsLoaded.faceMesh || !scriptsLoaded.camera) && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-stone-900/80 backdrop-blur-sm gap-3">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-warm-900/80 backdrop-blur-sm gap-3">
           <Loader2 className="w-6 h-6 text-white animate-spin" strokeWidth={1.5} />
           <p className="text-white/70 text-sm tracking-wide">
             Loading AR Module

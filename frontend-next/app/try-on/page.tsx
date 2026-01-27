@@ -29,9 +29,9 @@ function Swatch({
       title={title}
       className={`w-7 h-7 rounded-full transition-all duration-200 focus:outline-none ${
         selected
-          ? 'scale-110 ring-2 ring-offset-2 ring-stone-900'
+          ? 'scale-110 ring-2 ring-offset-2 ring-blush-400'
           : 'hover:scale-110'
-      } ${isLight ? 'border border-stone-200' : ''}`}
+      } ${isLight ? 'border border-cream-200' : ''}`}
       style={{ backgroundColor: color === 'transparent' ? 'white' : color }}
     />
   );
@@ -95,25 +95,25 @@ export default function TryOnPage() {
   };
 
   const selectClass =
-    'w-full bg-white border border-stone-200 rounded-lg py-2.5 px-3 pr-8 text-sm text-stone-700 focus:ring-1 focus:ring-stone-900 focus:border-stone-900 outline-none appearance-none cursor-pointer';
+    'w-full bg-white border border-cream-200 rounded-lg py-2.5 px-3 pr-8 text-sm text-warm-700 focus:ring-1 focus:ring-blush-400 focus:border-blush-400 outline-none appearance-none cursor-pointer';
 
   return (
-    <div className="min-h-screen bg-stone-50/40 flex flex-col md:flex-row font-sans text-stone-900">
+    <div className="min-h-screen bg-cream-50 flex flex-col md:flex-row font-sans text-warm-900">
       {/* Sidebar Controls */}
-      <aside className="w-full md:w-[380px] bg-white border-r border-stone-200/60 md:h-screen overflow-y-auto scrollbar-hide flex-shrink-0 flex flex-col">
+      <aside className="w-full md:w-[380px] bg-white border-r border-cream-200 md:h-screen overflow-y-auto scrollbar-hide flex-shrink-0 flex flex-col">
         {/* Header */}
         <div className="px-8 pt-8 pb-6 flex-shrink-0">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-stone-400 hover:text-stone-900 transition-colors mb-6 text-sm font-medium"
+            className="inline-flex items-center gap-2 text-olive-400 hover:text-warm-900 transition-colors mb-6 text-sm font-medium"
           >
             <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
             Back
           </Link>
-          <h1 className="text-2xl font-light tracking-tight text-stone-900 mb-1">
+          <h1 className="text-2xl font-light tracking-tight text-warm-900 mb-1">
             Virtual Studio
           </h1>
-          <p className="text-stone-400 text-sm">
+          <p className="text-olive-400 text-sm">
             Select shades to preview live.
           </p>
         </div>
@@ -122,18 +122,18 @@ export default function TryOnPage() {
         <div className="flex-1 overflow-y-auto scrollbar-hide px-8 pb-8">
           <div className="space-y-6">
             {/* LIPS */}
-            <section className="border-t border-stone-100 pt-6">
+            <section className="border-t border-cream-200 pt-6">
               <div className="flex items-center gap-2 mb-4">
-                <Palette className="w-4 h-4 text-stone-400" strokeWidth={1.5} />
-                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-stone-500">
+                <Palette className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
+                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
                   Lips
                 </h3>
               </div>
 
-              <div className="bg-stone-50/80 p-4 rounded-xl space-y-4">
+              <div className="bg-cream-100 p-4 rounded-xl space-y-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] font-medium text-stone-400 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-[10px] font-medium text-olive-400 mb-1.5 uppercase tracking-wider">
                       Finish
                     </label>
                     <select
@@ -147,7 +147,7 @@ export default function TryOnPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-[10px] font-medium text-stone-400 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-[10px] font-medium text-olive-400 mb-1.5 uppercase tracking-wider">
                       Product
                     </label>
                     <select
@@ -163,7 +163,7 @@ export default function TryOnPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-medium text-stone-400 mb-2 uppercase tracking-wider">
+                  <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
                     Shade: {Object.keys(getLipShades()).find(k => getLipShades()[k] === selectedLipShade)}
                   </label>
                   <div className="flex flex-wrap gap-2.5">
@@ -182,18 +182,18 @@ export default function TryOnPage() {
             </section>
 
             {/* CHEEKS */}
-            <section className="border-t border-stone-100 pt-6">
+            <section className="border-t border-cream-200 pt-6">
               <div className="flex items-center gap-2 mb-4">
-                <CircleDot className="w-4 h-4 text-stone-400" strokeWidth={1.5} />
-                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-stone-500">
+                <CircleDot className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
+                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
                   Cheeks
                 </h3>
               </div>
 
-              <div className="bg-stone-50/80 p-4 rounded-xl space-y-4">
+              <div className="bg-cream-100 p-4 rounded-xl space-y-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] font-medium text-stone-400 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-[10px] font-medium text-olive-400 mb-1.5 uppercase tracking-wider">
                       Finish
                     </label>
                     <select
@@ -209,7 +209,7 @@ export default function TryOnPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-[10px] font-medium text-stone-400 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-[10px] font-medium text-olive-400 mb-1.5 uppercase tracking-wider">
                       Product
                     </label>
                     <select
@@ -225,7 +225,7 @@ export default function TryOnPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-medium text-stone-400 mb-2 uppercase tracking-wider">
+                  <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
                     Shade: {Object.keys(getCheekShades()).find(k => getCheekShades()[k] === selectedCheekShade)}
                   </label>
                   <div className="flex flex-wrap gap-2.5">
@@ -244,17 +244,17 @@ export default function TryOnPage() {
             </section>
 
             {/* BROWS */}
-            <section className="border-t border-stone-100 pt-6">
+            <section className="border-t border-cream-200 pt-6">
               <div className="flex items-center gap-2 mb-4">
-                <Eye className="w-4 h-4 text-stone-400" strokeWidth={1.5} />
-                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-stone-500">
+                <Eye className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
+                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
                   Brows
                 </h3>
               </div>
 
-              <div className="bg-stone-50/80 p-4 rounded-xl space-y-4">
+              <div className="bg-cream-100 p-4 rounded-xl space-y-4">
                 <div>
-                  <label className="block text-[10px] font-medium text-stone-400 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-[10px] font-medium text-olive-400 mb-1.5 uppercase tracking-wider">
                     Product
                   </label>
                   <select
@@ -268,7 +268,7 @@ export default function TryOnPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[10px] font-medium text-stone-400 mb-2 uppercase tracking-wider">
+                  <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
                     Shade: {Object.keys(getBrowShades()).find(k => getBrowShades()[k] === selectedBrowShade)}
                   </label>
                   <div className="flex flex-wrap gap-2.5">
@@ -287,18 +287,18 @@ export default function TryOnPage() {
             </section>
 
             {/* FACE */}
-            <section className="border-t border-stone-100 pt-6">
+            <section className="border-t border-cream-200 pt-6">
               <div className="flex items-center gap-2 mb-4">
-                <Layers className="w-4 h-4 text-stone-400" strokeWidth={1.5} />
-                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-stone-500">
+                <Layers className="w-4 h-4 text-olive-400" strokeWidth={1.5} />
+                <h3 className="font-medium text-[11px] uppercase tracking-[0.15em] text-olive-500">
                   Face
                 </h3>
               </div>
 
-              <div className="bg-stone-50/80 p-4 rounded-xl space-y-5">
+              <div className="bg-cream-100 p-4 rounded-xl space-y-5">
                 {/* Contour */}
                 <div>
-                  <label className="block text-[10px] font-medium text-stone-400 mb-2 uppercase tracking-wider">
+                  <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
                     Bronzer / Contour
                   </label>
                   <div className="flex flex-wrap gap-2.5">
@@ -315,8 +315,8 @@ export default function TryOnPage() {
                 </div>
 
                 {/* Foundation */}
-                <div className="border-t border-stone-200/60 pt-4">
-                  <label className="block text-[10px] font-medium text-stone-400 mb-2 uppercase tracking-wider">
+                <div className="border-t border-cream-200/60 pt-4">
+                  <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
                     Foundation
                   </label>
                   <div className="flex flex-wrap gap-2.5">
@@ -338,9 +338,9 @@ export default function TryOnPage() {
       </aside>
 
       {/* AR Camera View */}
-      <div className="flex-1 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden bg-stone-50/40">
+      <div className="flex-1 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden bg-cream-50">
         <div className="relative z-10 flex flex-col items-center max-w-2xl w-full">
-          <div className="bg-white p-3 rounded-2xl shadow-lg border border-stone-200/40 mb-6">
+          <div className="bg-white p-3 rounded-2xl shadow-lg border border-cream-200/40 mb-6">
             <ARCamera
               lipShade={selectedLipShade}
               cheekShade={selectedCheekShade}
@@ -351,12 +351,12 @@ export default function TryOnPage() {
             />
           </div>
 
-          <div className="flex items-center gap-2.5 text-stone-400 text-xs tracking-wide">
-            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-stone-200/60">
+          <div className="flex items-center gap-2.5 text-olive-400 text-xs tracking-wide">
+            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-cream-200/60">
               <Camera className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Camera active</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-stone-200/60">
+            <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-cream-200/60">
               <Shield className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Processed locally</span>
             </div>

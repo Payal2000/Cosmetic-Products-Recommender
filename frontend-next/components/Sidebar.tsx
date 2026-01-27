@@ -54,16 +54,16 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
   };
 
   return (
-    <aside className="w-full md:w-[380px] bg-white border-r border-stone-200/60 flex flex-col md:h-screen flex-shrink-0">
+    <aside className="w-full md:w-[380px] bg-white border-r border-cream-200 flex flex-col md:h-screen flex-shrink-0">
       {/* Header */}
       <div className="px-8 pt-8 pb-6 flex-shrink-0">
         <div className="flex items-center gap-2.5">
-          <Sparkles className="w-5 h-5 text-stone-400" strokeWidth={1.5} />
-          <h1 className="text-xl font-semibold tracking-tight text-stone-900">
+          <Sparkles className="w-5 h-5 text-blush-400" strokeWidth={1.5} />
+          <h1 className="text-xl font-semibold tracking-tight text-warm-900">
             RARE.
           </h1>
         </div>
-        <p className="text-[11px] text-stone-400 tracking-[0.2em] uppercase font-medium mt-1 pl-[30px]">
+        <p className="text-[11px] text-olive-400 tracking-[0.2em] uppercase font-medium mt-1 pl-[30px]">
           Beauty Recommender
         </p>
       </div>
@@ -71,13 +71,13 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
       {/* Scrollable Content */}
       <div className="flex-1 overflow-y-auto scrollbar-hide px-8 pb-6">
         {/* Search */}
-        <div className="border-t border-stone-100 pt-6 mb-6">
-          <label className="flex items-center gap-2 text-[11px] font-medium text-stone-400 tracking-[0.15em] uppercase mb-3">
+        <div className="border-t border-cream-200 pt-6 mb-6">
+          <label className="flex items-center gap-2 text-[11px] font-medium text-olive-400 tracking-[0.15em] uppercase mb-3">
             <Search className="w-3.5 h-3.5" strokeWidth={1.5} />
             Describe your look
           </label>
           <textarea
-            className="w-full p-4 bg-stone-50 border border-stone-200/80 rounded-xl text-sm text-stone-800 placeholder:text-stone-300 focus:ring-1 focus:ring-stone-900 focus:border-stone-900 outline-none resize-none leading-relaxed"
+            className="w-full p-4 bg-cream-50 border border-cream-300 rounded-xl text-sm text-warm-800 placeholder:text-olive-300 focus:ring-1 focus:ring-blush-400 focus:border-blush-400 outline-none resize-none leading-relaxed"
             rows={3}
             placeholder="A natural, dewy finish for everyday wear..."
             value={query}
@@ -86,8 +86,8 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
         </div>
 
         {/* Categories */}
-        <div className="border-t border-stone-100 pt-6 mb-6">
-          <label className="flex items-center gap-2 text-[11px] font-medium text-stone-400 tracking-[0.15em] uppercase mb-3">
+        <div className="border-t border-cream-200 pt-6 mb-6">
+          <label className="flex items-center gap-2 text-[11px] font-medium text-olive-400 tracking-[0.15em] uppercase mb-3">
             <SlidersHorizontal className="w-3.5 h-3.5" strokeWidth={1.5} />
             Categories
           </label>
@@ -101,8 +101,8 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
                   onClick={() => handleCategoryChange(cat.id)}
                   className={`px-3.5 py-2 rounded-lg text-xs font-medium border flex items-center gap-1.5 transition-all duration-200 ${
                     isSelected
-                      ? 'bg-stone-900 text-white border-stone-900'
-                      : 'bg-white text-stone-500 border-stone-200 hover:border-stone-300 hover:text-stone-700'
+                      ? 'bg-blush-400 text-white border-blush-400'
+                      : 'bg-white text-warm-600 border-cream-300 hover:border-blush-300 hover:text-warm-800'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" strokeWidth={1.5} />
@@ -114,11 +114,11 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
         </div>
 
         {/* Price & Rating */}
-        <div className="border-t border-stone-100 pt-6 mb-6 space-y-5">
+        <div className="border-t border-cream-200 pt-6 mb-6 space-y-5">
           <div>
-            <label className="flex items-center justify-between text-[11px] font-medium text-stone-400 tracking-[0.15em] uppercase mb-3">
+            <label className="flex items-center justify-between text-[11px] font-medium text-olive-400 tracking-[0.15em] uppercase mb-3">
               <span>Price Range</span>
-              <span className="text-stone-600 tracking-normal font-semibold">
+              <span className="text-warm-700 tracking-normal font-semibold">
                 Up to ${priceRange[1]}
               </span>
             </label>
@@ -133,12 +133,12 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
           </div>
 
           <div>
-            <label className="flex items-center justify-between text-[11px] font-medium text-stone-400 tracking-[0.15em] uppercase mb-3">
+            <label className="flex items-center justify-between text-[11px] font-medium text-olive-400 tracking-[0.15em] uppercase mb-3">
               <span className="flex items-center gap-1.5">
                 <Star className="w-3 h-3" strokeWidth={1.5} />
                 Min Rating
               </span>
-              <span className="text-stone-600 tracking-normal font-semibold">
+              <span className="text-warm-700 tracking-normal font-semibold">
                 {minRating.toFixed(1)}
               </span>
             </label>
@@ -155,30 +155,30 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
         </div>
 
         {/* Curated Looks */}
-        <div className="border-t border-stone-100 pt-6">
-          <label className="text-[11px] font-medium text-stone-400 tracking-[0.15em] uppercase mb-3 block">
+        <div className="border-t border-cream-200 pt-6">
+          <label className="text-[11px] font-medium text-olive-400 tracking-[0.15em] uppercase mb-3 block">
             Curated Looks
           </label>
           <div className="space-y-0.5">
             <button
               onClick={() => handlePreload('products for a summer dewy glow with Rare Beauty')}
-              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-stone-50 text-stone-600 hover:text-stone-900 transition-colors group"
+              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-colors group"
             >
-              <Sun className="w-4 h-4 text-stone-300 group-hover:text-stone-500 transition-colors" strokeWidth={1.5} />
+              <Sun className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-colors" strokeWidth={1.5} />
               <span className="font-medium">Summer Dewy Glow</span>
             </button>
             <button
               onClick={() => handlePreload('lightweight natural makeup for office from Rare Beauty')}
-              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-stone-50 text-stone-600 hover:text-stone-900 transition-colors group"
+              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-colors group"
             >
-              <Briefcase className="w-4 h-4 text-stone-300 group-hover:text-stone-500 transition-colors" strokeWidth={1.5} />
+              <Briefcase className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-colors" strokeWidth={1.5} />
               <span className="font-medium">Natural Office Look</span>
             </button>
             <button
               onClick={() => handlePreload('evening glam look with Rare Beauty products')}
-              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-stone-50 text-stone-600 hover:text-stone-900 transition-colors group"
+              className="flex items-center gap-3 w-full text-left text-sm py-2.5 px-3 rounded-lg hover:bg-cream-100 text-warm-700 hover:text-warm-900 transition-colors group"
             >
-              <Moon className="w-4 h-4 text-stone-300 group-hover:text-stone-500 transition-colors" strokeWidth={1.5} />
+              <Moon className="w-4 h-4 text-olive-300 group-hover:text-blush-400 transition-colors" strokeWidth={1.5} />
               <span className="font-medium">Evening Glam Look</span>
             </button>
           </div>
@@ -186,11 +186,11 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
       </div>
 
       {/* Fixed Bottom Actions */}
-      <div className="px-8 pb-8 pt-5 space-y-3 border-t border-stone-100 flex-shrink-0 bg-white">
+      <div className="px-8 pb-8 pt-5 space-y-3 border-t border-cream-200 flex-shrink-0 bg-white">
         <button
           onClick={handleSearch}
           disabled={isLoading}
-          className="w-full bg-stone-900 text-white py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2.5"
+          className="w-full bg-blush-400 text-white py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-blush-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2.5"
         >
           {isLoading ? (
             <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -201,7 +201,7 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
         </button>
 
         <Link href="/try-on" className="block">
-          <button className="w-full bg-transparent text-stone-600 border border-stone-200 py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-stone-900 hover:text-white hover:border-stone-900 transition-all duration-300 flex items-center justify-center gap-2.5">
+          <button className="w-full bg-transparent text-warm-700 border border-cream-300 py-3.5 rounded-xl text-sm font-medium tracking-wide hover:bg-blush-400 hover:text-white hover:border-blush-400 transition-all duration-300 flex items-center justify-center gap-2.5">
             <Camera className="w-4 h-4" strokeWidth={1.5} />
             Virtual Try-On
           </button>

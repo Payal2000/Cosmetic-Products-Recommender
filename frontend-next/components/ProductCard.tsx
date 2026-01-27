@@ -29,7 +29,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group">
       {/* Image */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-stone-100 rounded-xl mb-4">
+      <div className="relative aspect-[4/5] overflow-hidden bg-cream-100 rounded-xl mb-4">
         <Image
           src={imageUrl}
           alt={product.product_name}
@@ -39,7 +39,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
 
         {/* Hover overlay with rating */}
-        <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-warm-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="flex items-center gap-1.5">
             <Star className="w-3 h-3 fill-white text-white" strokeWidth={1.5} />
             <span className="text-xs font-medium text-white">
@@ -56,21 +56,21 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="space-y-1.5">
         <div className="flex justify-between items-start gap-3">
           <h3
-            className="text-sm font-medium text-stone-900 leading-snug line-clamp-2 group-hover:text-stone-600 transition-colors duration-300"
+            className="text-sm font-medium text-warm-900 leading-snug line-clamp-2 group-hover:text-blush-500 transition-colors duration-300"
             title={product.product_name}
           >
             {product.product_name}
           </h3>
-          <p className="text-sm font-medium text-stone-900 whitespace-nowrap">
+          <p className="text-sm font-medium text-warm-900 whitespace-nowrap">
             ${product.price.toFixed(2)}
           </p>
         </div>
 
-        <p className="text-[11px] text-stone-400 capitalize tracking-wide">
+        <p className="text-[11px] text-olive-400 capitalize tracking-wide">
           {product.category}
           {product.variant_title_product && (
             <>
-              <span className="mx-1.5 text-stone-300">/</span>
+              <span className="mx-1.5 text-cream-300">/</span>
               {product.variant_title_product}
             </>
           )}
