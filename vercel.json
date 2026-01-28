@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd frontend-next && npm run build",
+  "outputDirectory": "frontend-next/.next",
+  "installCommand": "cd frontend-next && npm install",
+  "framework": "nextjs",
+  "devCommand": "cd frontend-next && npm run dev"
+}
