@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
 
     const results = await index.query({
       vector: queryVector,
-      topK: 30,
+      topK: 50,
       includeMetadata: true,
       filter: Object.keys(pineconeFilter).length > 0 ? pineconeFilter : undefined,
     });
@@ -45,7 +45,16 @@ export async function POST(req: NextRequest) {
     const matches = results.matches.map((match: any) => ({
       id: match.id,
       score: match.score,
-      ...match.metadata,
+      product_name: match.metadata.product_name,
+      price: match.metadata.price || 0,
+      category: match.metadata.category,
+      rating: match.metadata.rating || 0,
+      review_count: match.metadata.review_count || 0,
+      description: match.metadata.description,
+      variant_title_product: match.metadata.variant_title,
+      image_url: match.metadata.variant_image,
+      product_url: match.metadata.product_url,
+      available: match.metadata.available,
     }));
 
     return NextResponse.json({ matches });

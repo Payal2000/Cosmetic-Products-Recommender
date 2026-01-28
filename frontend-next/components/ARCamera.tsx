@@ -11,6 +11,12 @@ interface ARCameraProps {
   browProductType: string;
   contourShade: string;
   foundationShade: string;
+  lipIntensity?: number;
+  cheekIntensity?: number;
+  browIntensity?: number;
+  contourIntensity?: number;
+  foundationIntensity?: number;
+  showMakeup?: boolean;
 }
 
 export interface ARCameraRef {
@@ -31,6 +37,12 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
   browProductType,
   contourShade,
   foundationShade,
+  lipIntensity = 1,
+  cheekIntensity = 1,
+  browIntensity = 1,
+  contourIntensity = 1,
+  foundationIntensity = 1,
+  showMakeup = true,
 }: ARCameraProps, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -46,6 +58,12 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
     browProductType,
     contourShade,
     foundationShade,
+    lipIntensity,
+    cheekIntensity,
+    browIntensity,
+    contourIntensity,
+    foundationIntensity,
+    showMakeup,
   });
 
   // Update refs whenever shades change
@@ -57,8 +75,14 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
       browProductType,
       contourShade,
       foundationShade,
+      lipIntensity,
+      cheekIntensity,
+      browIntensity,
+      contourIntensity,
+      foundationIntensity,
+      showMakeup,
     };
-  }, [lipShade, cheekShade, browShade, browProductType, contourShade, foundationShade]);
+  }, [lipShade, cheekShade, browShade, browProductType, contourShade, foundationShade, lipIntensity, cheekIntensity, browIntensity, contourIntensity, foundationIntensity, showMakeup]);
 
   // Expose screenshot capture method to parent
   useImperativeHandle(ref, () => ({
@@ -128,39 +152,43 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
         };
 
         // Lips
-        const upperOuterLip = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375, 291];
-        const lowerOuterLip = [61, 185, 40, 39, 37, 0, 267, 269, 270, 409, 291];
+        if (latestShades.current.showMakeup && latestShades.current.lipIntensity > 0) {
+          const upperOuterLip = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375, 291];
+          const lowerOuterLip = [61, 185, 40, 39, 37, 0, 267, 269, 270, 409, 291];
 
-        canvasCtx.beginPath();
-        if (landmarks[upperOuterLip[0]]) {
-          canvasCtx.moveTo(landmarks[upperOuterLip[0]].x * width, landmarks[upperOuterLip[0]].y * height);
-          [...upperOuterLip, ...lowerOuterLip.slice().reverse()].forEach(idx => {
-            const pt = landmarks[idx];
-            canvasCtx.lineTo(pt.x * width, pt.y * height);
-          });
-          canvasCtx.closePath();
-          canvasCtx.fillStyle = hexToRGBA(latestShades.current.lipShade, 0.25);
-          canvasCtx.fill();
+          canvasCtx.beginPath();
+          if (landmarks[upperOuterLip[0]]) {
+            canvasCtx.moveTo(landmarks[upperOuterLip[0]].x * width, landmarks[upperOuterLip[0]].y * height);
+            [...upperOuterLip, ...lowerOuterLip.slice().reverse()].forEach(idx => {
+              const pt = landmarks[idx];
+              canvasCtx.lineTo(pt.x * width, pt.y * height);
+            });
+            canvasCtx.closePath();
+            canvasCtx.fillStyle = hexToRGBA(latestShades.current.lipShade, 0.32 * latestShades.current.lipIntensity);
+            canvasCtx.fill();
+          }
         }
 
         // Cheeks
-        const drawCheek = (idx: number) => {
-          const pt = landmarks[idx];
-          if (pt) {
-            const x = pt.x * width;
-            const y = pt.y * height - 10;
-            canvasCtx.beginPath();
-            canvasCtx.ellipse(x, y, 30, 20, 0, 0, 2 * Math.PI);
-            canvasCtx.fillStyle = hexToRGBA(latestShades.current.cheekShade, 0.045);
-            canvasCtx.fill();
-          }
-        };
-        drawCheek(205);
-        drawCheek(425);
+        if (latestShades.current.showMakeup && latestShades.current.cheekIntensity > 0) {
+          const drawCheek = (idx: number) => {
+            const pt = landmarks[idx];
+            if (pt) {
+              const x = pt.x * width;
+              const y = pt.y * height - 10;
+              canvasCtx.beginPath();
+              canvasCtx.ellipse(x, y, 30, 20, 0, 0, 2 * Math.PI);
+              canvasCtx.fillStyle = hexToRGBA(latestShades.current.cheekShade, 0.06 * latestShades.current.cheekIntensity);
+              canvasCtx.fill();
+            }
+          };
+          drawCheek(205);
+          drawCheek(425);
+        }
 
         // Brows
-        if (latestShades.current.browShade !== 'transparent') {
-          const browAlpha = latestShades.current.browProductType.includes('Pencil') ? 0.3 : 0.2;
+        if (latestShades.current.showMakeup && latestShades.current.browIntensity > 0 && latestShades.current.browShade !== 'transparent') {
+          const browAlpha = latestShades.current.browProductType.includes('Pencil') ? 0.37 : 0.27;
           const leftBrow = [70, 63, 105, 66, 107, 55];
           const rightBrow = [336, 296, 334, 293, 300, 285];
 
@@ -173,58 +201,62 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
                 canvasCtx.lineTo(pt.x * width, pt.y * height);
               });
               canvasCtx.closePath();
-              canvasCtx.fillStyle = hexToRGBA(latestShades.current.browShade, browAlpha);
+              canvasCtx.fillStyle = hexToRGBA(latestShades.current.browShade, browAlpha * latestShades.current.browIntensity);
               canvasCtx.fill();
             }
           });
         }
 
         // Contour
-        const drawContour = (p1Idx: number, p2Idx: number, rotationOffset: number) => {
-          if (landmarks[p1Idx] && landmarks[p2Idx]) {
-            const x1 = landmarks[p1Idx].x * width;
-            const y1 = landmarks[p1Idx].y * height;
-            const x2 = landmarks[p2Idx].x * width;
-            const y2 = landmarks[p2Idx].y * height;
-            const cx = (x1 + x2) / 2;
-            const cy = (y1 + y2) / 2 + 20;
-            const angle = Math.atan2(y2 - y1, x2 - x1) - rotationOffset;
+        if (latestShades.current.showMakeup && latestShades.current.contourIntensity > 0) {
+          const drawContour = (p1Idx: number, p2Idx: number, rotationOffset: number) => {
+            if (landmarks[p1Idx] && landmarks[p2Idx]) {
+              const x1 = landmarks[p1Idx].x * width;
+              const y1 = landmarks[p1Idx].y * height;
+              const x2 = landmarks[p2Idx].x * width;
+              const y2 = landmarks[p2Idx].y * height;
+              const cx = (x1 + x2) / 2;
+              const cy = (y1 + y2) / 2 + 20;
+              const angle = Math.atan2(y2 - y1, x2 - x1) - rotationOffset;
 
-            canvasCtx.save();
-            canvasCtx.translate(cx, cy);
-            canvasCtx.rotate(angle);
-            canvasCtx.beginPath();
-            canvasCtx.ellipse(0, 0, 40, 20, 0, 0, 2 * Math.PI);
-            canvasCtx.fillStyle = hexToRGBA(latestShades.current.contourShade, 0.05);
-            canvasCtx.fill();
-            canvasCtx.restore();
-          }
-        };
-        drawContour(234, 132, 0.3);
-        drawContour(454, 361, -0.3);
+              canvasCtx.save();
+              canvasCtx.translate(cx, cy);
+              canvasCtx.rotate(angle);
+              canvasCtx.beginPath();
+              canvasCtx.ellipse(0, 0, 40, 20, 0, 0, 2 * Math.PI);
+              canvasCtx.fillStyle = hexToRGBA(latestShades.current.contourShade, 0.065 * latestShades.current.contourIntensity);
+              canvasCtx.fill();
+              canvasCtx.restore();
+            }
+          };
+          drawContour(234, 132, 0.3);
+          drawContour(454, 361, -0.3);
+        }
 
         // Foundation
-        const faceOutline = [
-          10, 338, 297, 332, 284, 251, 389, 356, 454, 323, 361, 288,
-          397, 365, 379, 378, 400, 377, 152, 148, 176, 149, 150,
-          136, 172, 58, 132, 93, 234, 127, 162, 21, 54, 103, 67, 109,
-        ];
+        if (latestShades.current.showMakeup && latestShades.current.foundationIntensity > 0) {
+          const faceOutline = [
+            10, 338, 297, 332, 284, 251, 389, 356, 454, 323, 361, 288,
+            397, 365, 379, 378, 400, 377, 152, 148, 176, 149, 150,
+            136, 172, 58, 132, 93, 234, 127, 162, 21, 54, 103, 67, 109,
+          ];
 
-        canvasCtx.beginPath();
-        if (landmarks[faceOutline[0]]) {
-          faceOutline.forEach((idx, i) => {
-            const pt = landmarks[idx];
-            const x = pt.x * width;
-            const y = pt.y * height;
-            if (i === 0) {
-              canvasCtx.moveTo(x, y);
-            } else {
-              canvasCtx.lineTo(x, y);
-            }
-          });
-          canvasCtx.closePath();
-          canvasCtx.fillStyle = hexToRGBA(latestShades.current.foundationShade, 0.09);
-          canvasCtx.fill();
+          canvasCtx.beginPath();
+          if (landmarks[faceOutline[0]]) {
+            faceOutline.forEach((idx, i) => {
+              const pt = landmarks[idx];
+              const x = pt.x * width;
+              const y = pt.y * height;
+              if (i === 0) {
+                canvasCtx.moveTo(x, y);
+              } else {
+                canvasCtx.lineTo(x, y);
+              }
+            });
+            canvasCtx.closePath();
+            canvasCtx.fillStyle = hexToRGBA(latestShades.current.foundationShade, 0.11 * latestShades.current.foundationIntensity);
+            canvasCtx.fill();
+          }
         }
       }
       canvasCtx.restore();

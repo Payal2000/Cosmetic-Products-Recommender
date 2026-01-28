@@ -9,11 +9,11 @@ interface Product {
   product_name: string;
   price: number;
   category: string;
-  rating: number;
-  review_count: number;
-  description: string;
-  variant_title_product: string;
-  image_url: string;
+  rating?: number;
+  review_count?: number;
+  description?: string;
+  variant_title_product?: string;
+  image_url?: string;
 }
 
 interface ProductCardProps {
@@ -21,35 +21,40 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  let imageUrl = product.image_url;
-  if (imageUrl.startsWith('//')) {
+  let imageUrl = product.image_url || '/placeholder-product.jpg';
+  if (imageUrl && imageUrl.startsWith('//')) {
     imageUrl = 'https:' + imageUrl;
+  }
+
+  // Debug logging
+  if (!product.image_url) {
+    console.log('Missing image for:', product.product_name);
   }
 
   return (
     <div className="group hover-lift rounded-xl">
       {/* Image */}
       <div className="relative aspect-[4/5] overflow-hidden bg-cream-100 rounded-xl mb-4">
-        <Image
+        <img
           src={imageUrl}
           alt={product.product_name}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
         />
 
         {/* Hover overlay with rating */}
-        <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-warm-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 translate-y-2 group-hover:translate-y-0">
-          <div className="flex items-center gap-1.5">
-            <Star className="w-3 h-3 fill-white text-white" strokeWidth={1.5} />
-            <span className="text-xs font-medium text-white">
-              {product.rating}
-            </span>
-            <span className="text-xs text-white/60">
-              ({product.review_count})
-            </span>
+        {product.rating && product.review_count && (
+          <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-warm-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 translate-y-2 group-hover:translate-y-0">
+            <div className="flex items-center gap-1.5">
+              <Star className="w-3 h-3 fill-white text-white" strokeWidth={1.5} />
+              <span className="text-xs font-medium text-white">
+                {product.rating}
+              </span>
+              <span className="text-xs text-white/60">
+                ({product.review_count})
+              </span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Info */}
@@ -62,7 +67,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product.product_name}
           </h3>
           <p className="text-sm font-medium text-warm-900 whitespace-nowrap transition-colors duration-300 group-hover:text-blush-500">
-            ${product.price.toFixed(2)}
+            ${product.price?.toFixed(2) || '0.00'}
           </p>
         </div>
 

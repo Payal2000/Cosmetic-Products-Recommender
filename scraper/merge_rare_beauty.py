@@ -27,14 +27,9 @@ merged = variants_df.merge(
 print("✅ columns after merging details:")
 print(merged.columns.tolist())
 
-# merge category from collections
-merged = merged.merge(
-    collections_df[["handle", "category"]],
-    on="handle",
-    how="left"
-)
-
-print("✅ columns after merging category:")
+# Note: variants_df already has category, so we don't need to merge it again
+# Just ensure we keep the existing category column
+print("✅ using category from variants_df")
 print(merged.columns.tolist())
 
 # safe final columns

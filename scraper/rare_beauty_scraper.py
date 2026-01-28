@@ -74,13 +74,6 @@ def scrape_rare_beauty_collections():
                     category_product_count += 1
                     print(f"➡️ [{category}] Collected {category_product_count} products")
 
-                    if category_product_count >= 100:
-                        print(f"✅ Reached 100 products in category '{category}', moving on.")
-                        break
-
-                if category_product_count >= 100:
-                    break
-
         browser.close()
 
     df = pd.DataFrame(all_data)
