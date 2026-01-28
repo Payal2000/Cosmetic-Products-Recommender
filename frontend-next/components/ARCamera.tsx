@@ -31,7 +31,7 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
   browProductType,
   contourShade,
   foundationShade,
-}: ARCameraProps) {
+}: ARCameraProps, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [scriptsLoaded, setScriptsLoaded] = useState({ faceMesh: false, camera: false });
@@ -59,6 +59,29 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
       foundationShade,
     };
   }, [lipShade, cheekShade, browShade, browProductType, contourShade, foundationShade]);
+
+  // Expose screenshot capture method to parent
+  useImperativeHandle(ref, () => ({
+    captureScreenshot: () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      // Convert canvas to blob and download
+      canvas.toBlob((blob) => {
+        if (!blob) return;
+
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+        link.download = `cosmetic-tryOn-${timestamp}.png`;
+        link.href = url;
+        link.click();
+
+        // Cleanup
+        URL.revokeObjectURL(url);
+      }, 'image/png');
+    },
+  }));
 
   useEffect(() => {
     if (!scriptsLoaded.faceMesh || !scriptsLoaded.camera) return;
@@ -257,4 +280,8 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
       )}
     </div>
   );
-}
+});
+
+ARCamera.displayName = 'ARCamera';
+
+export default ARCamera;

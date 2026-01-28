@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import ARCamera from '@/components/ARCamera';
+import ARCamera, { ARCameraRef } from '@/components/ARCamera';
 import { lipShades, cheekShades, browProducts, contourShades, foundationShades } from '@/data/shades';
-import { ArrowLeft, Palette, CircleDot, Eye, Layers, Camera, Shield } from 'lucide-react';
+import { ArrowLeft, Palette, CircleDot, Eye, Layers, Camera, Shield, Download } from 'lucide-react';
 
 /**
  * Swatch button for selecting color shades.
@@ -38,6 +38,8 @@ function Swatch({
 }
 
 export default function TryOnPage() {
+  const arCameraRef = useRef<ARCameraRef>(null);
+
   const [lipFinish, setLipFinish] = useState('matte');
   const [lipProduct, setLipProduct] = useState('');
   const [selectedLipShade, setSelectedLipShade] = useState('#E33638');
@@ -342,6 +344,7 @@ export default function TryOnPage() {
         <div className="relative z-10 flex flex-col items-center max-w-2xl w-full">
           <div className="bg-white p-3 rounded-2xl shadow-lg border border-cream-200/40 mb-6 w-full max-w-[670px] opacity-0 animate-scale-in" style={{ animationDelay: '150ms' }}>
             <ARCamera
+              ref={arCameraRef}
               lipShade={selectedLipShade}
               cheekShade={selectedCheekShade}
               browShade={selectedBrowShade}
@@ -351,7 +354,7 @@ export default function TryOnPage() {
             />
           </div>
 
-          <div className="flex items-center gap-2.5 text-olive-400 text-xs tracking-wide">
+          <div className="flex items-center gap-2.5 text-olive-400 text-xs tracking-wide flex-wrap justify-center">
             <div className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-cream-200/60 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
               <Camera className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Camera active</span>
@@ -360,6 +363,14 @@ export default function TryOnPage() {
               <Shield className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Processed locally</span>
             </div>
+            <button
+              onClick={() => arCameraRef.current?.captureScreenshot()}
+              className="flex items-center gap-1.5 bg-blush-400 text-white px-4 py-2 rounded-full border border-blush-500/20 opacity-0 animate-fade-in-up hover:bg-blush-500 transition-colors duration-200 shadow-sm hover:shadow-md active:scale-95"
+              style={{ animationDelay: '600ms' }}
+            >
+              <Download className="w-3.5 h-3.5" strokeWidth={1.5} />
+              <span className="font-medium">Save Look</span>
+            </button>
           </div>
         </div>
       </div>
