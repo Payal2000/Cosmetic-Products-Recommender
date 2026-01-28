@@ -48,6 +48,7 @@ def generate_foundation_color(shade_name):
 def generate_blush_color(shade_name):
     """Map blush shade names to realistic hex colors"""
     blush_colors = {
+        # Soft Pinch Liquid Blush (main product)
         'Bliss': '#F4AEB7',
         'Hope': '#D79FA8',
         'Adore': '#E898A6',
@@ -67,6 +68,22 @@ def generate_blush_color(shade_name):
         'Charm': '#F5A5B8',
         'Truth': '#D88A99',
         'Wonder': '#E583A4',
+
+        # Soft Pinch Luminous Powder Blush
+        'Cheer': '#F9B5C0',
+
+        # Soft Pinch Matte Bouncy Blush
+        'Divine': '#EFA1B1',
+        'Alive': '#FF8599',
+        'Thriving': '#E27B8E',
+        'Soulful': '#B85C6F',
+
+        # Stay Vulnerable Melting Blush
+        'Nearly Neutral': '#C6846A',
+        'Nearly Apricot': '#F5A49D',
+        'Nearly Mauve': '#E583A4',
+        'Nearly Rose': '#F4AEB7',
+        'Nearly Berry': '#A24C58',
     }
     return blush_colors.get(shade_name, '#E898A6')
 
@@ -74,8 +91,9 @@ def generate_blush_color(shade_name):
 def generate_lip_color(shade_name, product_type):
     """Map lip shade names to realistic hex colors"""
 
-    # Soft Pinch Tinted Lip Oil (dewy finish)
-    lip_oil_colors = {
+    # All lip shade colors mapped by name
+    lip_shade_colors = {
+        # Soft Pinch Tinted Lip Oil (dewy finish)
         'Serenity': '#B76E6B',
         'Affection': '#A24C58',
         'Happy': '#FB7798',
@@ -85,10 +103,8 @@ def generate_lip_color(shade_name, product_type):
         'Wonder': '#E583A4',
         'Honesty': '#C18A76',
         'Truth': '#B47271',
-    }
 
-    # Kind Words Matte Lipstick
-    matte_lipstick_colors = {
+        # Kind Words Matte Lipstick & Liner
         'Worthy': '#C27A7D',
         'Talented': '#D0948C',
         'Humble': '#BE8289',
@@ -100,10 +116,8 @@ def generate_lip_color(shade_name, product_type):
         'Fun': '#ED9BA7',
         'Creative': '#E2858F',
         'Devoted': '#A5404F',
-    }
 
-    # Lip Soufflé Matte Lip Cream
-    lip_souffle_colors = {
+        # Lip Soufflé Matte Lip Cream
         'Inspire': '#E33638',
         'Heroic': '#A8344C',
         'Brave': '#E25C4C',
@@ -116,16 +130,31 @@ def generate_lip_color(shade_name, product_type):
         'Motivate': '#FF5D73',
         'Ascend': '#C67C89',
         'Thrilling': '#B5455D',
+
+        # Stay Vulnerable Glossy Lip Balm
+        'Nearly Neutral': '#C6846A',
+        'Nearly Apricot': '#F5A49D',
+        'Nearly Mauve': '#E583A4',
+        'Nearly Rose': '#F4AEB7',
+        'Nearly Berry': '#A24C58',
+        'Nearly Petal': '#F2B5BB',
+
+        # Positive Light Luminizing Lip Gloss
+        'Dazzle': '#FFB3C1',
+        'Beam': '#FFC5A3',
+        'Flicker': '#F5A49D',
+        'Glimmer': '#FFCCD5',
+        'Spark': '#FFD4C4',
+        'Blaze': '#FF9BAD',
+
+        # Find Comfort Lip Butter
+        'Easygoing': '#D9A598',
+        'Loved': '#E8A5AC',
+        'Friendly': '#F4AEB7',
+        'Uplifting': '#FFB8C3',
     }
 
-    if 'Lip Oil' in product_type:
-        return lip_oil_colors.get(shade_name, '#C6846A')
-    elif 'Matte Lipstick' in product_type:
-        return matte_lipstick_colors.get(shade_name, '#C27A7D')
-    elif 'Soufflé' in product_type:
-        return lip_souffle_colors.get(shade_name, '#E33638')
-
-    return '#C27A7D'
+    return lip_shade_colors.get(shade_name, '#C27A7D')
 
 # Helper for brow colors
 def generate_brow_color(shade_name):
@@ -175,37 +204,52 @@ for _, row in foundation_df.iterrows():
 
 print(f"✅ Extracted {len(foundation_shades)} foundation shades")
 
-# Extract blush shades
-blush_df = df[df['product_name'] == 'Soft Pinch Liquid Blush']
-blush_shades = {}
-for _, row in blush_df.iterrows():
-    shade = row['variant_title']
-    blush_shades[shade] = generate_blush_color(shade)
+# Extract ALL blush products and their shades
+all_blush_products = {}
+blush_product_names = [
+    'Soft Pinch Liquid Blush',
+    'Soft Pinch Matte Bouncy Blush',
+    'Soft Pinch Luminous Powder Blush',
+    'Stay Vulnerable Melting Blush'
+]
 
-print(f"✅ Extracted {len(blush_shades)} blush shades")
+for product_name in blush_product_names:
+    product_df = df[df['product_name'] == product_name]
+    if len(product_df) > 0:
+        shades = {}
+        for _, row in product_df.iterrows():
+            shade = row['variant_title']
+            if shade and shade != 'Default Title':
+                shades[shade] = generate_blush_color(shade)
 
-# Extract lip shades
-lip_oil_df = df[df['product_name'] == 'Soft Pinch Tinted Lip Oil']
-lip_oil_shades = {}
-for _, row in lip_oil_df.iterrows():
-    shade = row['variant_title']
-    lip_oil_shades[shade] = generate_lip_color(shade, 'Lip Oil')
+        if shades:
+            all_blush_products[product_name] = shades
+            print(f"✅ Extracted {len(shades)} shades for {product_name}")
 
-matte_lipstick_df = df[df['product_name'] == 'Kind Words Matte Lipstick']
-matte_lipstick_shades = {}
-for _, row in matte_lipstick_df.iterrows():
-    shade = row['variant_title']
-    matte_lipstick_shades[shade] = generate_lip_color(shade, 'Matte Lipstick')
+# Extract ALL lip products and their shades
+all_lip_products = {}
+lip_product_names = [
+    'Soft Pinch Tinted Lip Oil',
+    'Kind Words Matte Lipstick',
+    'Lip Soufflé Matte Lip Cream',
+    'Stay Vulnerable Glossy Lip Balm',
+    'Positive Light Luminizing Lip Gloss',
+    'Find Comfort Lip Butter',
+    'Kind Words Matte Lip Liner'
+]
 
-lip_souffle_df = df[df['product_name'] == 'Lip Soufflé Matte Lip Cream']
-lip_souffle_shades = {}
-for _, row in lip_souffle_df.iterrows():
-    shade = row['variant_title']
-    lip_souffle_shades[shade] = generate_lip_color(shade, 'Soufflé')
+for product_name in lip_product_names:
+    product_df = df[df['product_name'] == product_name]
+    if len(product_df) > 0:
+        shades = {}
+        for _, row in product_df.iterrows():
+            shade = row['variant_title']
+            if shade and shade != 'Default Title':
+                shades[shade] = generate_lip_color(shade, product_name)
 
-print(f"✅ Extracted {len(lip_oil_shades)} lip oil shades")
-print(f"✅ Extracted {len(matte_lipstick_shades)} matte lipstick shades")
-print(f"✅ Extracted {len(lip_souffle_shades)} lip soufflé shades")
+        if shades:
+            all_lip_products[product_name] = shades
+            print(f"✅ Extracted {len(shades)} shades for {product_name}")
 
 # Extract brow shades
 brow_df = df[df['product_name'].str.contains('Brow Harmony', na=False)]
@@ -234,49 +278,77 @@ with open(output_path, 'w') as f:
     f.write("// Auto-generated from scraped Rare Beauty product data\n")
     f.write("// All shades are real products available on rarebeauty.com\n\n")
 
-    # Lip shades
+    # Lip shades - organized by finish type
     f.write("export const lipShades = {\n")
 
-    # Dewy lip oil
+    # Dewy/glossy lip products
     f.write("  dewy: {\n")
-    f.write("    \"Soft Pinch Tinted Lip Oil\": {\n")
-    for shade, color in sorted(lip_oil_shades.items()):
-        f.write(f"      {shade}: \"{color}\", ")
-    f.write("\n    }\n")
+    dewy_products = ['Soft Pinch Tinted Lip Oil', 'Positive Light Luminizing Lip Gloss', 'Find Comfort Lip Butter']
+    for product_name in dewy_products:
+        if product_name in all_lip_products:
+            f.write(f"    \"{product_name}\": {{\n")
+            for shade, color in sorted(all_lip_products[product_name].items()):
+                f.write(f"      \"{shade}\": \"{color}\",\n")
+            f.write("    },\n")
     f.write("  },\n")
 
-    # Matte lips
+    # Matte lip products
     f.write("  matte: {\n")
-    f.write("    \"Lip Soufflé Matte Lip Cream\": {\n")
-    for shade, color in sorted(lip_souffle_shades.items()):
-        f.write(f"      {shade}: \"{color}\", ")
-    f.write("\n    },\n")
-    f.write("    \"Kind Words Matte Lipstick\": {\n")
-    for shade, color in sorted(matte_lipstick_shades.items()):
-        f.write(f"      {shade}: \"{color}\", ")
-    f.write("\n    }\n")
+    matte_products = ['Lip Soufflé Matte Lip Cream', 'Kind Words Matte Lipstick', 'Kind Words Matte Lip Liner']
+    for product_name in matte_products:
+        if product_name in all_lip_products:
+            f.write(f"    \"{product_name}\": {{\n")
+            for shade, color in sorted(all_lip_products[product_name].items()):
+                f.write(f"      \"{shade}\": \"{color}\",\n")
+            f.write("    },\n")
     f.write("  },\n")
 
-    # Glossy (keeping from original if exists)
+    # Glossy/balm lip products
     f.write("  glossy: {\n")
-    f.write("    \"Stay Vulnerable Glossy Lip Balm\": {\n")
-    f.write("      \"Nearly Neutral\": \"#C6846A\", \"Nearly Apricot\": \"#F5A49D\", \"Nearly Mauve\": \"#E583A4\", \"Nearly Rose\": \"#F4AEB7\", \"Nearly Berry\": \"#A24C58\"\n")
-    f.write("    }\n")
+    glossy_products = ['Stay Vulnerable Glossy Lip Balm']
+    for product_name in glossy_products:
+        if product_name in all_lip_products:
+            f.write(f"    \"{product_name}\": {{\n")
+            for shade, color in sorted(all_lip_products[product_name].items()):
+                f.write(f"      \"{shade}\": \"{color}\",\n")
+            f.write("    },\n")
     f.write("  }\n")
     f.write("};\n\n")
 
-    # Cheek shades
+    # Cheek shades - organized by finish type
     f.write("export const cheekShades = {\n")
+
+    # Matte blush products
     f.write("  matte: {\n")
-    f.write("    \"Soft Pinch Liquid Blush\": {\n")
-    for shade, color in sorted(blush_shades.items()):
-        f.write(f"      {shade}: \"{color}\", ")
-    f.write("\n    }\n")
+    matte_blush_products = ['Soft Pinch Liquid Blush', 'Soft Pinch Matte Bouncy Blush']
+    for product_name in matte_blush_products:
+        if product_name in all_blush_products:
+            f.write(f"    \"{product_name}\": {{\n")
+            for shade, color in sorted(all_blush_products[product_name].items()):
+                f.write(f"      \"{shade}\": \"{color}\",\n")
+            f.write("    },\n")
     f.write("  },\n")
+
+    # Glossy/dewy blush products
     f.write("  glossy: {\n")
-    f.write("    \"Stay Vulnerable Melting Blush\": {\n")
-    f.write("      \"Nearly Neutral\": \"#C6846A\", \"Nearly Apricot\": \"#F5A49D\", \"Nearly Mauve\": \"#E583A4\", \"Nearly Rose\": \"#F4AEB7\", \"Nearly Berry\": \"#A24C58\"\n")
-    f.write("    }\n")
+    glossy_blush_products = ['Stay Vulnerable Melting Blush']
+    for product_name in glossy_blush_products:
+        if product_name in all_blush_products:
+            f.write(f"    \"{product_name}\": {{\n")
+            for shade, color in sorted(all_blush_products[product_name].items()):
+                f.write(f"      \"{shade}\": \"{color}\",\n")
+            f.write("    },\n")
+    f.write("  },\n")
+
+    # Luminous/shimmer blush products
+    f.write("  luminous: {\n")
+    luminous_blush_products = ['Soft Pinch Luminous Powder Blush']
+    for product_name in luminous_blush_products:
+        if product_name in all_blush_products:
+            f.write(f"    \"{product_name}\": {{\n")
+            for shade, color in sorted(all_blush_products[product_name].items()):
+                f.write(f"      \"{shade}\": \"{color}\",\n")
+            f.write("    },\n")
     f.write("  }\n")
     f.write("};\n\n")
 
@@ -312,8 +384,19 @@ print(f"\n✅ Generated shades.ts at: {output_path}")
 print("=" * 60)
 print("Summary:")
 print(f"  Foundation shades: {len(foundation_shades)}")
-print(f"  Blush shades: {len(blush_shades)}")
-print(f"  Lip shades: {len(lip_oil_shades) + len(matte_lipstick_shades) + len(lip_souffle_shades)}")
+
+# Count total blush shades
+total_blush_shades = sum(len(shades) for shades in all_blush_products.values())
+print(f"  Blush products: {len(all_blush_products)} ({total_blush_shades} total shades)")
+for product_name, shades in all_blush_products.items():
+    print(f"    - {product_name}: {len(shades)} shades")
+
+# Count total lip shades
+total_lip_shades = sum(len(shades) for shades in all_lip_products.values())
+print(f"  Lip products: {len(all_lip_products)} ({total_lip_shades} total shades)")
+for product_name, shades in all_lip_products.items():
+    print(f"    - {product_name}: {len(shades)} shades")
+
 print(f"  Brow shades: {len(brow_shades)}")
 print(f"  Bronzer shades: {len(bronzer_shades)}")
 print("=" * 60)

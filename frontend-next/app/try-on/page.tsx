@@ -349,8 +349,19 @@ export default function TryOnPage() {
 
                 <div>
                   <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
-                    Shade: {Object.keys(getLipShades()).find(k => getLipShades()[k] === selectedLipShade)}
+                    Shade
                   </label>
+                  <div className="mb-3 px-3 py-2 bg-gradient-to-r from-blush-50 to-cream-100 rounded-lg border border-blush-200">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-5 h-5 rounded-full border-2 border-white shadow-sm"
+                        style={{ backgroundColor: selectedLipShade }}
+                      />
+                      <span className="text-sm font-medium text-warm-800">
+                        {Object.keys(getLipShades()).find(k => getLipShades()[k] === selectedLipShade) || 'Select a shade'}
+                      </span>
+                    </div>
+                  </div>
                   <div className="flex flex-wrap gap-2.5">
                     {Object.entries(getLipShades()).map(([name, hex]) => (
                       <Swatch
@@ -438,8 +449,19 @@ export default function TryOnPage() {
 
                 <div>
                   <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
-                    Shade: {Object.keys(getCheekShades()).find(k => getCheekShades()[k] === selectedCheekShade)}
+                    Shade
                   </label>
+                  <div className="mb-3 px-3 py-2 bg-gradient-to-r from-blush-50 to-cream-100 rounded-lg border border-blush-200">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-5 h-5 rounded-full border-2 border-white shadow-sm"
+                        style={{ backgroundColor: selectedCheekShade }}
+                      />
+                      <span className="text-sm font-medium text-warm-800">
+                        {Object.keys(getCheekShades()).find(k => getCheekShades()[k] === selectedCheekShade) || 'Select a shade'}
+                      </span>
+                    </div>
+                  </div>
                   <div className="flex flex-wrap gap-2.5">
                     {Object.entries(getCheekShades()).map(([name, hex]) => (
                       <Swatch
@@ -508,8 +530,19 @@ export default function TryOnPage() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
-                    Shade: {Object.keys(getBrowShades()).find(k => getBrowShades()[k] === selectedBrowShade)}
+                    Shade
                   </label>
+                  <div className="mb-3 px-3 py-2 bg-gradient-to-r from-blush-50 to-cream-100 rounded-lg border border-blush-200">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-5 h-5 rounded-full border-2 border-white shadow-sm"
+                        style={{ backgroundColor: selectedBrowShade }}
+                      />
+                      <span className="text-sm font-medium text-warm-800">
+                        {Object.keys(getBrowShades()).find(k => getBrowShades()[k] === selectedBrowShade) || 'Select a shade'}
+                      </span>
+                    </div>
+                  </div>
                   <div className="flex flex-wrap gap-2.5">
                     {Object.entries(getBrowShades()).map(([name, hex]) => (
                       <Swatch
@@ -568,6 +601,17 @@ export default function TryOnPage() {
                     <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
                       Bronzer / Contour
                     </label>
+                    <div className="mb-3 px-3 py-2 bg-gradient-to-r from-blush-50 to-cream-100 rounded-lg border border-blush-200">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className="w-5 h-5 rounded-full border-2 border-white shadow-sm"
+                          style={{ backgroundColor: selectedContourShade }}
+                        />
+                        <span className="text-sm font-medium text-warm-800">
+                          {Object.keys(getContourShades()).find(k => getContourShades()[k] === selectedContourShade) || 'Select a shade'}
+                        </span>
+                      </div>
+                    </div>
                     <div className="flex flex-wrap gap-2.5">
                       {Object.entries(getContourShades()).map(([name, hex]) => (
                         <Swatch
@@ -602,6 +646,17 @@ export default function TryOnPage() {
                     <label className="block text-[10px] font-medium text-olive-400 mb-2 uppercase tracking-wider">
                       Foundation
                     </label>
+                    <div className="mb-3 px-3 py-2 bg-gradient-to-r from-blush-50 to-cream-100 rounded-lg border border-blush-200">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className="w-5 h-5 rounded-full border-2 border-white shadow-sm"
+                          style={{ backgroundColor: selectedFoundationShade }}
+                        />
+                        <span className="text-sm font-medium text-warm-800">
+                          {Object.keys(getFoundationShades()).find(k => getFoundationShades()[k] === selectedFoundationShade) || 'Select a shade'}
+                        </span>
+                      </div>
+                    </div>
                     <div className="flex flex-wrap gap-2.5">
                       {Object.entries(getFoundationShades()).map(([name, hex]) => (
                         <Swatch
