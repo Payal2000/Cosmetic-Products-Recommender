@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useImperativeHandle, forwardRef } from 'react';
 import Script from 'next/script';
 import { Loader2 } from 'lucide-react';
 
@@ -13,6 +13,10 @@ interface ARCameraProps {
   foundationShade: string;
 }
 
+export interface ARCameraRef {
+  captureScreenshot: () => void;
+}
+
 declare global {
   interface Window {
     FaceMesh: any;
@@ -20,7 +24,7 @@ declare global {
   }
 }
 
-export default function ARCamera({
+const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
   lipShade,
   cheekShade,
   browShade,
@@ -33,6 +37,28 @@ export default function ARCamera({
   const [scriptsLoaded, setScriptsLoaded] = useState({ faceMesh: false, camera: false });
   const faceMeshInstance = useRef<any>(null);
   const cameraInstance = useRef<any>(null);
+
+  // Store latest shade values in refs so the callback can access them
+  const latestShades = useRef({
+    lipShade,
+    cheekShade,
+    browShade,
+    browProductType,
+    contourShade,
+    foundationShade,
+  });
+
+  // Update refs whenever shades change
+  useEffect(() => {
+    latestShades.current = {
+      lipShade,
+      cheekShade,
+      browShade,
+      browProductType,
+      contourShade,
+      foundationShade,
+    };
+  }, [lipShade, cheekShade, browShade, browProductType, contourShade, foundationShade]);
 
   useEffect(() => {
     if (!scriptsLoaded.faceMesh || !scriptsLoaded.camera) return;
@@ -90,7 +116,7 @@ export default function ARCamera({
             canvasCtx.lineTo(pt.x * width, pt.y * height);
           });
           canvasCtx.closePath();
-          canvasCtx.fillStyle = hexToRGBA(lipShade, 0.25);
+          canvasCtx.fillStyle = hexToRGBA(latestShades.current.lipShade, 0.25);
           canvasCtx.fill();
         }
 
@@ -102,7 +128,7 @@ export default function ARCamera({
             const y = pt.y * height - 10;
             canvasCtx.beginPath();
             canvasCtx.ellipse(x, y, 30, 20, 0, 0, 2 * Math.PI);
-            canvasCtx.fillStyle = hexToRGBA(cheekShade, 0.045);
+            canvasCtx.fillStyle = hexToRGBA(latestShades.current.cheekShade, 0.045);
             canvasCtx.fill();
           }
         };
@@ -110,8 +136,8 @@ export default function ARCamera({
         drawCheek(425);
 
         // Brows
-        if (browShade !== 'transparent') {
-          const browAlpha = browProductType.includes('Pencil') ? 0.3 : 0.2;
+        if (latestShades.current.browShade !== 'transparent') {
+          const browAlpha = latestShades.current.browProductType.includes('Pencil') ? 0.3 : 0.2;
           const leftBrow = [70, 63, 105, 66, 107, 55];
           const rightBrow = [336, 296, 334, 293, 300, 285];
 
@@ -124,7 +150,7 @@ export default function ARCamera({
                 canvasCtx.lineTo(pt.x * width, pt.y * height);
               });
               canvasCtx.closePath();
-              canvasCtx.fillStyle = hexToRGBA(browShade, browAlpha);
+              canvasCtx.fillStyle = hexToRGBA(latestShades.current.browShade, browAlpha);
               canvasCtx.fill();
             }
           });
@@ -146,7 +172,7 @@ export default function ARCamera({
             canvasCtx.rotate(angle);
             canvasCtx.beginPath();
             canvasCtx.ellipse(0, 0, 40, 20, 0, 0, 2 * Math.PI);
-            canvasCtx.fillStyle = hexToRGBA(contourShade, 0.05);
+            canvasCtx.fillStyle = hexToRGBA(latestShades.current.contourShade, 0.05);
             canvasCtx.fill();
             canvasCtx.restore();
           }
@@ -174,7 +200,7 @@ export default function ARCamera({
             }
           });
           canvasCtx.closePath();
-          canvasCtx.fillStyle = hexToRGBA(foundationShade, 0.09);
+          canvasCtx.fillStyle = hexToRGBA(latestShades.current.foundationShade, 0.09);
           canvasCtx.fill();
         }
       }
@@ -196,7 +222,7 @@ export default function ARCamera({
     return () => {
       // Component unmount handles standard DOM cleanup
     };
-  }, [scriptsLoaded, lipShade, cheekShade, browShade, browProductType, contourShade, foundationShade]);
+  }, [scriptsLoaded]);
 
   return (
     <div className="relative w-full max-w-[640px] aspect-[4/3] rounded-xl overflow-hidden bg-warm-900">

@@ -30,7 +30,7 @@ function Swatch({
       className={`w-7 h-7 rounded-full transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] focus:outline-none active:scale-90 ${
         selected
           ? 'scale-110 ring-2 ring-offset-2 ring-blush-400 shadow-md'
-          : 'hover:scale-115 hover:shadow-sm'
+          : 'hover:scale-110 hover:shadow-sm'
       } ${isLight ? 'border border-cream-200' : ''}`}
       style={{ backgroundColor: color === 'transparent' ? 'white' : color }}
     />
