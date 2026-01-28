@@ -27,8 +27,7 @@ export default function Dashboard() {
   const handleSearch = async (
     query: string,
     filters: string[],
-    priceRange: [number, number],
-    minRating: number
+    priceRange: [number, number]
   ) => {
     if (!query.trim()) return;
 
@@ -49,8 +48,7 @@ export default function Dashboard() {
       if (data.matches) {
         const filtered = data.matches.filter((p: Product) => {
           const price = p.price || 0;
-          const rating = p.rating || 0;
-          return price >= priceRange[0] && price <= priceRange[1] && rating >= minRating;
+          return price >= priceRange[0] && price <= priceRange[1];
         });
         setProducts(filtered);
       } else {

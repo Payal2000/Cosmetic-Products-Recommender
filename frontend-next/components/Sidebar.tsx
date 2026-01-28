@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 interface SidebarProps {
-  onSearch: (query: string, filters: string[], priceRange: [number, number], minRating: number) => void;
+  onSearch: (query: string, filters: string[], priceRange: [number, number]) => void;
   isLoading: boolean;
 }
 
@@ -27,7 +27,6 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
   const [query, setQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 100]);
-  const [minRating, setMinRating] = useState(3.0);
 
   const categories = [
     { id: 'face', label: 'Face', icon: CircleDot },
@@ -46,7 +45,7 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
   };
 
   const handleSearch = () => {
-    onSearch(query, selectedCategories, priceRange, minRating);
+    onSearch(query, selectedCategories, priceRange);
   };
 
   const handlePreload = (text: string) => {
@@ -128,27 +127,6 @@ export default function Sidebar({ onSearch, isLoading }: SidebarProps) {
               max="100"
               value={priceRange[1]}
               onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
-              className="w-full"
-            />
-          </div>
-
-          <div>
-            <label className="flex items-center justify-between text-[11px] font-medium text-olive-400 tracking-[0.15em] uppercase mb-3">
-              <span className="flex items-center gap-1.5">
-                <Star className="w-3 h-3" strokeWidth={1.5} />
-                Min Rating
-              </span>
-              <span className="text-warm-700 tracking-normal font-semibold">
-                {minRating.toFixed(1)}
-              </span>
-            </label>
-            <input
-              type="range"
-              min="0"
-              max="5"
-              step="0.1"
-              value={minRating}
-              onChange={(e) => setMinRating(parseFloat(e.target.value))}
               className="w-full"
             />
           </div>
