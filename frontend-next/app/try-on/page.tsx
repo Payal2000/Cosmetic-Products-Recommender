@@ -692,9 +692,9 @@ export default function TryOnPage() {
       </aside>
 
       {/* AR Camera View */}
-      <div className="flex-1 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden bg-cream-50">
-        <div className="relative z-10 flex flex-col items-center max-w-2xl w-full">
-          <div className="bg-white p-3 rounded-2xl shadow-lg border border-cream-200/40 mb-6 w-full max-w-[670px] opacity-0 animate-scale-in" style={{ animationDelay: '150ms' }}>
+      <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden bg-cream-50">
+        <div className="relative z-10 flex flex-col items-center w-full max-w-2xl">
+          <div className="bg-white p-2 sm:p-3 rounded-2xl shadow-lg border border-cream-200/40 mb-4 sm:mb-6 w-full opacity-0 animate-scale-in" style={{ animationDelay: '150ms' }}>
             <ARCamera
               ref={arCameraRef}
               lipShade={selectedLipShade}

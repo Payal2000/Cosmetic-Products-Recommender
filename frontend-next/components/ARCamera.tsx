@@ -46,7 +46,9 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
 }: ARCameraProps, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [scriptsLoaded, setScriptsLoaded] = useState({ faceMesh: false, camera: false });
+  const [dimensions, setDimensions] = useState({ width: 640, height: 480 });
   const faceMeshInstance = useRef<any>(null);
   const cameraInstance = useRef<any>(null);
 
@@ -84,6 +86,38 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
     };
   }, [lipShade, cheekShade, browShade, browProductType, contourShade, foundationShade, lipIntensity, cheekIntensity, browIntensity, contourIntensity, foundationIntensity, showMakeup]);
 
+  // Handle responsive dimensions
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (!containerRef.current) return;
+
+      const container = containerRef.current;
+      const containerWidth = container.clientWidth;
+      const containerHeight = container.clientHeight;
+
+      // Use actual container dimensions, maintaining 4:3 aspect ratio
+      const aspectRatio = 4 / 3;
+      let width = containerWidth;
+      let height = containerWidth / aspectRatio;
+
+      if (height > containerHeight) {
+        height = containerHeight;
+        width = containerHeight * aspectRatio;
+      }
+
+      // Set reasonable limits for performance
+      const maxWidth = Math.min(1280, width);
+      const maxHeight = Math.min(960, height);
+
+      setDimensions({ width: maxWidth, height: maxHeight });
+    };
+
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
   // Expose screenshot capture method to parent
   useImperativeHandle(ref, () => ({
     captureScreenshot: () => {
@@ -109,7 +143,6 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
 
   useEffect(() => {
     if (!scriptsLoaded.faceMesh || !scriptsLoaded.camera) return;
-    if (faceMeshInstance.current) return;
 
     const videoElement = videoRef.current;
     const canvasElement = canvasRef.current;
@@ -120,6 +153,22 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
 
     const FaceMesh = window.FaceMesh;
     const Camera = window.Camera;
+
+    // Clean up existing instances
+    if (cameraInstance.current) {
+      try {
+        cameraInstance.current.stop();
+      } catch (e) {
+        // Ignore errors during cleanup
+      }
+    }
+    if (faceMeshInstance.current) {
+      try {
+        faceMeshInstance.current.close();
+      } catch (e) {
+        // Ignore errors during cleanup
+      }
+    }
 
     const faceMesh = new FaceMesh({
       locateFile: (file: string) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
@@ -266,8 +315,8 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
       onFrame: async () => {
         await faceMesh.send({ image: videoElement });
       },
-      width: 640,
-      height: 480,
+      width: dimensions.width,
+      height: dimensions.height,
     });
     camera.start();
 
@@ -275,12 +324,29 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
     cameraInstance.current = camera;
 
     return () => {
-      // Component unmount handles standard DOM cleanup
+      // Cleanup on unmount or when dependencies change
+      if (cameraInstance.current) {
+        try {
+          cameraInstance.current.stop();
+        } catch (e) {
+          // Ignore errors during cleanup
+        }
+      }
+      if (faceMeshInstance.current) {
+        try {
+          faceMeshInstance.current.close();
+        } catch (e) {
+          // Ignore errors during cleanup
+        }
+      }
     };
-  }, [scriptsLoaded]);
+  }, [scriptsLoaded, dimensions]);
 
   return (
-    <div className="relative w-full max-w-[640px] aspect-[4/3] rounded-xl overflow-hidden bg-warm-900">
+    <div
+      ref={containerRef}
+      className="relative w-full max-w-full aspect-[4/3] rounded-xl overflow-hidden bg-warm-900"
+    >
       <Script
         src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"
         onLoad={() => setScriptsLoaded(prev => ({ ...prev, faceMesh: true }))}
@@ -295,12 +361,14 @@ const ARCamera = forwardRef<ARCameraRef, ARCameraProps>(({
         autoPlay
         muted
         playsInline
+        webkit-playsinline="true"
       />
       <canvas
         ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        width={640}
-        height={480}
+        className="absolute top-0 left-0 w-full h-full"
+        style={{ objectFit: 'cover' }}
+        width={dimensions.width}
+        height={dimensions.height}
       />
       {(!scriptsLoaded.faceMesh || !scriptsLoaded.camera) && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-warm-900/80 backdrop-blur-sm gap-3">
